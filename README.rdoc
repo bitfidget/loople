@@ -1,15 +1,57 @@
 == LOOPLE
+= GA WDI Major Project No.2 created by (H)A.C.K.
 
 An interactive javascript/rails based music toy that is easy and fun to use!
 
 == MODELS
+= TABLES
 
-USERS --> Have many --> LOOPS
-LOOPS --> Belong to --> USERS
-LOOPS --> Has and belongs to many --> TRACKS
-TRACKS --> Has and belongs to many --> LOOPS
+USERS - LOOPS - TRACKS - KEYLOGS - LOOPS_TRACKS
 
+= RELATIONSHIPS
 
+* USERS --> Has many --> LOOPS
+* LOOPS --> Belong to --> USERS
+* LOOPS --> Has and belongs to many --> TRACKS
+* LOOPS --> Has many --> KEYLOGS
+* TRACKS --> Has and belongs to many --> LOOPS
+* KEYLOGS --> Belong to --> LOOPS
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== MUCH JAVASRIPT GOODNESS WILL BE HAD
+
+== App process (initial dev)
+
+1. There will be a loop of 1 bar, always playing on-screen (play will be represented by a moving bar or playhead, left to right). This loop will initially be empty.
+2. User can play sounds by hitting keys, and if they want to permanently add it to the loop, they need to hold space+key to add that sound at that exact time. This will also be visually added to the loop, and from now on played everytime the playhead passes that point.
+3. Each sound will also play an associated animation at the time that it plays.
+4. User can click on a sound on the loop to also remove it from the loop.
+5. User can save the loop at any time if they have built it up to a point they like (via keyboard button or on-screen button).
+6. User can also grab a different loop from their saved loops at any time (so they are essentially live-mixing loops). Selecting a saved loop, queues it up to be played immediately at the end of the current loop (we only ever deal with one loop at a time).
+7. User can still play or add new sounds over the top of a saved loop while it is playing.
+
+= Givens of this first build process
+
+* Basic crud system (so user can register and start saving loops)
+* javascript/webkit audio API based sound manipulation and playback
+* javascript 2JS or 3JS and CSS3 animations
+* javascript to represent the live loop
+* ajax to save the current loop seamlessly
+* ajax to load a saved loop into the mix seamlessly
+
+Only once these basics are working and tested we can move on to:
+
+== App Dev Stage 2
+
+= A tracks 'record' mode
+
+1. User can click a RECORD button to start the process - the current loop will be recorded as loop1.
+2. At any time, the user can select any of their saved loops to play, this wil also be recorded.
+3. Once the user chained together a sequence of loops playing that they like they click stop and they have a full track they can share. 
+
+== More Sweet Stuff We'd Like but Not Inittially Essesntial
+
+* Tempo adjustment (would obviously affect the current play speed, but could also be saved to a track, so the track plays at the right speed as the user intended)
+* Multiple banks of sounds (selecting different banks would also change the animations slightly - probably colour only)
+* A metronome function that can be switched on/off
+* Social share buttons for the saved tracks
+* It would be REALLY nice if we could adjust the sound of a sound instance by dragging it up or down on the screen
