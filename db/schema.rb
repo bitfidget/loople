@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411064800) do
+ActiveRecord::Schema.define(version: 20140411072316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20140411064800) do
     t.datetime "updated_at"
   end
 
-  create_table "loops_tracks", id: false, force: true do |t|
-    t.integer "loop_id"
-    t.integer "track_id"
+  create_table "orders", id: false, force: true do |t|
     t.integer "order"
+    t.integer "track_id"
+    t.integer "loop_id"
   end
 
   create_table "tracks", force: true do |t|
