@@ -1,27 +1,14 @@
-== README
+== LOOPLE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An interactive javascript/rails based music toy that is easy and fun to use!
 
-Things you may want to cover:
+== MODELS
 
-* Ruby version
+USERS --> Have many --> LOOPS
+LOOPS --> Belong to --> USERS
+LOOPS --> Has and belongs to many --> TRACKS
+TRACKS --> Has and belongs to many --> LOOPS
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
