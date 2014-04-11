@@ -12,12 +12,12 @@ USERS - LOOPS - TRACKS - KEYLOGS - LOOPS_TRACKS
 
 * USERS --> Has many --> LOOPS
 * LOOPS --> Belong to --> USERS
-* LOOPS --> Has and belongs to many --> TRACKS
+* LOOPS --> Has many --> TRACKS -- through LOOPS_TRACKS
+* TRACKS --> Has many --> LOOPS -- through LOOPS_TRACKS
 * LOOPS --> Has many --> KEYLOGS
-* TRACKS --> Has and belongs to many --> LOOPS
 * KEYLOGS --> Belong to --> LOOPS
 
-== MUCH JAVASRIPT GOODNESS WILL BE HAD
+== MUCH JAVASCRIPT GOODNESS WILL BE HAD
 
 == App process (initial dev)
 
