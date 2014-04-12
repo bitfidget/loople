@@ -3,6 +3,6 @@ development:
   encoding: unicode
   database: loople_development
   pool: 5
-  username: kriss
+  username: annehomann
   password:
 
