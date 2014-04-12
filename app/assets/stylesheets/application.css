@@ -11,3 +11,38 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+  margin: 0;
+}
+
+/*-------------------- PAGE CHARLIE CANVAS ------------------*/
+
+canvas{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+h1.animation_page{
+	font-size: 12px;
+	position: absolute;
+	z-index: 10;
+	color: black;
+	display: block;
+	max-width: 100%;
+	padding: 5px;
+	text-align: center;
+	margin: 0 45%;
+}
+
+h1.instructions{
+	position: absolute;
+	font-size: 12px;
+	background-color: #bbb;
+	display: block;
+	max-width: 600px;
+	padding: 5px;
+	border-radius: 5%;
+	margin: 2% 32%;
+}
