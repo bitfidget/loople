@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: loops
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  colour     :string(255)
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Loop < ActiveRecord::Base
   attr_accessible :user_id, :name, :colour
   belongs_to :user
