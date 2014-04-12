@@ -6,29 +6,33 @@ $(document).ready(function(){
   // Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // for testing porpoises, set timing to 60bpm
   // lets create a variable for the time so we can change it easily later
-  var loopTime = 4000
+  var loopTime = 1000
+  var loopGrid = loopTime/$loopWindow.width()
+  counterSub = 0
 
 
-  // the basic timing loop
-  var timerStart = function(){
-    var counter = 0
-    counterID = setInterval(function(){
-      makeBlip(counter)
-      moveHead()
-      counter++;
-    }, loopTime);
+  // the not so basic timing loop which is the fine-tuning of the beats - this gets reset everytime the playhead returns to 0 (using the main timer)
+  var logTime = function(i){
+    countSub = i
+    counterSub = setInterval(function(){
+    countSub++;
+  }, 
+  (loopTime/1000));
   };
 
-  var num = 0;
-  // var counter = setInterval(start_count,1000);  
-  // function start_count(type){     
-  //     num++;     
-  //     document.getElementById('num_div').innerHTML = num;
-  // }
-  // function stop_count(){    
-  //     clearInterval(counter);    
-  //     num = 0;
-  // }
+  // the basic timing loop which is all 4 beats
+  var countMain = 0
+  counterMain = setInterval(function(){
+    if (counterSub != 0){
+      clearInterval(counterSub);
+    };
+    logTime(0)
+    moveHead()
+    countMain++;
+  }, 
+  loopTime);
+
+
 
   // a test blip - this will be removed laterz
   var makeBlip = function(counter){
@@ -50,46 +54,43 @@ $(document).ready(function(){
     );
   };
 
-  var makeKey = function(key, time){
+  // ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
+  var loopKeys = [];
+  var loopTimes = [];
+  var loopKeyTime = [loopKeys, loopTimes];
 
+  var makeKey = function(key){
+    loopKeys.push(key);
+    loopTimes.push(countSub);
+    console.log(loopKeyTime);
+    plotKey(key, countSub);
+  };
+
+  var plotKey = function(key, time){
+    var $keyBlip = $('<div class="key-blip" />').css({
+      left: ( time / loopGrid ) + 'px'
+    }).appendTo($loopWindow);
   }
 
 
-  timerStart();
+
+  // the event listener for keys clicked
+  $(document).keydown(function(e){
+    switch(e.keyCode){
+      //Letter 'Q'
+      case 81:
+        makeKey('q');
+        break;
+
+      //Letter 'W'
+      case 87:
+        makeKey('w');
+        break;
+
+    }
+  });
+
+
 
 });
 
-// the event listener for keys clicked
-// $(document).keydown(function(e){
-//   switch(e.keyCode){
-//     //Letter 'Q'
-//     case 81:
-//       changeColor(0); //Grey
-//       break;
-
-//     //Letter 'W'
-//     case 87:
-//       changeColor(1); //Pink
-//       break;
-
-//     //Letter 'E'
-//     case 69:
-//       changeColor(2); //Green
-//       break;
-
-//     //Letter 'R'
-//     case 82:
-//       changeColor(3); //Purple
-//       break;
-
-//     //Letter 'T'
-//     case 84:
-//       changeColor(4); //Blue
-//       break;
-
-//     //Letter 'Y'
-//     case 89:
-//       changeColor(5); //Red
-//       break;
-//   }
-// });

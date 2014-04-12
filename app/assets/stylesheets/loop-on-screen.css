@@ -33,3 +33,11 @@
   background: green;
   display: block;
 }
+.key-blip{
+  position: absolute;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background: red;
+  display: block;
+}
