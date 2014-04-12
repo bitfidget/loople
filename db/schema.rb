@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20140411072316) do
     t.datetime "updated_at"
   end
 
+  create_table "loops_tracks", id: false, force: true do |t|
+    t.integer "loop_id"
+    t.integer "track_id"
+    t.integer "order"
+  end
+
   create_table "orders", id: false, force: true do |t|
     t.integer "order"
     t.integer "track_id"
