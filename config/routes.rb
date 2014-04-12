@@ -1,4 +1,9 @@
 Loople::Application.routes.draw do
+  # KH custom test pages for experimentations porpoises
+  get "anne" =>'pages#anne'
+  get "charlie" =>'pages#charlie'
+  get "kriss" =>'pages#kriss'
+  # regular routes
   get "loops/new"
   get "loops/create"
   get "loops/edit"
