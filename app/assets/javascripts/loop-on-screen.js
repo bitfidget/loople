@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
 $(document).ready(function(){
   // KH the first dom elements we need to mess with will be the window and playhead
   var $loopWindow = $('#loop-window')
@@ -10,28 +6,18 @@ $(document).ready(function(){
   var $loopName = $('#loop-name');
   var $loopColour = $('#loop-colour');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
   // Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // for testing porpoises, set timing to 60bpm
   // lets create a variable for the time so we can change it easily later
   var loopTime = 4000
 
-<<<<<<< HEAD
-=======
 
   // the basic timing loop
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
+
   var timerStart = function(){
     var counter = 0
     counterID = setInterval(function(){
       makeBlip(counter)
-=======
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // KH lets create a variable for the time so we can change it easily later
@@ -46,7 +32,7 @@ $(document).ready(function(){
       countBar = 0
     };
     if (countBar == 0){
->>>>>>> 9140b434237f59a0118fd56029e24a44dbcebce0
+
       moveHead()
     };
     $('#counter').text(countBar)
@@ -54,9 +40,6 @@ $(document).ready(function(){
   }, 
   loopTime/200);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   var num = 0;
   // var counter = setInterval(start_count,1000);  
   // function start_count(type){     
@@ -69,7 +52,6 @@ $(document).ready(function(){
   // }
 
   // a test blip - this will be removed laterz
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
   var makeBlip = function(counter){
     var $testBlip = $('<div class="blip">' + counter + '</div>').prependTo($loopWindow);
     setTimeout(function(){
@@ -78,13 +60,9 @@ $(document).ready(function(){
       });
     }, 1000);
   };
-=======
->>>>>>> 9140b434237f59a0118fd56029e24a44dbcebce0
 
-<<<<<<< HEAD
-=======
+
   // the playhead - should animate using the same timeing as the loop
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
   var moveHead = function(){
     var $loopHead = $('<div id="loop-head" />').prependTo($loopWindow);
     $loopHead.animate(
@@ -94,13 +72,7 @@ $(document).ready(function(){
     );
   };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
   var makeKey = function(key, time){
-=======
->>>>>>> 9140b434237f59a0118fd56029e24a44dbcebce0
 
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
   // KH all keypresses are saved in the loopKeyTime array, under 2 different arrays
@@ -124,15 +96,11 @@ $(document).ready(function(){
       left: ($loopWindow.width() / 200) * time + 'px'
     }).appendTo($loopWindow);
   }
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
-
-
-<<<<<<< HEAD
   timerStart();
 
-<<<<<<< HEAD
-});
-=======
+
+};
+
 });
 
 // the event listener for keys clicked
@@ -169,8 +137,7 @@ $(document).ready(function(){
 //       break;
 //   }
 // });
->>>>>>> 42ca684e04b47d3cb6ff5bc726a64fd5cf57bf3c
-=======
+
   // KH all listeners for this section will start from here...
   // KH The save loop button and form
   $('form#loop-save').on('click', 'button', function (event) {
@@ -236,7 +203,3 @@ keyPress();
 // KH This stuff doesn't need to be in the document.ready function as it is called separately
 
 
-
-
-
->>>>>>> 9140b434237f59a0118fd56029e24a44dbcebce0
