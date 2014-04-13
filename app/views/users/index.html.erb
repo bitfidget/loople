@@ -1,2 +1,26 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All Users</h1>
+<section class="details">
+  <table cellpadding="10px" border="0" cellspacing="0">  
+    <% @users.each do |user| %>
+      <tr class="<%= cycle('bg1', 'bg2') %>"> 
+        <td valign="top">
+          <%= image_tag(user.image, :class => "image-user") %>
+        </td>
+        <td valign="top">
+          <%= link_to(user.username, user) %>
+        </td>
+        <td valign="top"> 
+          <nav class="meta">
+            <ul>
+              <% if @current_user && ( @current_user.admin == true ) %>
+                <li><%= link_to("Update user", edit_user_path(user)) %></li>
+                <li><%= link_to("Delete user", user, :confirm => "Are you sure you want to delete user #{user.username.upcase}?", :method => :delete) %></li>
+                <li><%= link_to("New user", new_user_path) %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</section>

@@ -8,8 +8,18 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 </head>
-<body>
- 
+<body class="<%= params[:controller] %> <%= params[:action] %>">
+  <nav id="main">
+    <ul>
+      <%== usernav %>
+      <li><%= link_to("Users", users_path ) %></li>
+      <li><%= link_to("Loops", loops_path ) %></li>
+      <li><%= link_to("Animationstest", charlie_path ) %></li>
+      <li><%= link_to("SoundTest", anne_path ) %></li>
+      <li><%= link_to("LoopTest", kriss_path ) %></li>
+    </ul>
+ </nav>
+
 <%= yield %>
 
 </body>
