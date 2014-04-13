@@ -1,7 +1,7 @@
 <h1>All Loops</h1>
 <ul>
   <% @loops.each do |loop| %>
-    <li><strong><%= loop.name %></strong></li>
+    <li><strong><%= link_to(loop.name, loop) %></strong></li>
     <li>ID <%= loop.id %> - Colour <%= loop.colour %></li>
     <li>
       <ul>

@@ -1,4 +1,4 @@
-<h1>Loops</h1>
+<h1>Loop</h1>
 <ul>
   <li><strong><%= @loop.name %></strong></li>
   <li>ID <%= @loop.id %> - Colour <%= @loop.colour %></li>
@@ -11,3 +11,4 @@
     </ul>
   </li>
 </ul>
+<li><%= link_to("Delete Loop", @loop, :method => :delete) %></li>

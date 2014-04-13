@@ -46,5 +46,8 @@ class LoopsController < ApplicationController
   end
 
   def destroy
+    loop = Loop.find params[:id]
+    loop.destroy
+    redirect_to loops_path, :notice => "loop deleted"
   end
 end
