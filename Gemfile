@@ -32,11 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
+# use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 # not sure what this does
-gem 'protected_attributes' 
-
+gem 'protected_attributes'
+# For dealign with arrays in a nice way
+gem 'underscore-rails'
+# for Heroku i think
 gem 'rails_12factor'
 
 # for carrierwave image uploads
@@ -46,6 +48,7 @@ gem 'rails_12factor'
 
 # debugging gems cos they're awesome:
 group :development do
+  gem 'pry'
   gem 'pry-rails' 
   gem 'pry-debugger' 
   gem 'pry-stack_explorer' 

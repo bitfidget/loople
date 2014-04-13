@@ -3,7 +3,7 @@ $(document).ready(function() {
     var context, 
         source, 
         buffer,
-        url = "../sounds/clap.mp3";
+        url = "/sounds/clap.mp3";
 
 	// Create the Audio Context
 	context = new webkitAudioContext();
@@ -23,7 +23,7 @@ $(document).ready(function() {
     function start() {
         // Note: this will load asynchronously
         var request = new XMLHttpRequest();
-        request.open("GET", "../sounds/clap.mp3", true);
+        request.open("GET", "/sounds/clap.mp3", true);
         request.responseType = "arraybuffer"; 
 
         // Asynchronous callback
@@ -56,3 +56,5 @@ $(document).ready(function() {
     init();
 
 }());
+
+Clap.mp3
