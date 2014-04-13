@@ -1,7 +1,7 @@
 $(document).ready(function(){
   // KH the first dom elements we need to mess with will be the window and playhead
-  var $loopWindow = $('#loop-window')
-  var $loopHead = $('#loop-head')
+  var $loopWindow = $('#loop-window');
+  var $loopHead = $('#loop-head');
   // KH dom form fields
   var $loopName = $('#loop-name');
   var $loopColour = $('#loop-colour');
