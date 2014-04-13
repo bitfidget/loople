@@ -16,6 +16,18 @@ body{
   margin: 0;
 }
 
+ul{
+	max-width: 600px;
+	margin: 5px auto;
+}
+
+li{
+	display: inline-block;
+	margin-right: 20px;
+	font-family: Futura;
+	font-size: 12px;
+}
+
 /*-------------------- PAGE CHARLIE CANVAS ------------------*/
 
 canvas#b{
