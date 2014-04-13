@@ -53,6 +53,30 @@ $(document).ready(function(){
     }).appendTo($loopWindow);
   }
 
+  // KH all listeners for this section will start from here...
+  // KH The save loop button and form
+  $('form#loop-save').on('click', 'button', function (event) {
+    event.preventDefault();
+    // KH get the loop name, then clear the field
+    var $loopName = $('#loop-name');
+    var name = $loopName.val();
+    $loopName.val('');
+    // KH get the loop colour
+    var $loopColour = $('#loop-colour');
+    var colour = $loopColour.val().replace('#', '');
+    // KH get the loop keystrokes array
+    var keyStrokes = loopKeyTime;
+    // KH make Ajax goodness happen
+    loopAjax.createLoop(name, colour, keyStrokes);
+  });
+
+
+
+
+
+
+
+
 
 
   // the event listener for keys clicked - this will later be shared with everybody elses codes
