@@ -1,2 +1,17 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.username %></h1>
+<section class="details">
+  <%= image_tag(@user.image, :class => "image-user") %>
+  <% if @user.id == session[:user_id] %>
+  <!-- user detils only for current user -->
+    <h4>Email</h4>
+    <p><%= @user.email %></p>
+    <nav class="meta">
+      <ul>
+        <li><%= link_to("Edit My Account", edit_user_path(@user)) %></li>
+        <li><%= link_to("Delete My Account", @user, :confirm => "Are you sure you want to delete account for #{@user.username.upcase}?", :method => :delete) %></li>
+      </ul>
+    </nav>
+  <% end %>
+</section>
+
+<!-- we will need to list all user loops and tracks here also -->

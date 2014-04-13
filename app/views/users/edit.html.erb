@@ -1,2 +1,5 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<section class="details">
+  <h1><span>Editing User: </span><%= @user.username %></h1>
+  <%= image_tag(@user.image, :class => "image-user") %>
+  <%= render 'form' %>
+</section>

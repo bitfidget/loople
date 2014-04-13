@@ -14,8 +14,8 @@ USERS - LOOPS - TRACKS - KEYLOGS - LOOPS_TRACKS
 * LOOPS --> Belong to --> USERS
 * LOOPS --> Has many --> TRACKS -- through LOOPS_TRACKS
 * TRACKS --> Has many --> LOOPS -- through LOOPS_TRACKS
-* LOOPS --> Has many --> KEYLOGS
-* KEYLOGS --> Belong to --> LOOPS
+* LOOPS --> Has many --> KEYSTROKES
+* KEYSTROKES --> Belong to --> LOOPS
 
 == MUCH JAVASCRIPT GOODNESS WILL BE HAD
 

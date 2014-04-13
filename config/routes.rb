@@ -3,27 +3,15 @@ Loople::Application.routes.draw do
   get "anne" =>'pages#anne'
   get "charlie" =>'pages#charlie'
   get "kriss" =>'pages#kriss'
-  # regular routes
-  get "loops/new"
-  get "loops/create"
-  get "loops/edit"
-  get "loops/index"
-  get "loops/show"
-  get "loops/update"
-  get "loops/destroy"
-  get "key_strokes/new"
-  get "key_strokes/create"
-  get "key_strokes/edit"
-  get "key_strokes/index"
-  get "key_strokes/show"
-  get "key_strokes/update"
-  get "key_strokes/destroy"
-  get "users/index"
-  get "users/create"
-  get "users/new"
-  get "users/edit"
-  get "users/show"
-  get "users/update"
-  get "users/destroy"
+
+  # KH session control for login
+  root :to => 'session#new'
+  post 'index' => 'session#new'
+  #sessions
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+  
+
   resources :users, :loops, :keystrokes, :tracks
 end

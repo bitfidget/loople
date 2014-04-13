@@ -10,8 +10,18 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
   <script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
 </head>
-<body>
- 
+<body class="<%= params[:controller] %> <%= params[:action] %>">
+  <nav id="main">
+    <ul>
+      <%== usernav %>
+      <li><%= link_to("Users", users_path ) %></li>
+      <li><%= link_to("Loops", loops_path ) %></li>
+      <li><%= link_to("Animationstest", charlie_path ) %></li>
+      <li><%= link_to("SoundTest", anne_path ) %></li>
+      <li><%= link_to("LoopTest", kriss_path ) %></li>
+    </ul>
+ </nav>
+
 <%= yield %>
 
 </body>

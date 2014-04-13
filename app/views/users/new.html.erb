@@ -1,2 +1,14 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Welcome New User</h1>
+<section class="details">
+  <% if @user.errors.any? %>
+    <h4>Please fix the following <%= 'error'.pluralize(@user.errors.count)%> before resubmitting form</h4>
+    <ul class="error">
+      <% @user.errors.full_messages.each do |msg|  %>
+        <li class="info"><%= msg %></li>
+      <% end %>  
+    </ul>
+  <% else %>
+    <p>Please enter some quick details below so you can start saving your looply loops.</p>
+  <% end %>
+  <%= render 'form' %>
+</section>
