@@ -21,7 +21,7 @@ var keyPress = function(){
       //Letter 'Q'
       case 81:
         console.log('q')
-        makeKey('q');
+        makeKey(1);
         playSound('clap');
         drawCircle();
         //two.clear();
@@ -29,151 +29,151 @@ var keyPress = function(){
       //Letter 'W'
       case 87:
         console.log('w')
-        makeKey('w');
+        makeKey(2);
         playSound('cowbell');
         drawRect();
         break;
       //Letter 'E'
       case 69:
-        makeKey('e');
+        makeKey(3);
         playSound('kickdrum');
         drawLine();
         break;
       //Letter 'R'
       case 82:
-        makeKey('r');
+        makeKey(4);
         playSound('snare');
         drawTriangle();
         break;
       //Letter 'T'
       case 84:
-        makeKey('t');
+        makeKey(5);
         playSound('laser01');
         drawCurve();
         break;
       //Letter 'Y'
       case 89:
-        makeKey('y');
+        makeKey(6);
         playSound('laser02');
         // drawSpiral(); Not working for now
         break;
       //Letter 'U'
       case 85:
-        makeKey('u');
+        makeKey(7);
         playSound('laser03');
         // drawSpiral(); Not working for now
         break;
       //Letter 'I'
       case 73:
-        makeKey('i');
+        makeKey(8);
         playSound('robot01');
         // drawSpiral(); Not working for now
         break;
       //Letter 'O'
       case 79:
-        makeKey('o');
+        makeKey(9);
         playSound('robot02');
         // drawSpiral(); Not working for now
         break;
       //Letter 'P'
       case 80:
-        makeKey('p');
+        makeKey(10);
         playSound('three');
         // drawSpiral(); Not working for now
         break;
       //Letter 'A'
       case 65:
-        makeKey('a');
+        makeKey(11);
         playSound('four');
         // drawSpiral(); Not working for now
         break;
       //Letter 'S'
       case 83:
-        makeKey('s');
+        makeKey(12);
         playSound('five');
         // drawSpiral(); Not working for now
         break;
       //Letter 'D'
       case 68:
-        makeKey('d');
+        makeKey(13);
         playSound('six');
         // drawSpiral(); Not working for now
         break;
       //Letter 'F'
       case 70:
-        makeKey('f');
+        makeKey(14);
         playSound('seven');
         // drawSpiral(); Not working for now
         break;
       //Letter 'G'
       case 71:
-        makeKey('g');
+        makeKey(15);
         playSound('eight');
         // drawSpiral(); Not working for now
         break;
       //Letter 'H'
       case 72:
-        makeKey('h');
+        makeKey(16);
         playSound('nine');
         // drawSpiral(); Not working for now
         break;
       //Letter 'J'
       case 74:
-        makeKey('j');
+        makeKey(17);
         playSound('ten');
         // drawSpiral(); Not working for now
         break;
       //Letter 'K'
       case 75:
-        makeKey('k');
+        makeKey(18);
         playSound('eleven');
         // drawSpiral(); Not working for now
         break;
       //Letter 'L'
       case 76:
-        makeKey('l');
+        makeKey(19);
         playSound('twelve');
         // drawSpiral(); Not working for now
         break;
       //Letter 'Z'
       case 90:
-        makeKey('z');
+        makeKey(20);
         playSound('thirteen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'X'
       case 88:
-        makeKey('x');
+        makeKey(21);
         playSound('fourteen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'C'
       case 67:
-        makeKey('c');
+        makeKey(22);
         playSound('fifteen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'V'
       case 86:
-        makeKey('v');
+        makeKey(23);
         playSound('sixteen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'B'
       case 66:
-        makeKey('b');
+        makeKey(24);
         playSound('seventeen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'N'
       case 78:
-        makeKey('n');
+        makeKey(25);
         playSound('eighteen');
         // drawSpiral(); Not working for now
         break;
       //Letter 'M'
       case 77:
-        makeKey('m');
+        makeKey(26);
         playSound('nineteen');
         // drawSpiral(); Not working for now
         break;
