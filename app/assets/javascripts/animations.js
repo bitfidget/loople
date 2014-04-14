@@ -3,6 +3,7 @@ $(document).ready(function(){
 	/*CG: declaring variables representing the full size of the window.
 	Makes it easier to set position of shapes later on and helps if the user 
 	resizes the window.*/
+	var $animWindow = $('#anim-window');
 	winWidth = window.innerWidth;
 	winHeight = window.innerHeight;
 	winBody = document.getElementById("body");		

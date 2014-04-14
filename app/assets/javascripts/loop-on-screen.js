@@ -13,10 +13,10 @@ $(document).ready(function(){
   $column.css({
     height: winHeight + 'px'
   });
+  $gridVert = (winHeight / 27);
   // KH dom form fields
   var $loopName = $('#loop-name');
   var $loopColour = $('#loop-colour');
-
 
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
@@ -68,10 +68,13 @@ $(document).ready(function(){
 
 
   // KH This draws the key according to it's time on the grid
+  var plotCount = 0;
   var plotKey = function(key, time){
-    var $keyBlip = $('<div class="key-blip" />').css({
-      left: ($loopWindow.width() / 200) * time + 'px'
+    var $keyBlip = $('<div class="key-blip kb' + key + '" id="kbid' + plotCount +'" />').css({
+      left: ($loopWindow.width() / 200) * time + 'px',
+      top: ($gridVert) * key + 'px'
     }).appendTo($loopWindow);
+    plotCount += 1;
   }
 
 
@@ -90,8 +93,4 @@ $(document).ready(function(){
     loopAjax.createLoop(name, colour, keyStrokes);
   });
 
-  
-
 }); // end of document.ready function
-
-
