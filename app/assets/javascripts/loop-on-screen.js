@@ -77,6 +77,7 @@ $(document).ready(function(){
     // KH make Ajax goodness happen
     loopAjax.createLoop(name, colour, keyStrokes);
   });
+
   
 
 }); // end of document.ready function
