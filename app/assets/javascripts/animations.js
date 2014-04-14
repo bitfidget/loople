@@ -127,47 +127,47 @@ function drawCurve(){
 //THIS IS NOT WORKING!!!!!!!!
 
 // function drawSpiral(){
-// 	var colorSeed = 0;
+//  	var colorSeed = 0;
 
-// 	function init() {
-// 		createjs.CSSPlugin.install(createjs.Tween);
+//  	function init() {
+//  		createjs.CSSPlugin.install(createjs.Tween);
 
-// 		createjs.Ticker.setFPS(20);
-// 		var count = 600;
-// 		while (--count >= 0) {
-// 			var box = document.getElementById("div");
-// 			box.style.width = "6px";
-// 			box.style.winHeight = "2px";
-// 			box.style.position = "absolute";
-// 			box.style.borderRadius = "2px";
-// 			box.style.backgroundColor = "#0F0";
-// 			document.body.appendChild(box);
-// 			var a = (Math.random()*Math.PI*2*16|0)/16;
-// 			box.style.webkitTransform = "rotate("+a+"rad)";
-// 			var d = 30;
-// 			box.style.left = window.innerWidth/2+Math.cos(a-0.2-Math.random())*d+"px";
-// 			box.style.top = window.innerHeight/2+Math.sin(a-0.2-Math.random())*d+"px";
-// 			d = (Math.min(window.innerWidth,window.innerHeight)-16)/2*(Math.random()*0.3+0.7);
-// 			var x = window.innerWidth/2+Math.cos(a)*d;
-// 			var y = window.innerHeight/2+Math.sin(a)*d;
-// 			createjs.Tween.get(box, {loop:true}, true).set({opacity:"0"},box.style).wait(Math.random()*1000+1|0).call(updateColor).to({top:y,left:x,width:16,winHeight:4,opacity:1},Math.random()*1500+1000,easeIn);
-// 		}
-// 		// tween the base color that divs will be assigned when they start moving:
-// 		createjs.Tween.get(this,{loop:true}).to({colorSeed:360},5000);
-// 	}
+//  		createjs.Ticker.setFPS(20);
+//  		var count = 600;
+//  		while (--count >= 0) {
+//  			var box = document.getElementById("test");
+//  			box.style.width = "6px";
+//  			box.style.winHeight = "2px";
+//  			box.style.position = "absolute";
+//  			box.style.borderRadius = "2px";
+//  			box.style.backgroundColor = "#0F0";
+//  			document.body.appendChild(box);
+//  			var a = (Math.random()*Math.PI*2*16|0)/16;
+//  			box.style.webkitTransform = "rotate("+a+"rad)";
+//  			var d = 30;
+//  			box.style.left = window.innerWidth/2+Math.cos(a-0.2-Math.random())*d+"px";
+//  			box.style.top = window.innerHeight/2+Math.sin(a-0.2-Math.random())*d+"px";
+//  			d = (Math.min(window.innerWidth,window.innerHeight)-16)/2*(Math.random()*0.3+0.7);
+//  			var x = window.innerWidth/2+Math.cos(a)*d;
+//  			var y = window.innerHeight/2+Math.sin(a)*d;
+//  			createjs.Tween.get(box, {loop:true}, true).set({opacity:"0"},box.style).wait(Math.random()*1000+1|0).call(updateColor).to({top:y,left:x,width:16,winHeight:4,opacity:1},Math.random()*1500+1000,easeIn);
+//  		}
+//  		// tween the base color that divs will be assigned when they start moving:
+//  		createjs.Tween.get(this,{loop:true}).to({colorSeed:360},5000);
+//  	}
 
-// 	function updateColor(tween) {
-// 		// grab the tween's target (the style object), and update it's color
-// 		tween._target.style.backgroundColor = "hsl("+(Math.random()*60+colorSeed|0)+",100%,50%)";
-// 	}
+//  	function updateColor(tween) {
+//  		// grab the tween's target (the style object), and update it's color
+//  		tween._target.style.backgroundColor = "hsl("+(Math.random()*60+colorSeed|0)+",100%,50%)";
+//  	}
 
-// 	// very simple easing equation:
-// 	function easeIn(ratio) {
-// 		return ratio*ratio;
-// 	}
+// // 	// very simple easing equation:
+//  	function easeIn(ratio) {
+//  		return ratio*ratio;
+//  	}
 
-// 	init();
-// }
+//  	init();
+//  }
 
 /*------------------------ DRAW TRIANGLE WITH DOTS ------------------------*/
 	
@@ -200,5 +200,57 @@ function drawTriangleDots(){
    		group.rotation += t * Math.PI;
 	 	}
 	}).play();	
+}
+
+/*------------------------ DRAW BOUNCING BALL ------------------------*/
+
+function drawBouncingBall(){
+
+	// var stage = new createjs.Stage("canvas");
+	// createjs.Ticker.addEventListener("tick", tick);
+	// createjs.MotionGuidePlugin.install();
+
+
+	// // var shape = new createjs.Shape();
+	// // shape.graphics.beginFill("#ff00ff").drawCircle(0,0,50);
+	// // shape.appendTo(winBody);
+
+	// var ball = two.makeCircle(300, 100, 50);
+	// 	ball.noStroke();
+	// 	ball.fill = "green";
+
+	// 	two.update();
+
+	// createjs.Tween.get(ball).to({guide:{ path:[100,0, 200,0,200,200, 350,100,450,200] }},1000);
+
+	// // var path = new createjs.Shape();
+	// // path.graphics.beginStroke("#ff00ff").moveTo(0,0).curveTo(200,0,200,200).curveTo(350,100,450,200);
+	// // stage.addChild(path);
+
+	// two.bind("update", function (frameCount){
+	//  	ball.translation.x +=5;
+	// }).play();
+
+	// function tick(event) {
+	//     stage.update();
+	// }
+
+	var stage = new createjs.Stage();
+	createjs.Ticker.addEventListener("tick", tick);
+	createjs.MotionGuidePlugin.install();
+
+	var shape = new createjs.Shape();
+	shape.graphics.beginFill("#ff00ff").drawCircle(0,0,50);
+	stage.addChild(shape);
+
+	createjs.Tween.get(shape).to({guide:{ path:[0,0, 200,0,200,200, 350,100,450,200] }},1000);
+
+	var path = new createjs.Shape();
+	path.graphics.beginStroke("#ff00ff").moveTo(0,0).curveTo(200,0,200,200).curveTo(350,100,450,200);
+	stage.addChild(path);
+
+	function tick(event) {
+	    stage.update();
+	}
 }
 
