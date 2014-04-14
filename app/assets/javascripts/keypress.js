@@ -10,6 +10,8 @@ $(document).ready(function(){
     keyPress();
   });
 
+}); // end of document.ready function
+
 
 // Charlies event listener for keys clicked
 // add all key press fucntions here
@@ -60,10 +62,6 @@ $(document).ready(function(){
     });
   };
 
-  // KH start these functions when all else is loaded
-  keyPress();
-
-}); // end of document.ready function
-
+  
 
 

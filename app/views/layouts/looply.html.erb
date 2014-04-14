@@ -26,12 +26,18 @@
         <li><%= link_to("SoundTest", anne_path ) %></li>
         <li><%= link_to("LoopTest", kriss_path ) %></li>
       </ul>
-   </nav>    
-    
+    </nav> 
+    <%= yield %>   
   </div>
+  THIS IS THE LOOPLE PAGE
 
 
-<%= yield %>
+
 
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+  keyPress();
+});
+</script>
 </html>

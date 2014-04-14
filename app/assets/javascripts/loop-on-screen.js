@@ -1,10 +1,22 @@
 $(document).ready(function(){
   // KH the first dom elements we need to mess with will be the window and playhead
   var $loopWindow = $('#loop-window');
+  var $animWindow = $('#anim-window');
+  var $column = $('#column');
   var $loopHead = $('#loop-head');
+  $loopWindow.css({
+    height: winHeight + 'px'
+  });
+  $animWindow.css({
+    height: winHeight + 'px'
+  });
+  $column.css({
+    height: winHeight + 'px'
+  });
   // KH dom form fields
   var $loopName = $('#loop-name');
   var $loopColour = $('#loop-colour');
+
 
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
