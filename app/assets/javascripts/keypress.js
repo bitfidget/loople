@@ -23,6 +23,7 @@ $(document).ready(function(){
           makeKey('q');
           playSound('clap');
           drawCircle();
+          //two.clear();
           break;
         //Letter 'W'
         case 87:
@@ -30,6 +31,30 @@ $(document).ready(function(){
           makeKey('q');
           playSound('cowbell');
           drawRect();
+          break;
+        //Letter 'E'
+        case 69:
+          makeKey('q');
+          // playSound('cowbell');
+          drawLine();
+          break;
+        //Letter 'R'
+        case 82:
+          makeKey('q');
+          // playSound('cowbell');
+          drawTriangle();
+          break;
+        //Letter 'T'
+        case 84:
+          makeKey('q');
+          // playSound('cowbell');
+          drawCurve();
+          break;
+        //Letter 'Y'
+        case 89:
+          makeKey('q');
+          // playSound('cowbell');
+          // drawSpiral(); Not working for now
           break;
       }
     });
