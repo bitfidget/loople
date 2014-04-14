@@ -34,27 +34,28 @@ $(document).ready(function(){
           break;
         //Letter 'E'
         case 69:
-          makeKey('q');
+          makeKey('e');
           // playSound('cowbell');
           drawLine();
           break;
         //Letter 'R'
         case 82:
-          makeKey('q');
+          makeKey('r');
           // playSound('cowbell');
           drawTriangle();
           break;
         //Letter 'T'
         case 84:
-          makeKey('q');
+          makeKey('t');
           // playSound('cowbell');
           drawCurve();
           break;
         //Letter 'Y'
         case 89:
-          makeKey('q');
+          makeKey('y');
           // playSound('cowbell');
           // drawSpiral(); Not working for now
+          drawTriangleDots();
           break;
       }
     });

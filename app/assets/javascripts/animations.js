@@ -6,18 +6,17 @@ $(document).ready(function(){
 	winWidth = window.innerWidth;
 	winHeight = window.innerHeight;
 	winBody = document.getElementById("body");		
-});
 
+	// Make an instance of two and place it on the page.
+	window.two = new Two({
+		fullscreen: true
+	}).appendTo(winBody);
+
+});
 
 /*---------------------- DRAW CIRCLE ------------------------*/
 
 function drawCircle(){
-	// Make an instance of two and place it on the page.
-	// var elem = document.getElementById("draw-circle");
-	two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
-
 	var shapeRadius = 300
 	// two has convenience methods to create shapes.
 	var circle = two.makeCircle( winWidth/2, winHeight/2, shapeRadius);
@@ -35,21 +34,12 @@ function drawCircle(){
 		if(circle.scale > 0){
 			circle.scale -= 0.04;
 		}
-	}).play();
-	
-	
-	// two.clear();
-			
+	}).play();			
 }
 
 /*---------------------- DRAW SQUARE ------------------------*/
 
 function drawRect(){
-	// var elem = document.getElementById("draw-rect");
-	two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
-
 	//CG: Sets the rectangle at the center of the window.
 	var rect = two.makeRectangle( (winWidth/2), (winHeight/2), 50, 50);
 	rect.fill = '#99FF33';
@@ -69,11 +59,6 @@ function drawRect(){
 /*---------------------- DRAW LINE ------------------------*/
 
 function drawLine(){
-	// var elem = document.getElementById("draw-line");
-	two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
-
 	var line = two.makeLine( 0, 25, winWidth/2, winHeight/2);
 		line.linewidth = 10;
 		line.stroke = getRandomColor();
@@ -96,11 +81,6 @@ function getRandomColor() {
 /*---------------------- DRAW TRIANGLE ------------------------*/
 
 function drawTriangle(){
-	// var elem = document.getElementById("draw-triangle");
-	two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
-
 	//Draw triangle (x1, y1, x2, y2, x3, y3)
 	//(left points, top points, right points)
 	var poly = two.makePolygon(500, 800, 650, 700, 800, 800);
@@ -126,11 +106,6 @@ function drawTriangle(){
 /*---------------------- DRAW CURVES ------------------------*/
 
 function drawCurve(){
-	// var elem = document.getElementById("draw-curve");
-	two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
-
 	var curve = two.makeCurve(110, 100, 120, 50, 140, 150, 160, 50, 180, 150, 190, 100, true);
 		curve.linewidth = 5;
 		curve.scale = 5;
@@ -192,6 +167,36 @@ function drawCurve(){
 
 // 	init();
 // }
-	
 
+/*------------------------ DRAW TRIANGLE WITH DOTS ------------------------*/
+	
+function drawTriangleDots(){
+	var triangleDots = two.makePolygon((winWidth/2), (winHeight/2 - 75), (winWidth/2 - 100), (winHeight/2 + 75), (winWidth/2 + 100), (winHeight/2 + 75));
+	 	triangleDots.noFill;
+	 	triangleDots.stroke = "#ccc";
+	 	triangleDots.linewidth = 7;
+
+	var circle1 = two.makeCircle(winWidth/2, (winHeight/2 - 75), 10);
+	 	circle1.fill = "#000";
+
+	var circle2 = two.makeCircle((winWidth/2 - 100), (winHeight/2 + 75 ), 10);
+	 	circle2.fill = "#000";
+
+	var circle3 = two.makeCircle((winWidth/2 + 100), (winHeight/2 + 75), 10);
+	 	circle3.fill = "#000";
+
+	var group = two.makeGroup(triangleDots, circle1, circle2, circle3);
+		group.scale = 1;
+	 	group.translation.set(500, -500);
+
+	two.update();
+
+	two.bind("update", function (frameCount){
+	 	if(group.scale < 2){
+	 	 var t =  0.01;
+  		group.scale += t;
+   		group.rotation += t * Math.PI;
+	 	}
+	}).play();	
+}
 
