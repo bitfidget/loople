@@ -173,8 +173,9 @@ function drawCurve(){
 function drawTriangleDots(){
 	var triangleDots = two.makePolygon((winWidth/2), (winHeight/2 - 75), (winWidth/2 - 100), (winHeight/2 + 75), (winWidth/2 + 100), (winHeight/2 + 75));
 	 	triangleDots.noFill;
-	 	triangleDots.stroke = "#ccc";
+	 	triangleDots.stroke = "#bbb";
 	 	triangleDots.linewidth = 7;
+	 	triangleDots.noFill();
 
 	var circle1 = two.makeCircle(winWidth/2, (winHeight/2 - 75), 10);
 	 	circle1.fill = "#000";

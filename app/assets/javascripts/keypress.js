@@ -56,6 +56,7 @@ var keyPress = function(){
         makeKey('y');
         playSound('laser02');
         // drawSpiral(); Not working for now
+        drawTriangleDots();
         break;
       //Letter 'U'
       case 85:
@@ -180,4 +181,3 @@ var keyPress = function(){
     }
   });
 };
->>>>>>> 2c057acd701800cc4bfd5baf2681d140b5ad0fd7
