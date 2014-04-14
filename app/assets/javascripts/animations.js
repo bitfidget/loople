@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var $animWindow = $('#anim-window');
 	winWidth = window.innerWidth;
 	winHeight = window.innerHeight;
-	winBody = document.getElementById("body");		
+	winBody = document.getElementById("anim-window");		
 
 	// Make an instance of two and place it on the page.
 	window.two = new Two({
