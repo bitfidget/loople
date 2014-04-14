@@ -26,8 +26,8 @@ $(document).ready(function(){
           break;
         //Letter 'W'
         case 87:
-          console.log('q')
-          makeKey('q');
+          console.log('w')
+          makeKey('w');
           playSound('cowbell');
           drawSquare();
           break;
