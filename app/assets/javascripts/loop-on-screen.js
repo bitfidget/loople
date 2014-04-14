@@ -48,7 +48,7 @@ $(document).ready(function(){
 
 
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
-  var makeKey = function(key){
+  makeKey = function(key){
     loopKeys.push(key);
     loopTimes.push(countBar);
     plotKey(key, countBar);
@@ -77,43 +77,6 @@ $(document).ready(function(){
     // KH make Ajax goodness happen
     loopAjax.createLoop(name, colour, keyStrokes);
   });
-
-
-  // KH check that forms are NOT currently focussed otherwsie typing in the form will also add keys!
-  $('form input').focus(function(){
-    console.log('form now has focus')
-    $(document).unbind('keydown');
-  });
-  $('form input').blur(function(){
-    console.log('form has lost focus')
-    // if not focussed on a form, reload the keypress listener
-    keyPress();
-  });
-
-
-
-
-
-// Charlies event listener for keys clicked - this will later be shared with everybody elses codes
-var keyPress = function(){
-  $(document).keydown(function(e){
-    switch(e.keyCode){
-      //Letter 'Q'
-      case 81:
-        makeKey('q');
-        break;
-      //Letter 'W'
-      case 87:
-        makeKey('w');
-        break;
-    }
-  });
-};
-
-
-
-
-
 
 
 
