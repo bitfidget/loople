@@ -19,6 +19,7 @@
   <div id="column">
     <nav id="main">
       <ul>
+        FUUUUCK!
         <%== usernav %>
         <li><%= link_to("Users", users_path ) %></li>
         <li><%= link_to("Loops", loops_path ) %></li>
@@ -26,12 +27,19 @@
         <li><%= link_to("SoundTest", anne_path ) %></li>
         <li><%= link_to("LoopTest", kriss_path ) %></li>
       </ul>
-   </nav>    
-    
+    </nav> 
+    <%= yield %>   
   </div>
+  <div id="anim-window"></div>
+  <div id="loop-window"></div>
 
 
-<%= yield %>
+
 
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+  keyPress();
+});
+</script>
 </html>
