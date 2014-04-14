@@ -41,6 +41,7 @@ gem 'underscore-rails'
 # for Heroku i think
 gem 'rails_12factor'
 
+
 # for carrierwave image uploads
 # gem 'carrierwave'
 # gem 'dotenv-rails'

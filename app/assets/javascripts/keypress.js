@@ -63,12 +63,14 @@ var keyPress = function(){
         makeKey(7);
         playSound('laser03');
         // drawSpiral(); Not working for now
+       drawBouncingBall();
         break;
       //Letter 'I'
       case 73:
         makeKey(8);
         playSound('robot01');
-        // drawSpiral(); Not working for now
+        drawSpiral(); //Not working for now
+
         break;
       //Letter 'O'
       case 79:

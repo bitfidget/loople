@@ -21,12 +21,11 @@ $(document).ready(function(){
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // KH lets create a variable for the time so we can change it easily later
-  var loopTime = 8000
+  var loopTime = 2000
 
 
   // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
   // KH at 0 the counter fires-off the playbar animation (moveHead)
-  var countBar = 0
   counterMain = setInterval(function(){
     if (countBar >= 200){
       countBar = 0
@@ -35,6 +34,7 @@ $(document).ready(function(){
       moveHead()
     };
     $('#counter').text(countBar)
+    playBlips()
     countBar++;
   }, 
   loopTime/200);
@@ -52,11 +52,6 @@ $(document).ready(function(){
 
 
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
-  // KH all keypresses are saved in the loopKeyTime array, under 2 different arrays
-  // KH To access them by loopKeyTime[0].loopKeys[x] and loopKeyTime[0].loopTimes[x]
-  var loopKeys = [];
-  var loopTimes = [];
-  var loopKeyTime = [loopKeys, loopTimes];
 
 
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
@@ -70,12 +65,14 @@ $(document).ready(function(){
   // KH This draws the key according to it's time on the grid
   var plotCount = 0;
   var plotKey = function(key, time){
-    var $keyBlip = $('<div class="key-blip kb' + key + '" id="kbid' + loopKeys.length +'" />').css({
+    var $keyBlip = $('<div class="key-blip kb' + key + '" id="' + loopKeys.length + '" />').css({
       left: ($loopWindow.width() / 200) * time + 'px',
       top: ($gridVert) * key + 'px'
     }).appendTo($loopWindow);
     plotCount += 1;
-  }
+  };
+
+  
 
 
   // KH all listeners for this section will start from here...
@@ -90,14 +87,25 @@ $(document).ready(function(){
     // KH get the loop keystrokes array
     var keyStrokes = loopKeyTime;
     // KH make Ajax goodness happen
+    console.log(name, colour, keyStrokes)
     loopAjax.createLoop(name, colour, keyStrokes);
   });
 
   // KH the listener for removing objects from the window
   $loopWindow.on('click', '.key-blip', function(event) {
     event.preventDefault();
-    console.log(this.id);
+    // KH Delete the blip from the arrays
+    loopKeys[(this.id - 1)] = '';
+    loopTimes[(this.id - 1)] = '';
+    // KH Delete the blip from the screen
     this.remove();
   })
-
 }); // end of document.ready function
+
+
+// KH all keypresses are saved in the loopKeyTime array, under 2 different arrays
+// KH To access them by loopKeyTime[0].loopKeys[x] and loopKeyTime[0].loopTimes[x]
+var loopKeys = [];
+var loopTimes = [];
+var loopKeyTime = [loopKeys, loopTimes];
+var countBar = 0

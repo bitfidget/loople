@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
 
   # KH use a separate page for the looply page only 
-  layout "loople", :only => :loople
+  
   layout "application", :except => :loople
+  layout "loople", :only => :loople
 
   def loople
-    render layout: "loople"
+
   end
 
   def anne
