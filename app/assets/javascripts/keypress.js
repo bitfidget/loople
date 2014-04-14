@@ -29,7 +29,7 @@ $(document).ready(function(){
           console.log('w')
           makeKey('w');
           playSound('cowbell');
-          drawSquare();
+          drawRect();
           break;
       }
     });

@@ -80,8 +80,8 @@ $(document).ready(function(){
 
 
 
-// KH start these functions when all else is loaded
-keyPress();
+// // KH start these functions when all else is loaded
+// doKeypress();
 
   
 
