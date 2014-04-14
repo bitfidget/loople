@@ -92,49 +92,49 @@ $(document).ready(function(){
 		b_context.stroke();
 	}
 
-	window.addEventListener("keypress", doKeypress, false);
+	// window.addEventListener("keypress", doKeypress, false);
 
-	//CG: Code to change background color depending on key pressed.
-	function doKeypress(e){
-		// e.preventDefault();
-		switch(e.keyCode){
-			//Letter 'Q'
-			case 113:
-			console.log(e.keyCode)
-				// changeColor(0); //Grey
-				drawCircle();
-				break;
+	// //CG: Code to change background color depending on key pressed.
+	// function doKeypress(e){
+	// 	// e.preventDefault();
+	// 	switch(e.keyCode){
+	// 		//Letter 'Q'
+	// 		case 113:
+	// 			makeKey('q')
+				
+	// 			drawCircle();
+	// 			break;
 
-			//Letter 'W'
-			case 119:
-				// changeColor(1); //Pink
-				drawRect();
-				break;
+	// 		//Letter 'W'
+	// 		case 119:
+	// 			// changeColor(1); //Pink
+	// 			drawRect();
+	// 			break;
 
-			//Letter 'E'
-			case 101:
-				// changeColor(2); //Green
-				drawLine();
-				break;
+	// 		//Letter 'E'
+	// 		case 101:
+	// 			// changeColor(2); //Green
+	// 			animate(e);
+	// 			break;
 
-			//Letter 'R'
-			case 114:
-				// changeColor(3); //Purple
-				drawTriangle();
-				break;
+	// 		//Letter 'R'
+	// 		case 114:
+	// 			// changeColor(3); //Purple
+	// 			drawTriangle();
+	// 			break;
 
-			//Letter 'T'
-			case 116:
-				// changeColor(4); //Blue
-				drawCurve();
-				break;
+	// 		//Letter 'T'
+	// 		case 116:
+	// 			// changeColor(4); //Blue
+	// 			drawCurve();
+	// 			break;
 
-			//Letter 'Y'
-			case 121:
-				// changeColor(5); //Red
-				break;
-		}
-	};
+	// 		//Letter 'Y'
+	// 		case 121:
+	// 			// changeColor(5); //Red
+	// 			break;
+	// 	}
+	// };
 
 	/*---------------------- DRAW CIRCLE ------------------------*/
 
