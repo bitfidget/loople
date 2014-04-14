@@ -2,7 +2,7 @@
 var context,
     source,
     buffer,
-    url = "/assets/clap.mp3";
+    url = "";
 
 // Initialise the Audio Context
 function init() {
@@ -15,7 +15,7 @@ function init() {
     }
 }
 
-    // Load the Sound with XMLHttpRequest
+// Load the Sound with XMLHttpRequest
 function playSound(sound) {
     // Note: this will load asynchronouslys
     var request = new XMLHttpRequest();
@@ -41,24 +41,5 @@ function audioRouting(data) {
     source.start(0); //Important line to get the sound to play!
 }
 
-    // Map Keyboard Events for the keydown function 	
-	// $(document).keydown(function(e) {
-	// 	console.log(e);
-	// 	switch(e.keyCode) {
-	// 		case 70: // F key
-	// 			playSound('clap');
-	// 		break;
- //            case 71: // G key
- //                playSound('cowbell');
- //            break;
- //            case 72: // H key
- //                playSound('kickdrum');
- //            break;
- //            case 74: // J key
- //                playSound('snare');
- //            break;
-	// 	}
-	// })	
-	
-    init();
+init();
 

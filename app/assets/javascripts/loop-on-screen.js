@@ -78,14 +78,8 @@ $(document).ready(function(){
     loopAjax.createLoop(name, colour, keyStrokes);
   });
 
-
-
-// // KH start these functions when all else is loaded
-// doKeypress();
-
   
 
 }); // end of document.ready function
 
 
-// KH This stuff doesn't need to be in the document.ready function as it is called separately
