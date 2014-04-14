@@ -56,6 +56,7 @@ var keyPress = function(){
         makeKey(6);
         playSound('laser02');
         // drawSpiral(); Not working for now
+        drawTriangleDots();
         break;
       //Letter 'U'
       case 85:
