@@ -12,8 +12,11 @@
  *= require_tree .
  */
 
+ /*-------------------- ANNE FRONT END CHANGES ------------------*/
+
 body{
   margin: 0;
+  background: grey;
 }
 
 /*ul{
