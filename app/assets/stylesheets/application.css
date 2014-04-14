@@ -17,8 +17,15 @@ body{
 }
 
 ul{
-	max-width: 600px;
-	margin: 5px auto;
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	z-index: 20;
+	background-color: white;
+	top: 0;
+	padding: 5px;
+	display: block;
+	text-align: center;
 }
 
 li{
@@ -55,7 +62,7 @@ h1.animation_page{
 	max-width: 100%;
 	padding: 5px;
 	text-align: center;
-	margin: 0 45%;
+	margin: 2% 45%;
 }
 
 h1.instructions{
@@ -66,5 +73,5 @@ h1.instructions{
 	max-width: 600px;
 	padding: 5px;
 	border-radius: 5%;
-	margin: 2% 32%;
+	margin: 4% 32%;
 }
