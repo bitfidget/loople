@@ -70,7 +70,7 @@ $(document).ready(function(){
   // KH This draws the key according to it's time on the grid
   var plotCount = 0;
   var plotKey = function(key, time){
-    var $keyBlip = $('<div class="key-blip kb' + key + '" id="kbid' + plotCount +'" />').css({
+    var $keyBlip = $('<div class="key-blip kb' + key + '" id="kbid' + loopKeys.length +'" />').css({
       left: ($loopWindow.width() / 200) * time + 'px',
       top: ($gridVert) * key + 'px'
     }).appendTo($loopWindow);
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
   // KH all listeners for this section will start from here...
   // KH The save loop button and form
-  $('form#loop-save').on('click', 'button', function (event) {
+  $('form#loop-save').on('click', 'button', function(event) {
     event.preventDefault();
     // KH get the loop name, then clear the field
     var name = $loopName.val();
@@ -92,5 +92,12 @@ $(document).ready(function(){
     // KH make Ajax goodness happen
     loopAjax.createLoop(name, colour, keyStrokes);
   });
+
+  // KH the listener for removing objects from the window
+  $loopWindow.on('click', '.key-blip', function(event) {
+    event.preventDefault();
+    console.log(this.id);
+    this.remove();
+  })
 
 }); // end of document.ready function
