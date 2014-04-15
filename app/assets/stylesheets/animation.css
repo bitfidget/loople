@@ -1,18 +1,26 @@
 #animated-circle{
   width: 200px;
   height: 200px;
-  background: rgba(255,255,255,0.5);
+  bbackground: url(http://upload.wikimedia.org/wikipedia/commons/b/b7/Big_smile.png);
+  background-size: cover;
+  -webkit-transform:rotate(-30deg);
+  -moz-transform:rotate(-30deg);
+  border: solid 100px rgba(255,0,0,1);
   border-radius: 50%;
   margin: 20px auto;
   top: 50%;
   left: 50%;
   display: block;
   transition: all 0.2s ease;
+  margin-top: 15%;
 
 }
 #animated-circle.circle-half{
-  width: 50%;
-  height: 50%;
-  border: solid 20px #469;
-  background: rgba(0,255,0,0.2);
+  width: 300px;
+  height: 300px;
+  border: solid 0px rgba(0,0,0,0);
+  background: url(http://upload.wikimedia.org/wikipedia/commons/b/b7/Big_smile.png);
+  background-size: cover;
+  -webkit-transform:rotate(10deg);
+  -moz-transform:rotate(10deg);
 }
