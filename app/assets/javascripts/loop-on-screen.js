@@ -4,6 +4,7 @@ $(document).ready(function(){
   var $animWindow = $('#anim-window');
   var $column = $('#column');
   var $loopHead = $('#loop-head');
+  var $animCircle = $('#animated-circle');
   $loopWindow.css({
     height: winHeight + 'px'
   });
@@ -37,6 +38,11 @@ $(document).ready(function(){
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
     });
+    if (countBar % 25 == 0){
+      $animCircle.toggleClass('circle-half');
+    };
+    
+
     countBar++;
   }, 
   loopTime/200);

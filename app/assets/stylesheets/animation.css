@@ -1,0 +1,18 @@
+#animated-circle{
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  margin: 20px auto;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transition: all 0.2s ease;
+
+}
+#animated-circle.circle-half{
+  width: 50%;
+  height: 50%;
+  border: solid 20px #469;
+  background: rgba(0,255,0,0.2);
+}
