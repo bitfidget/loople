@@ -14,7 +14,7 @@ var blipPress = function(blip){
     //Letter 'E'
     case 3:
       playSound('kickdrum');
-      drawLine();
+      drawCurve();
       break;
     //Letter 'R'
     case 4:
@@ -24,7 +24,7 @@ var blipPress = function(blip){
     //Letter 'T'
     case 5:
       playSound('laser01');
-      drawCurve();
+      drawLine();
       break;
     //Letter 'Y'
     case 6:
