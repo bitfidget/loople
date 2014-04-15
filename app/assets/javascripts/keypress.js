@@ -24,8 +24,8 @@ var keyPress = function(){
         makeKey(1);
         playSound('clap');
         drawCircle();
-        //two.clear();
         break;
+
       //Letter 'W'
       case 87:
         console.log('w')
@@ -33,24 +33,28 @@ var keyPress = function(){
         playSound('cowbell');
         drawRect();
         break;
+
       //Letter 'E'
       case 69:
         makeKey(3);
         playSound('kickdrum');
-        drawLine();
+        drawCurve();
         break;
+
       //Letter 'R'
       case 82:
         makeKey(4);
         playSound('snare');
         drawTriangle();
         break;
+
       //Letter 'T'
       case 84:
         makeKey(5);
         playSound('laser01');
-        drawCurve();
+        drawLine();
         break;
+
       //Letter 'Y'
       case 89:
         makeKey(6);
@@ -58,26 +62,28 @@ var keyPress = function(){
         // drawSpiral(); Not working for now
         drawTriangleDots();
         break;
+
       //Letter 'U'
       case 85:
         makeKey(7);
         playSound('laser03');
-        // drawSpiral(); Not working for now
-       drawBouncingBall();
+        drawBouncingBall();
         break;
+
       //Letter 'I'
       case 73:
         makeKey(8);
         playSound('robot01');
-        drawSpiral(); //Not working for now
-
+        drawBackgroundChange();
         break;
+
       //Letter 'O'
       case 79:
         makeKey(9);
         playSound('robot02');
-        // drawSpiral(); Not working for now
+        drawExplosion();
         break;
+        
       //Letter 'P'
       case 80:
         makeKey(10);

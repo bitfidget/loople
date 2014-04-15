@@ -13,6 +13,8 @@ $(document).ready(function(){
 		fullscreen: true
 	}).appendTo(winBody);
 
+	drawBouncingBall();
+
 });
 
 /*---------------------- DRAW CIRCLE ------------------------*/
@@ -92,13 +94,13 @@ function drawTriangle(){
 	var poly = two.makePolygon(500, 800, 650, 700, 800, 800);
 		poly.linewidth = 4;
 		// poly.translation = new Two.Vector(60, 60);
-		poly.stroke = "#000000";
+		poly.stroke = "yellow";
 		poly.noFill();
 
 	var poly2 = two.makePolygon(500, -200, 650, -100, 800, -200);
 		poly2.linewidth = 4;
 		// poly.translation = new Two.Vector(60, 60);
-		poly2.stroke = "#000000";
+		poly2.stroke = "yellow";
 		poly2.noFill();
 
 	two.update();
@@ -210,37 +212,7 @@ function drawTriangleDots(){
 /*------------------------ DRAW BOUNCING BALL ------------------------*/
 
 function drawBouncingBall(){
-
-	// var stage = new createjs.Stage("canvas");
-	// createjs.Ticker.addEventListener("tick", tick);
-	// createjs.MotionGuidePlugin.install();
-
-
-	// // var shape = new createjs.Shape();
-	// // shape.graphics.beginFill("#ff00ff").drawCircle(0,0,50);
-	// // shape.appendTo(winBody);
-
-	// var ball = two.makeCircle(300, 100, 50);
-	// 	ball.noStroke();
-	// 	ball.fill = "green";
-
-	// 	two.update();
-
-	// createjs.Tween.get(ball).to({guide:{ path:[100,0, 200,0,200,200, 350,100,450,200] }},1000);
-
-	// // var path = new createjs.Shape();
-	// // path.graphics.beginStroke("#ff00ff").moveTo(0,0).curveTo(200,0,200,200).curveTo(350,100,450,200);
-	// // stage.addChild(path);
-
-	// two.bind("update", function (frameCount){
-	//  	ball.translation.x +=5;
-	// }).play();
-
-	// function tick(event) {
-	//     stage.update();
-	// }
-
-	var stage = new createjs.Stage();
+	var stage = new createjs.Stage("myCanvas");
 	createjs.Ticker.addEventListener("tick", tick);
 	createjs.MotionGuidePlugin.install();
 
@@ -258,4 +230,68 @@ function drawBouncingBall(){
 	    stage.update();
 	}
 }
+
+/*------------------------ DRAW BACKGROUND SLIDE ------------------------*/
+
+function drawBackgroundChange(){
+	var w2 = 10;
+	var backChange = two.makeRectangle(195,0,w2,2000);
+		backChange.fill = "orange";
+		two.update();
+
+	two.bind("update", function (frameCount){
+		w2 += 100;
+		if(w2 < 2500){
+			backChange.scale += 5;
+		} else if(w2 >= 2000){
+		 	backChange.translation.x += 100;
+		}
+	}).play();
+}
+
+/*------------------------ DRAW EXPLOSION -------------------------------*/
+
+function drawExplosion(){
+	var x = 650;
+	var y = 300;
+	var circle1 = two.makeCircle(x,y,10);
+		circle1.fill="#CC3399";
+		circle1.noStroke();
+
+	var circle2 = two.makeCircle(x, y, 10);
+		circle2.fill="#CC3399";
+		circle2.noStroke();
+
+	var circle3 = two.makeCircle(x, y, 10);
+		circle3.fill="#CC3399";
+		circle3.noStroke();
+
+	var circle4 = two.makeCircle(x, y, 10);
+		circle4.fill="#CC3399";
+		circle4.noStroke();
+
+	var circle5 = two.makeCircle(x, y, 10);
+		circle5.fill="#CC3399";
+		circle5.noStroke();
+
+		two.update();
+
+	two.bind("update", function (frameCount){
+		x+=20;
+		if(x < 750){
+			circle1.translation.x += 5;
+			circle2.translation.x -=10;
+			circle3.translation.y -= 15;
+			circle4.translation.x += 20;
+			circle5.translation.y += 20;
+		} else if (x >= 750){
+			x = 0;
+			y = 0;
+		}
+	}).play();
+}
+
+
+
+
 
