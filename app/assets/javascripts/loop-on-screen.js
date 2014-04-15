@@ -44,7 +44,7 @@ $(document).ready(function(){
   var moveHead = function(){
     var $loopHead = $('<div id="loop-head" />').prependTo($loopWindow);
     $loopHead.animate(
-      {left: ($loopWindow.width()) + 'px'}, loopTime, 'linear', function(){
+      {left: ($loopWindow.width() ) + 'px'}, loopTime, 'linear', function(){
         this.remove();
       }
     );
@@ -87,8 +87,7 @@ $(document).ready(function(){
     // KH get the loop keystrokes array
     var keyStrokes = loopKeyTime;
     // KH make Ajax goodness happen
-    console.log(name, colour, keyStrokes)
-    loopAjax.createLoop(name, colour, keyStrokes);
+    loopAjax.createLoop(name, colour, loopKeys, loopTimes);
   });
 
   // KH the listener for removing objects from the window

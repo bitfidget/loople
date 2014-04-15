@@ -6,14 +6,23 @@ body{
 
 }
 
-#loop-window,
-#anim-window{
-  position: absolute;
+#loop-window{
+  z-index: 10;
   width: 85%;
   left: 15%;
   top: 0;
-  z-index: -10;
+  position: absolute;
   display: block;
+}
+
+
+#anim-window{
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  z-index: -10;
 }
 
 #loop-window{
