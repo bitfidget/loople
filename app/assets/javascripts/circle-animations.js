@@ -1,8 +1,8 @@
 var circleAnimate = {
   animation1: function(){
-    $animCircle.addClass('circle-half');
+    $animCircle.addClass('circle-whatever');
     setTimeout(function() {
-      $animCircle.removeClass('circle-half');
+      $animCircle.removeClass('circle-whatever');
     }, 200);
   },
     animation2: function(){
@@ -19,4 +19,4 @@ var circleAnimate = {
   }
 }
 
-circleAnimate(animation1)
+circleAnimate.animation1()
