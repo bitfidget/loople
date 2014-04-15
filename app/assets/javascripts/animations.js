@@ -9,9 +9,9 @@ $(document).ready(function(){
 	winBody = document.getElementById("anim-window");		
 
 	// Make an instance of two and place it on the page.
-	window.two = new Two({
-		fullscreen: true
-	}).appendTo(winBody);
+	// window.two = new Two({
+	// 	fullscreen: true
+	// }).appendTo(winBody);
 
 });
 
@@ -672,6 +672,8 @@ $(document).ready(function(){
 // 	// }).play();			
 // }
 
-
+// function animateCircle(){
+// 	$animCircle.toggleClass('circle-half');
+// }
 
 

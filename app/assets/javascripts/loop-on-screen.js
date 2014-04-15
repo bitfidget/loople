@@ -4,7 +4,7 @@ $(document).ready(function(){
   var $animWindow = $('#anim-window');
   var $column = $('#column');
   var $loopHead = $('#loop-head');
-  var $animCircle = $('#animated-circle');
+  $animCircle = $('#animated-circle');
   $loopWindow.css({
     height: winHeight + 'px'
   });
@@ -38,7 +38,7 @@ $(document).ready(function(){
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
     });
-    if (countBar % 25 == 0){
+    if (countBar % 23 == 0){
       $animCircle.toggleClass('circle-half');
     };
     
@@ -102,3 +102,4 @@ var loopKeys = [];
 var loopTimes = [];
 var loopKeyTime = [loopKeys, loopTimes];
 var countBar = 0
+var $animCircle = 0

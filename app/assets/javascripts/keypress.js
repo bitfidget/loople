@@ -23,7 +23,7 @@ var keyPress = function(){
         console.log('q')
         makeKey(1);
         playSound('clap');
-        drawCircleQ();
+        circleAnimate.animation1()
         break;
 
       //Letter 'W'
@@ -31,174 +31,167 @@ var keyPress = function(){
         console.log('w')
         makeKey(2);
         playSound('cowbell');
-        drawCircleW();
         break;
 
       //Letter 'E'
       case 69:
         makeKey(3);
         playSound('kickdrum');
-        drawCircleE();
         break;
 
       //Letter 'R'
       case 82:
         makeKey(4);
         playSound('snare');
-        drawCircleR();
         break;
 
       //Letter 'T'
       case 84:
         makeKey(5);
         playSound('laser01');
-        drawCircleT();
         break; 
 
       //Letter 'Y'
       case 89:
         makeKey(6);
         playSound('laser02');
-        drawCircleY();
         break;
 
       //Letter 'U'
       case 85:
         makeKey(7);
         playSound('laser03');
-        drawCircleU();
         break;
 
       //Letter 'I'
       case 73:
         makeKey(8);
         playSound('robot01');
-        drawCircleI();
         break;
 
       //Letter 'O'
       case 79:
         makeKey(9);
         playSound('robot02');
-        drawCircleO();
+        //drawCircleO();
         break;
 
       //Letter 'P'
       case 80:
         makeKey(10);
         playSound('three');
-        drawCircleP();
+        //drawCircleP();
         break;
 
       //Letter 'A'
       case 65:
         makeKey(11);
         playSound('four');
-        drawCircleA();
+        //drawCircleA();
         break;
 
       //Letter 'S'
       case 83:
         makeKey(12);
         playSound('five');
-        drawCircleS();
+        //drawCircleS();
         break;
 
       //Letter 'D'
       case 68:
         makeKey(13);
         playSound('six');
-        drawCircleD();
+        //drawCircleD();
         break;
 
       //Letter 'F'
       case 70:
         makeKey(14);
         playSound('seven');
-        drawCircleF();
+        //drawCircleF();
         break;
 
       //Letter 'G'
       case 71:
         makeKey(15);
         playSound('eight');
-        drawCircleG();
+        //drawCircleG();
         break;
 
       //Letter 'H'
       case 72:
         makeKey(16);
         playSound('nine');
-        drawCircleH();
+        //drawCircleH();
         break;
 
       //Letter 'J'
       case 74:
         makeKey(17);
         playSound('ten');
-        drawCircleJ();
+        //drawCircleJ();
         break;
 
       //Letter 'K'
       case 75:
         makeKey(18);
         playSound('eleven');
-        drawCircleK();
+        //drawCircleK();
         break;
 
       //Letter 'L'
       case 76:
         makeKey(19);
         playSound('twelve');
-        drawCircleL();
+        //drawCircleL();
         break;
 
       //Letter 'Z'
       case 90:
         makeKey(20);
         playSound('thirteen');
-        drawCircleZ();
+        //drawCircleZ();
         break;
 
       //Letter 'X'
       case 88:
         makeKey(21);
         playSound('fourteen');
-        drawCircleX();
+        //drawCircleX();
         break;
 
       //Letter 'C'
       case 67:
         makeKey(22);
         playSound('fifteen');
-        drawCircleC();
+        //drawCircleC();
         break;
 
       //Letter 'V'
       case 86:
         makeKey(23);
         playSound('sixteen');
-        drawCircleV();
+        //drawCircleV();
         break;
       //Letter 'B'
       case 66:
         makeKey(24);
         playSound('seventeen');
-        drawCircleB();
+        //drawCircleB();
         break;
 
       //Letter 'N'
       case 78:
         makeKey(25);
         playSound('eighteen');
-        drawCircleN();
+        //drawCircleN();
         break;
 
       //Letter 'M'
       case 77:
         makeKey(26);
         playSound('nineteen');
-        drawCircleM();
+        //drawCircleM();
         break;
     }
   });

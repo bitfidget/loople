@@ -4,132 +4,132 @@ var blipPress = function(blip){
     //Letter 'Q'
     case 1:
       playSound('clap');
-      drawCircleQ();
+      circleAnimate.animation1()
       break;
     //Letter 'W'
     case 2:
       playSound('cowbell');
-      drawCircleW();
+      //drawCircleW();
       break;
     //Letter 'E'
     case 3:
       playSound('kickdrum');
-      drawCircleE();
+      //drawCircleE();
       break;
     //Letter 'R'
     case 4:
       playSound('snare');
-      drawCircleR();
+      //drawCircleR();
       break;
     //Letter 'T'
     case 5:
       playSound('laser01');
-      drawCircleT();
+      //drawCircleT();
       break;
     //Letter 'Y'
     case 6:
       playSound('laser02');
-      drawCircleY();
+      //drawCircleY();
       break;
     //Letter 'U'
     case 7:
       playSound('laser03');
-      drawCircleU();
+      //drawCircleU();
       break;
     //Letter 'I'
     case 8:
       playSound('robot01');
-      drawCircleI();
+      //drawCircleI();
       break;
     //Letter 'O'
     case 9:
       playSound('robot02');
-      drawCircleO();
+      //drawCircleO();
       break;
     //Letter 'P'
     case 10:
       playSound('three');
-      drawCircleP();
+      //drawCircleP();
       break;
     //Letter 'A'
     case 11:
       playSound('four');
-      drawCircleA();
+      //drawCircleA();
       break;
     //Letter 'S'
     case 12:
       playSound('five');
-      drawCircleS();
+      //drawCircleS();
       break;
     //Letter 'D'
     case 13:
       playSound('six');
-      drawCircleD();
+      //drawCircleD();
       break;
     //Letter 'F'
     case 14:
       playSound('seven');
-      drawCircleF();
+      //drawCircleF();
       break;
     //Letter 'G'
     case 15:
       playSound('eight');
-      drawCircleG();
+      //drawCircleG();
       break;
     //Letter 'H'
     case 16:
       playSound('nine');
-      drawCircleH();
+      //drawCircleH();
       break;
     //Letter 'J'
     case 17:
       playSound('ten');
-      drawCircleJ();
+      //drawCircleJ();
       break;
     //Letter 'K'
     case 18:
       playSound('eleven');
-      drawCircleK();
+      //drawCircleK();
       break;
     //Letter 'L'
     case 19:
       playSound('twelve');
-      drawCircleL();
+      //drawCircleL();
       break;
     //Letter 'Z'
     case 20:
       playSound('thirteen');
-      drawCircleZ();
+      //drawCircleZ();
       break;
     //Letter 'X'
     case 21:
       playSound('fourteen');
-      drawCircleX();
+      //drawCircleX();
       break;
     //Letter 'C'
     case 22:
       playSound('fifteen');
-     drawCircleC();
+     //drawCircleC();
       break;
     //Letter 'V'
     case 23:
       playSound('sixteen');
-      drawCircleV();
+      //drawCircleV();
       break;
     //Letter 'B'
     case 24:
       playSound('seventeen');
-      drawCircleB();
+      //drawCircleB();
       break;
     //Letter 'N'
     case 25:
       playSound('eighteen');
-      drawCircleN();
+      //drawCircleN();
       break;
     //Letter 'M'
     case 26:
       playSound('nineteen');
-      drawCircleM();
+      //drawCircleM();
       break;
   };
 };
