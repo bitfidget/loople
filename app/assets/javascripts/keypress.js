@@ -53,7 +53,7 @@ var keyPress = function(){
         makeKey(5);
         playSound('laser01');
         drawLine();
-        break;
+        break; 
 
       //Letter 'Y'
       case 89:
@@ -83,24 +83,24 @@ var keyPress = function(){
         playSound('robot02');
         drawExplosion();
         break;
-        
+
       //Letter 'P'
       case 80:
         makeKey(10);
         playSound('three');
-        // drawSpiral(); Not working for now
+        drawMovingSquare();
         break;
       //Letter 'A'
       case 65:
         makeKey(11);
         playSound('four');
-        // drawSpiral(); Not working for now
+        drawCircleNoFill();
         break;
       //Letter 'S'
       case 83:
         makeKey(12);
         playSound('five');
-        // drawSpiral(); Not working for now
+        drawSplash();
         break;
       //Letter 'D'
       case 68:

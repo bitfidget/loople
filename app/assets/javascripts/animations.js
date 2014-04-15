@@ -272,20 +272,167 @@ function drawExplosion(){
 		two.update();
 
 	two.bind("update", function (frameCount){
-		x+=20;
+		x+=10;
 		if(x < 750){
 			circle1.translation.x += 5;
-			circle2.translation.x -=10;
+			circle2.translation.x -= 10;
 			circle3.translation.y -= 15;
 			circle4.translation.x += 20;
 			circle5.translation.y += 20;
-		} else if (x >= 750){
-			x = 0;
-			y = 0;
+		} 
+		else if (x >= 750){
+			circle1.translation.x -= 5;
+			circle2.translation.x += 10;
+			circle3.translation.y += 15;
+			circle4.translation.x -= 20;
+			circle5.translation.y -= 20;
 		}
 	}).play();
 }
 
+/*------------------------ DRAW MOVING SQUARE -------------------------------*/
+
+function drawMovingSquare(){
+	var line1 = two.makeLine(520, 150, 570, 150);
+		line1.stroke="#fff";
+		line1.linewidth = 5;
+
+	var line2 = two.makeLine(570, 150, 600, 180);
+		line2.stroke="#fff";
+		line2.linewidth = 5;
+
+	var line3 = two.makeLine(600, 180, 600, 220);
+		line3.stroke="#fff";
+		line3.linewidth = 5;
+
+	var line4 = two.makeLine(600, 220, 570, 250);
+		line4.stroke="#fff";
+		line4.linewidth = 5;
+
+	var line5 = two.makeLine(570, 250, 520, 250);
+		line5.stroke="#fff";
+		line5.linewidth = 5;
+
+	var line6 = two.makeLine(520, 250, 490, 220);
+		line6.stroke="#fff";
+		line6.linewidth = 5;
+
+	var line7 = two.makeLine(490, 220, 490, 180);
+		line7.stroke="#fff";
+		line7.linewidth = 5;
+
+	var line8 = two.makeLine(490, 180, 520, 150);
+		line8.stroke="#fff";
+		line8.linewidth = 5;
+
+	var group = two.makeGroup(line1, line2, line3, line4, line5, line6, line7, line8);
+		group.translation.set(650, 320);
+		group.scale = 0.4;
+
+		two.update();
+
+	two.bind("update", function (frameCount){
+		if(group.scale < 1){
+	 	 var t =  0.05;
+   		group.rotation += t 
+	 	}
+	}).play();
+}
+
+/*------------------------ DRAW CIRCLE AGAIN -------------------------------*/
+
+function drawCircleNoFill(){
+	var shapeRadius = 300
+	// two has convenience methods to create shapes.
+	var circle = two.makeCircle( winWidth/2, winHeight/2, shapeRadius);
+
+	// The object returned has many stylable properties:
+	circle.noFill();
+	circle.stroke = '#CC33FF'; // Accepts all valid css color
+	circle.linewidth = 10;
+
+	//Calling two.update() creates the circle
+	two.update();
+
+	//The following function updates the circle's scale
+	two.bind("update", function (frameCount){
+		if(circle.scale > 0){
+			circle.scale += 0.04;
+		}
+	}).play();			
+}
+
+/*------------------------------ DRAW SPLASH -----------------------------*/
+
+ function drawSplash() {
+
+          var squished = false;
+
+          Two.Resolution = 32;
+
+          var blob = two.makeCircle(two.width / 2, two.height / 2, two.height / 3);
+          blob.noFill();
+          blob.stroke="#FF6699";
+          blob.linewidth = 2;
+
+          reset();
+
+          two
+            .bind('update', function() {
+              if (!squished) {
+                for (var i = 0; i < blob.vertices.length; i++) {
+                  var v = blob.vertices[i];
+                  var d = v.destination;
+
+                  if (v.equals(d)) {
+                    squished = true;
+                    break;
+                  }
+
+                  v.x += (d.x - v.x) * 0.125;
+                  v.y += (d.y - v.y) * 0.125;
+                }
+                return;
+              }
+
+              var outside = true;
+
+              for (var i = 0; i < blob.vertices.length; i++) {
+                var v = blob.vertices[i];
+                v.y += v.step;
+                v.step *= 1.125;
+                if (v.y < two.height) {
+                  outside = false;
+                }
+              }
+
+              if (outside) {
+                reset();
+              }
+
+            }).play();
+
+          function reset() {
+
+            blob.translation.set(two.width / 2, two.height / 2);
+
+            squished = false;
+
+            for (var i = 0; i < blob.vertices.length; i++) {
+              var v = blob.vertices[i];
+              var pct = (i + 1) / blob.vertices.length;
+              var theta = pct * Math.PI * 2;
+              var radius = Math.random() * two.height / 3 + two.height / 6;
+              var x = radius * Math.cos(theta);
+              var y = radius * Math.sin(theta);
+              v.set(two.height / 3 * Math.cos(theta), two.height / 3 * Math.sin(theta));
+              v.destination = new Two.Vector(x, y);
+              v.step = Math.sqrt(Math.random()) + 2;
+            }
+
+          }
+
+        };
 
 
 
