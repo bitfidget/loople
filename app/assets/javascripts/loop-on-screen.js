@@ -44,7 +44,7 @@ $(document).ready(function(){
   var moveHead = function(){
     var $loopHead = $('<div id="loop-head" />').prependTo($loopWindow);
     $loopHead.animate(
-      {left: ($loopWindow.width()) + 'px'}, loopTime, 'linear', function(){
+      {left: ($loopWindow.width() ) + 'px'}, loopTime, 'linear', function(){
         this.remove();
       }
     );
