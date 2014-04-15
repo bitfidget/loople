@@ -18,5 +18,3 @@ var circleAnimate = {
     }, 200);
   }
 }
-
-circleAnimate.animation1()
