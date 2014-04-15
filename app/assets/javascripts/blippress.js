@@ -54,12 +54,12 @@ var blipPress = function(blip){
     //Letter 'A'
     case 11:
       playSound('four');
-      // drawSpiral(); Not working for now
+      drawCircleNoFill();
       break;
     //Letter 'S'
     case 12:
       playSound('five');
-      // drawSpiral(); Not working for now
+      drawSplash();
       break;
     //Letter 'D'
     case 13:
