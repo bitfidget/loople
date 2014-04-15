@@ -1,7 +1,52 @@
 
 <div id="counter"></div>
+
+<% if flash[:notice].present? %> 
+ 	<h2><%= flash[:notice] %></h2> 
+<% end %>
+<% unless @current_user %>
+	<button class="signh3">Sign In</button>
+	<form action='/login' class="signin" method="post">
+	<%= form_tag login_path, :class => "form", :method => :post do %>
+	  <%= label_tag :username %>
+	  <%= text_field_tag :username, params[:username] %>
+	  <%= label_tag :password %>
+	  <%= password_field_tag :password %>
+	  <%= submit_tag "Sign in", class: "signh3" %>
+	<% end %>
+<% end %>
+
 <form id="loop-save">
   <input name="loop-name" id="loop-name" placeholder="Name your loop">
   <input name="loop-colour" id="loop-colour" type="color" />
   <button>Save Loop</button>
 </form>
+
+<button class="sign_up">Sign Up</button>
+<form action='/login' class="signup" method="post">
+	<div id="form">
+	  <%= form_for @user do |f| %>
+	    <p>
+	      <%= f.label :username %>
+	      <%= f.text_field :username, :autofocus => true, :class => 'field-short' %>
+	    </p>
+	    <p>
+	      <%= f.label :email %>
+	      <%= f.email_field :email %>
+	    </p>
+	    <p>
+	      <%= f.label :image, "image URL" %>
+	      <%= f.url_field :image %>
+	    </p>  
+	    <p>
+	      <%= f.label :password %>
+	      <%= f.password_field :password, :class => 'field-short' %>
+	    </p>
+	    <p>
+	      <%= f.label :password_confirmation %>
+	      <%= f.password_field :password_confirmation, :class => 'field-short' %>
+	    </p>
+
+	    <p><%= f.submit %></p>
+	  <% end %>
+	</div>

@@ -17,19 +17,18 @@
   <div id="column">
     <nav id="main">
       <ul>
+        <img src="assets/loople_logo.png">
         <%== usernav %>
         <li><%= link_to("Users", users_path ) %></li>
         <li><%= link_to("Loops", loops_path ) %></li>
-        <li><%= link_to("Animations Test", charlie_path ) %></li>
-        <li><%= link_to("Sound Test", anne_path ) %></li>
         <li><%= link_to("Loop Test", kriss_path ) %></li>
       </ul>
     </nav> 
     <%= yield %>   
+    
   </div>
   <div id="anim-window"></div>
   <div id="loop-window"></div>
-
 
 
 
