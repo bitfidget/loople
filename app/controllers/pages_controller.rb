@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   layout "loople", :only => :loople
 
   def loople
-
+    @user = User.new
   end
 
   def anne
