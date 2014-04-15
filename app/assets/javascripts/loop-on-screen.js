@@ -4,6 +4,7 @@ $(document).ready(function(){
   var $animWindow = $('#anim-window');
   var $column = $('#column');
   var $loopHead = $('#loop-head');
+  var $animCircle = $('#animated-circle');
   $loopWindow.css({
     height: winHeight + 'px'
   });
@@ -28,32 +29,25 @@ $(document).ready(function(){
   // KH at 0 the counter fires-off the playbar animation (moveHead)
   counterMain = setInterval(function(){
     if (countBar >= 200){
-      countBar = 0
-    };
-    if (countBar == 0){
-      moveHead()
+      countBar = 0;
     };
     $('#counter').text(countBar)
-    playBlips()
+    // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
+    playBlips();
+    // KH animate the playbar
+    $loopHead.css({
+      left: ($loopWindow.width() / 200) * countBar + 'px'
+    });
+    if (countBar % 25 == 0){
+      $animCircle.toggleClass('circle-half');
+    };
+    
+
     countBar++;
   }, 
   loopTime/200);
 
-
-  // the playhead - should animate using the same timeing as the loop
-  var moveHead = function(){
-    var $loopHead = $('<div id="loop-head" />').prependTo($loopWindow);
-    $loopHead.animate(
-      {left: ($loopWindow.width() ) + 'px'}, loopTime, 'linear', function(){
-        this.remove();
-      }
-    );
-  };
-
-
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
-
-
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
   makeKey = function(key){
     loopKeys.push(key);
