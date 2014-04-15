@@ -34,8 +34,12 @@ function drawCircle(){
 	two.bind("update", function (frameCount){
 		if(circle.scale > 0){
 			circle.scale -= 0.04;
+		} else {
+			two.remove(circle)	
 		}
-	}).play();			
+	}).play();	
+
+		
 }
 
 /*---------------------- DRAW SQUARE ------------------------*/
@@ -49,9 +53,10 @@ function drawRect(){
 	two.bind("update", function (frameCount){
 		if(rect.scale > 0){
 			rect.scale += 0.8;
+			
 			//Stops the animation when the scale gets to 20.
 			if (rect.scale > 11){
-				rect.scale = 0;
+				two.remove(rect);
 			}
 		} 
 	}).play();
