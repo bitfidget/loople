@@ -1,54 +1,44 @@
-
+<% if @current_user %>
 <!-- the save loop button and field-->
-<form id="loop-save">
-  <input name="loop-name" id="loop-name" placeholder="Name your loop">
-  <input name="loop-colour" id="loop-colour" type="color" />
-  <button>Save Loop</button>
-</form>
+	<form id="loop-save">
+	  <input name="loop-name" id="loop-name" placeholder="Name your loop">
+	  <input name="loop-colour" id="loop-colour" type="color" />
+	  <button>Save Loop</button>
+	</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
-<% if @current_user %>
 	<ul id="loops-saved">
 
 	</ul>
 <% end %>
 
 
-
-<% if flash[:notice].present? %> 
- 	<h2><%= flash[:notice] %></h2> 
-<% end %>
 <% unless @current_user %>
-	<button class="signh3">Sign In</button>
-	<%= form_tag login_path, :class => "form", :method => :post do %>
-	  <%= label_tag :username %>
-	  <%= text_field_tag :username, params[:username] %>
-	  <%= label_tag :password %>
-	  <%= password_field_tag :password %>
-	  <%= submit_tag "Sign in", class: "signh3" %>
-	<% end %>
+	
+	<button id="sign-in">Sign In</button>
+	<button id="sign-up">Sign Up</button>
+
+	<div class="sign-in">
+		<%= form_tag login_path, :method => :post do %>
+		  <%= text_field_tag :username, params[:username], :placeholder => "username" %>
+		  <%= password_field_tag :password, :placeholder => "password" %>
+		  <%= submit_tag "Sign in" %>
+		<% end %>
+	</div>
+
+	<div class="sign-up">
+		<% if flash[:notice].present? %> 
+	 		<h2><%= flash[:notice] %></h2> 
+		<% end %>
+		<%= form_for @user do |f| %>
+			<%= f.text_field :username, :placeholder => "username" %>
+		  <%= f.email_field :email, :placeholder => "email address" %>
+		  <%= f.password_field :password, :placeholder => "password" %>
+		  <%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+			<%= f.submit "Sign Up" %>
+		<% end %>
+	</div>
+
 <% end %>
 
 
-<button class="sign_up">Sign Up</button>
-	<div id="form">
-	  <%= form_for @user do |f| %>
-	    <p>
-	      <%= f.text_field :username, :placeholder => "Username", :autofocus => true, :class => 'field-short' %>
-	    </p>
-	    <p>
-	      <%= f.email_field :email, :placeholder => "Email Address" %>
-	    </p> 
-	    <p>
-	      <%= f.password_field :password, :placeholder => "Password", :class => 'field-short' %>
-	    </p>
-	    <p>
-	      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => 'field-short' %>
-	    </p>
-
-		<div class="signh3">
-	    <p><%= f.submit "Sign Up", :class => "signh3" %></p>
-		</div>
-	  <% end %>
-	</div>
-</form>
