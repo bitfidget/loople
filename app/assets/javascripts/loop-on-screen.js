@@ -38,15 +38,7 @@ $(document).ready(function(){
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
-    });
-    // attempting to make the circle pulse, we will probably cut it out
-    // if (countBar % 25 == 0){
-    //   $animCircle.addClass('circle-half');
-    //   setTimeout(function() {
-    //     $animCircle.removeClass('circle-half');
-    //   }, 200);
-    // };
-    // KH make the count count
+    });    
     countBar++;
   }, 
   loopTime/200);
