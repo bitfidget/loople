@@ -1,18 +1,24 @@
-<% if flash[:notice].present? %> 
- 	<h2><%= flash[:notice] %></h2> 
-<% end %>
-<% unless @current_user %>
-	<button class="signh3">Sign In</button>
-	<form action='/login' class="signin" method="post">
-		<%= form_tag login_path, :class => "form", :method => :post do %>
-		<%= label_tag :username %>
-		<%= text_field_tag :username, params[:username] %>
-		<%= label_tag :password %>
-		<%= password_field_tag :password %>
-		<%= submit_tag "Sign in", class: "signh3" %>
-	<% end %>
+<% if @current_user %>
+<!-- the save loop button and field-->
+	<form id="loop-save">
+	  <input name="loop-name" id="loop-name" placeholder="Name your loop">
+	  <input name="loop-colour" id="loop-colour" type="color" />
+	  <button>Save Loop</button>
+	</form>
+
+<!-- an empty spot for adding the saved loops as buttons -->
+	<ul id="loops-saved">
+
+	</ul>
 <% end %>
 
+
+<% unless @current_user %>
+	
+	<button id="sign-in">Sign In</button>
+	<button id="sign-up">Sign Up</button>
+
+<<<<<<< HEAD
 <button class="sign_up">Sign Up</button>
 <form action='/login' class="signup" method="post">
 	<div id="form">
@@ -34,11 +40,29 @@
 	    <p><%= f.submit "Sign Up" %></p>
 		</div>
 	  <% end %>
+=======
+	<div class="sign-in">
+		<%= form_tag login_path, :method => :post do %>
+		  <%= text_field_tag :username, params[:username], :placeholder => "username" %>
+		  <%= password_field_tag :password, :placeholder => "password" %>
+		  <%= submit_tag "Sign in" %>
+		<% end %>
+>>>>>>> ea107056ea5e892a824b32f896143fbb2ad266d5
 	</div>
-</form>
 
-<form id="loop-save">
-	<input name="loop-name" id="loop-name" placeholder="Name your loop">
-	<input name="loop-colour" id="loop-colour" type="color" />
-	<button>Save Loop</button>
-</form>
+	<div class="sign-up">
+		<% if flash[:notice].present? %> 
+	 		<h2><%= flash[:notice] %></h2> 
+		<% end %>
+		<%= form_for @user do |f| %>
+			<%= f.text_field :username, :placeholder => "username" %>
+		  <%= f.email_field :email, :placeholder => "email address" %>
+		  <%= f.password_field :password, :placeholder => "password" %>
+		  <%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+			<%= f.submit "Sign Up" %>
+		<% end %>
+	</div>
+
+<% end %>
+
+
