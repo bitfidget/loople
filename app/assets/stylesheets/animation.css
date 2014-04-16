@@ -1,22 +1,161 @@
-#animated-circle{
-  width: 48%;
-  height: 73%;
+#circleQ.circle_animationQ{
+  width: 50%;
+  height: 90%;
   border-radius: 50%;
-  margin: 7% auto;
+  margin: 3% 30%;
   display: block;
-  transition: all 0.2s ease;
-  border: solid 5px #CC33FF;
-
-}
-#animated-circle.circle-half{
-  width: 54%;
-  height: 80%;
-  border: solid 5px #CC33FF;
+  transition: all 0.1s ease;
+  border: solid 1px #CC33FF;
+  opacity: 0.6;
+  position: absolute;
 }
 
-
-#animated-circle.circle-whatever{
-  width: 54%;
-  height: 80%;
-  border: solid 5px #FFF;
+#circleQ.circleQ{
+  width: 51%;
+  height: 91%;
+  border: solid 10px #CC33FF;
 }
+
+#circleW.circle_animationW{
+  width: 40%;
+  height: 75%;
+  border-radius: 50%;
+  margin: 7% 35%;
+  display: block;
+  transition: all 0.1s ease;
+  border: solid 1px rgb(255,255,0);
+  opacity: 0.6;
+  position: absolute;
+}
+
+#circleW.circleW{
+ width: 41%;
+ height: 76%;
+ border: solid 10px rgb(255,255,0);
+ border-radius: 50%;
+}
+
+#circleE.circle_animationE{
+  width: 30%;
+  height: 60%;
+  border-radius: 50%;
+  margin: 11% 40%;
+  display: block;
+  transition: all 0.1s ease;
+  border: solid 1px rgb(120,230,0);
+  opacity: 0.6;
+  position: absolute;
+}
+
+#circleE.circleE{
+  width: 31%;
+  height: 61%;
+  border: solid 10px rgb(120,230,0);
+  border-radius: 50%;
+  position: absolute;
+}
+
+#animated-circle.circleR{
+  width: 50%;
+  height: 76%;
+ border: solid 5px #FF66FF;
+}
+
+#animated-circle.circleT{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(245,0,0);
+}
+
+#animated-circle.circleY{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(214,24,111);
+}
+
+#animated-circle.circleU{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(244,0,202);
+}
+
+#animated-circle.circleI{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(128,0,255);
+}
+
+#animated-circle.circleO{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(79,3,202);
+}
+
+#animated-circle.circleP{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(28,127,255);
+}
+
+#animated-circle.circleA{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(43,190,255);
+}
+
+#animated-circle.circleS{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(60,255,187);
+}
+
+#animated-circle.circleD{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(61,255,50);
+}
+
+#animated-circle.circleF{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(43,159,0);
+}
+
+#animated-circle.circleG{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(120,230,0);
+}
+
+#animated-circle.circleH{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(178,253,0);
+}
+
+#animated-circle.circleJ{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(28,127,255);
+}
+
+#animated-circle.circleK{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(43,190,255);
+}
+
+#animated-circle.circleL{
+  width: 50%;
+  height: 76%;
+ border: solid 5px rgb(60,255,187);
+}
+
+
+
+
+
+
+
+
+

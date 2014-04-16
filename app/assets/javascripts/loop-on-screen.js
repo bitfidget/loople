@@ -39,7 +39,7 @@ $(document).ready(function(){
       left: ($loopWindow.width() / 200) * countBar + 'px'
     });
     if (countBar % 23 == 0){
-      $animCircle.toggleClass('circle-half');
+      // $animCircle.toggleClass('circle-half');
     };
     
 

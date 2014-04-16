@@ -141,12 +141,7 @@ nav li a {
   display: block;
   transition: all .1s ease;
 }
-<<<<<<< HEAD
 
-.key-blip:hover {
-  background: rgba(230,50,50,0.8);
-  border-radius: 0;
-=======
 .key-blip:hover{
   background: rgba(230,50,50,1);
   border-radius: 0;
@@ -157,7 +152,7 @@ nav li a {
   -webkit-box-shadow: 0px 1px 5px 6px rgba(80,255,80,0.2);
   box-shadow:         0px 1px 5px 6px rgba(80,255,80,0.2);
   border-radius: 50%;
->>>>>>> 2337f9125a5c8b720a173b47636f73b28eb1ceb4
+
 }
 
 /* Log in section */
