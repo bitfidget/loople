@@ -1,16 +1,15 @@
 $(document).ready(function(){
-	console.log($(".signh3"));
 
-	$(".signh3").on("click", function() {
-		$(this).hide()
-		console.log("signing in");
-		$(this).next().toggleClass("signin")
+	$("#sign-in").on("click", function() {
+		$('.sign-in').addClass("toggle-visible")
+		$('.sign-up').removeClass("toggle-visible")
 	})
 
-	$(".sign_up").on("click", function() {
-		$(this).hide()
-		console.log("signing up");
-		$(this).next().toggleClass("signup")
+	$("#sign-up").on("click", function() {
+		$('.sign-up').addClass("toggle-visible")
+		$('.sign-in').removeClass("toggle-visible")
 	})
+
+
 
 });
