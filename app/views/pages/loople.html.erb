@@ -7,9 +7,19 @@
 	</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
-	<ul id="loops-saved">
+	<nav id="main">
+    <ul id="loops-saved">
+			<% @current_user.loops.each do |loop| %>
+				<li>
+					<a href="#" id="<%= loop.id %>" style="background: #<%= loop.colour %>">
+						<span class="queue">queue</span>
+						<%= loop.name %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+  </nav>
 
-	</ul>
 <% end %>
 
 
