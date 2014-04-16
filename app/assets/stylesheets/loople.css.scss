@@ -78,10 +78,10 @@ body {
     border: 0;
     width: 90%;
     margin: 5px auto;
-    text-transform: uppercase;
   }
   button{
     text-align: center;
+    text-transform: uppercase;
   }
   .queue{
     color: $looplBlue;
@@ -119,6 +119,7 @@ nav a {
   color: white;
   display: block;
   transition: all .5s ease;
+  text-transform: uppercase;
 }
 
 nav a:hover{
