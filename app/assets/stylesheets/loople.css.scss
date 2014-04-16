@@ -5,7 +5,7 @@ body {
   background: #333;
   font-family: 'Roboto', sans-serif;
 }
-
+/* this displays the main loop elements - the playbar and the blips */
 #loop-window{
   z-index: 10;
   width: 85%;
@@ -14,8 +14,7 @@ body {
   position: absolute;
   display: block;
 }
-
-
+/* this displays the main amimations - the playbar and the blips */
 #anim-window{
   width: 100%;
   left: 0;
@@ -136,6 +135,7 @@ nav li a {
   display: block;
   transition: all .1s ease;
 }
+<<<<<<< HEAD
 
 .key-blip:hover {
   background: rgba(230,50,50,0.8);
@@ -143,6 +143,9 @@ nav li a {
 }
 
 .key-blip:hover {
+=======
+.key-blip:hover{
+>>>>>>> 1260f50b8a4dcf09852c6b698a3cbf6cba8be18b
   background: rgba(230,50,50,1);
   border-radius: 0;
 }

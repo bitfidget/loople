@@ -4,7 +4,7 @@ $(document).ready(function(){
   var $animWindow = $('#anim-window');
   var $column = $('#column');
   var $loopHead = $('#loop-head');
-  var $animCircle = $('#animated-circle');
+  $animCircle = $('#animated-circle');
   $loopWindow.css({
     height: winHeight + 'px'
   });
@@ -39,7 +39,10 @@ $(document).ready(function(){
       left: ($loopWindow.width() / 200) * countBar + 'px'
     });
     if (countBar % 25 == 0){
-      $animCircle.toggleClass('circle-half');
+      $animCircle.addClass('circle-half');
+      setTimeout(function() {
+        $animCircle.removeClass('circle-half');
+      }, 200);
     };
     
 
@@ -102,3 +105,4 @@ var loopKeys = [];
 var loopTimes = [];
 var loopKeyTime = [loopKeys, loopTimes];
 var countBar = 0
+var $animCircle = 0

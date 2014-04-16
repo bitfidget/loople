@@ -7,23 +7,51 @@ var playBlips = function(){
       setTimeout(function() {
         $('#' + (index + 1)).removeClass('blipPlay');
       }, 100);
-
-
-      //   // boxShadow: '0px 1px 5px 6px rgba(80,255,80,0.2)',
-      //   background: 'rgba(0,255,0,0.8);'
-      // }, 1, function() {
-      //   // console.log('blip animaton complete')
-      //   console.log('#' + (index + 1))
-      // });
-
-      //REPLACE THIS ALL WITH A CLASS AND ADD/REMOVE IT TO MAKE IT ANIMATE!!
-
-
     };
   });
 };
 
-// <% @loop.keystrokes.each do |stroke| %>
-//         <li>Key Pressed: <%= stroke.key %></li>
-//         <li>At Time: <%= stroke.time %></li>
-//       <% end %>
+// // KH Playback the saved blips on screen
+// var playBlips = function(countBar){
+//   var blips = []
+
+//   $.each(loopTimes, function( index, value ) {
+//     blips[value] = 
+
+//   }
+
+
+//     if (countBar === loopTimes[index]){
+//       // play the Blip
+//       blipPress(value);
+//       // add/remove the class for the animation
+//       $('#' + (index + 1)).addClass('blipPlay');
+//       setTimeout(function() {
+//         $('#' + (index + 1)).removeClass('blipPlay');
+//       }, 100);
+//     };
+//   });
+// };
+
+// //blipPress
+
+
+// var playBlips(counter) {
+
+//     var blips = {
+
+//         18: [],
+
+//         27: [],
+
+//         200: []
+
+//     }
+
+//     var notes = blips[counter];
+
+// }
+
+// playBlips(18)
+
+// refactor using the counterBar variable to call the correct blip at a time, rather than doing this EVERY single stepof the way
