@@ -1,20 +1,36 @@
+
+<!-- the save loop button and field-->
+<form id="loop-save">
+  <input name="loop-name" id="loop-name" placeholder="Name your loop">
+  <input name="loop-colour" id="loop-colour" type="color" />
+  <button>Save Loop</button>
+</form>
+
+<!-- an empty spot for adding the saved loops as buttons -->
+<% if @current_user %>
+	<ul id="loops-saved">
+
+	</ul>
+<% end %>
+
+
+
 <% if flash[:notice].present? %> 
  	<h2><%= flash[:notice] %></h2> 
 <% end %>
 <% unless @current_user %>
 	<button class="signh3">Sign In</button>
-	<form action='/login' class="signin" method="post">
-		<%= form_tag login_path, :class => "form", :method => :post do %>
-		<%= label_tag :username %>
-		<%= text_field_tag :username, params[:username] %>
-		<%= label_tag :password %>
-		<%= password_field_tag :password %>
-		<%= submit_tag "Sign in", class: "signh3" %>
+	<%= form_tag login_path, :class => "form", :method => :post do %>
+	  <%= label_tag :username %>
+	  <%= text_field_tag :username, params[:username] %>
+	  <%= label_tag :password %>
+	  <%= password_field_tag :password %>
+	  <%= submit_tag "Sign in", class: "signh3" %>
 	<% end %>
 <% end %>
 
+
 <button class="sign_up">Sign Up</button>
-<form action='/login' class="signup" method="post">
 	<div id="form">
 	  <%= form_for @user do |f| %>
 	    <p>
@@ -35,10 +51,4 @@
 		</div>
 	  <% end %>
 	</div>
-</form>
-
-<form id="loop-save">
-	<input name="loop-name" id="loop-name" placeholder="Name your loop">
-	<input name="loop-colour" id="loop-colour" type="color" />
-	<button>Save Loop</button>
 </form>

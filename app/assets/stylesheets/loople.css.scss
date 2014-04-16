@@ -17,15 +17,16 @@ body {
 }
 
 /* this displays the main amimations - the playbar and the blips */
-#anim-window {
-  width: 100%;
-  left: 0;
+#anim-window{
+  width: 85%;
+  left: 15%;
   top: 0;
   position: absolute;
   display: block;
   z-index: -10;
 }
 
+/* this displays the left column - needs to remain as 15% width or the other windows will overlap */
 #column {
   width: 15%;
   display: block;

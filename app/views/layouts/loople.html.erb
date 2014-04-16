@@ -18,32 +18,36 @@
         <img src="assets/loople_logo.png">
         <%== usernav %>
       </ul>
-    </nav> 
+    </nav>
+
     <%= yield %>   
     
   </div>
   <!-- anim window is the animation stage, loop window is the loop stage, loop head is the animated bar that sweeps accross in time -->
-  <div id="anim-window"></div>
+  <div id="anim-window">
+    <!-- all the animated_circles go here -->
+    <div class="circle_animated"></div>
+  </div>
   <div id="loop-window">
     <div id="loop-head"></div>
-    <div id="animated-circle"></div>
   </div>
 
 </body>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      keyPress();
-    });
+<script type="text/javascript">
+// we only want to track keypress on the loople page (which is actually every page now)
+  $(document).ready(function(){
+    keyPress();
+  });
 
-    // google analytics tracking
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  // google analytics tracking
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-49479736-2', 'loople.herokuapp.com');
-    ga('send', 'pageview');
+  ga('create', 'UA-49479736-2', 'loople.herokuapp.com');
+  ga('send', 'pageview');
 
-  </script>
+</script>
 </html>
