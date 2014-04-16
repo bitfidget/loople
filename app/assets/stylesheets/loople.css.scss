@@ -112,12 +112,17 @@ nav ul li:last-child {
   border-bottom: none;
 }
 
-nav li a {
+nav a {
   text-decoration: none;
   line-height: 2.5;
   padding-left: 17px;
   color: white;
   display: block;
+  transition: all .5s ease;
+}
+
+nav a:hover{
+  background: rgba(255,255,255,0.1) !important;
 }
 
 

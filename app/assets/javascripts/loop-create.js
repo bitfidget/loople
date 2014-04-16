@@ -99,12 +99,3 @@ $(document).ready(function(){
     this.remove();
   })
 }); // end of document.ready function
-
-
-// KH all keypresses are saved in the loopKeyTime array, under 2 different arrays
-// KH To access them by loopKeyTime[0].loopKeys[x] and loopKeyTime[0].loopTimes[x]
-var loopKeys = [];
-var loopTimes = [];
-var loopKeyTime = [loopKeys, loopTimes];
-var countBar = 0
-var $animCircle = 0

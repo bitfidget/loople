@@ -17,7 +17,7 @@ $(document).ready(function(){
     // Create a vairable for the current size/width so we can use it later 
     var currentSize = (circleDifference * circleStepper)
 
-    // chnage the circles css according to maths (it's always bloody maths isn't it)
+    // chnage the circles' css according to maths (it's always bloody maths isn't it)
     $(this).css({
       height: currentSize + 'px',
       width: currentSize + 'px',
