@@ -3,6 +3,7 @@ body {
   margin: 0;
   z-index: -100;
   background: #333;
+  font-family: 'Roboto', sans-serif;
 }
 
 #loop-window{
@@ -22,10 +23,6 @@ body {
   position: absolute;
   display: block;
   z-index: -10;
-}
-
-#loop-window{
-  z-index: 10;
 }
 
 #column{
@@ -68,13 +65,8 @@ nav li a {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   line-height: 2.5;
-  padding-left: 15px;
+  padding-left: 17px;
   color: white;
-}
-
-#counter {
-  margin-top: 40px;
-  padding-left: 15px;
 }
 
 #loop-save {
@@ -86,8 +78,6 @@ nav li a {
   margin-top: 10px;
 }
 
-/* This allows the first sign in link to disappear */
-
 .signh3 {
   padding-left: 15px;
   font-family: 'Roboto', sans-serif;
@@ -96,14 +86,10 @@ nav li a {
   border: 0;
   text-align: left;
   font-size: 16px;
-  height: 100px;
 }
 
+/* This allows the first sign in link to disappear */
 .signin {
-  display: none;
-}
-
-.signup {
   display: none;
 }
 
@@ -116,6 +102,15 @@ nav li a {
   text-align: left;
   font-size: 16px;
   height: 30px;
+}
+
+.signup {
+  display: none;
+}
+
+#counter {
+  margin-top: 40px;
+  padding-left: 15px;
 }
 
 /* all of the following is just the playhead */
@@ -141,23 +136,23 @@ nav li a {
   display: block;
   transition: all .1s ease;
 }
-<<<<<<< HEAD
 
 .key-blip:hover {
   background: rgba(230,50,50,0.8);
   border-radius: 0;
-=======
-.key-blip:hover{
+}
+
+.key-blip:hover {
   background: rgba(230,50,50,1);
   border-radius: 0;
 }
+
 .key-blip.blipPlay{
   background: rgba(0,255,0,1);
   -moz-box-shadow:    0px 1px 5px 6px rgba(80,255,80,0.2);
   -webkit-box-shadow: 0px 1px 5px 6px rgba(80,255,80,0.2);
   box-shadow:         0px 1px 5px 6px rgba(80,255,80,0.2);
   border-radius: 50%;
->>>>>>> 2337f9125a5c8b720a173b47636f73b28eb1ceb4
 }
 
 /* Log in section */

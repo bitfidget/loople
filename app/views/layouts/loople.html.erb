@@ -13,15 +13,13 @@
 </head>
 
 
+
 <body id="body" class="<%= params[:controller] %> <%= params[:action] %>">
   <div id="column">
     <nav id="main">
       <ul>
         <img src="assets/loople_logo.png">
         <%== usernav %>
-        <li><%= link_to("Users", users_path ) %></li>
-        <li><%= link_to("Loops", loops_path ) %></li>
-        <li><%= link_to("Loop Test", kriss_path ) %></li>
       </ul>
     </nav> 
     <%= yield %>   
@@ -34,9 +32,8 @@
     <div id="animated-circle"></div>
   </div>
 
-
-
 </body>
+
 <script type="text/javascript">
 $(document).ready(function(){
   keyPress();
