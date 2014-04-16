@@ -99,37 +99,37 @@ var blipPress = function(blip){
     //Letter 'Z'
     case 20:
       playSound('thirteen');
-      //drawCircleZ();
+      circleAnimate.animation20()
       break;
     //Letter 'X'
     case 21:
       playSound('fourteen');
-      //drawCircleX();
+      circleAnimate.animation21()
       break;
     //Letter 'C'
     case 22:
       playSound('fifteen');
-     //drawCircleC();
+      circleAnimate.animation22()
       break;
     //Letter 'V'
     case 23:
       playSound('sixteen');
-      //drawCircleV();
+      circleAnimate.animation23()
       break;
     //Letter 'B'
     case 24:
       playSound('seventeen');
-      //drawCircleB();
+      circleAnimate.animation24()
       break;
     //Letter 'N'
     case 25:
       playSound('eighteen');
-      //drawCircleN();
+      circleAnimate.animation25()
       break;
     //Letter 'M'
     case 26:
       playSound('nineteen');
-      //drawCircleM();
+      circleAnimate.animation26()
       break;
   };
 };

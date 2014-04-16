@@ -21,100 +21,165 @@ var circleAnimate = {
     }, 50);
   },
     animation4: function(){
-    $animCircle.addClass('circleR');
+    $('#circleR').addClass('circleR');
+     $('#circleR').addClass('circle_animationR');
     setTimeout(function() {
-      $animCircle.removeClass('circleR');
-    }, 200);
+      $('#circleR').removeClass('circleR');
+    }, 50);
   },
     animation5: function(){
-    $animCircle.addClass('circleT');
+    $('#circleT').addClass('circleT');
+    $('#circleT').addClass('circle_animationT');
     setTimeout(function() {
-      $animCircle.removeClass('circleT');
-    }, 200);
+      $('#circleT').removeClass('circleT');
+    }, 50);
   },
     animation6: function(){
-    $animCircle.addClass('circleY');
+    $('#circleY').addClass('circleY');
+    $('#circleY').addClass('circle_animationY');
     setTimeout(function() {
-      $animCircle.removeClass('circleY');
-    }, 200);
+      $('#circleY').removeClass('circleY');
+    }, 50);
   },
     animation7: function(){
-    $animCircle.addClass('circleU');
+    $('#circleU').addClass('circleU');
+    $('#circleU').addClass('circle_animationU');
     setTimeout(function() {
-      $animCircle.removeClass('circleU');
-    }, 200);
+      $('#circleU').removeClass('circleU');
+    }, 50);
   },
     animation8: function(){
-    $animCircle.addClass('circleI');
+    $('#circleI').addClass('circleI');
+    $('#circleI').addClass('circle_animationI');
     setTimeout(function() {
-      $animCircle.removeClass('circleI');
-    }, 200);
+      $('#circleI').removeClass('circleI');
+    }, 50);
   },
     animation9: function(){
-    $animCircle.addClass('circleO');
+    $('#circleO').addClass('circleO');
+    $('#circleO').addClass('circle_animationO');
     setTimeout(function() {
-      $animCircle.removeClass('circleO');
-    }, 200);
+      $('#circleO').removeClass('circleO');
+    }, 50);
   },
     animation10: function(){
-    $animCircle.addClass('circleP');
+    $('#circleP').addClass('circleP');
+    $('#circleP').addClass('circle_animationP');
     setTimeout(function() {
-      $animCircle.removeClass('circleP');
-    }, 200);
+      $('#circleP').removeClass('circleP');
+    }, 50);
   },
     animation11: function(){
-    $animCircle.addClass('circleA');
+    $('#circleA').addClass('circleA');
+    $('#circleA').addClass('circle_animationA');
     setTimeout(function() {
-      $animCircle.removeClass('circleA');
-    }, 200);
+      $('#circleA').removeClass('circleA');
+    }, 50);
   },
     animation12: function(){
-    $animCircle.addClass('circleS');
+    $('#circleS').addClass('circleS');
+    $('#circleS').addClass('circle_animationS');
     setTimeout(function() {
-      $animCircle.removeClass('circleS');
-    }, 200);
+      $('#circleS').removeClass('circleS');
+    },50);
   },
     animation13: function(){
-    $animCircle.addClass('circleD');
+    $('#circleD').addClass('circleD');
+    $('#circleD').addClass('circle_animationD');
     setTimeout(function() {
-      $animCircle.removeClass('circleD');
-    }, 200);
+      $('#circleD').removeClass('circleD');
+    }, 50);
   },
     animation14: function(){
-    $animCircle.addClass('circleF');
+    $('#circleF').addClass('circleF');
+    $('#circleF').addClass('circle_animationF');
     setTimeout(function() {
-      $animCircle.removeClass('circleF');
-    }, 200);
+      $('#circleF').removeClass('circleF');
+    }, 50);
   },
     animation15: function(){
-    $animCircle.addClass('circleG');
+    $('#circleG').addClass('circleG');
+    $('#circleG').addClass('circle_animationG');
     setTimeout(function() {
-      $animCircle.removeClass('circleG');
-    }, 200);
+      $('#circleG').removeClass('circleG');
+    }, 50);
   },
     animation16: function(){
-    $animCircle.addClass('circleH');
+    $('#circleH').addClass('circleH');
+    $('#circleH').addClass('circle_animationH');
     setTimeout(function() {
-      $animCircle.removeClass('circleH');
-    }, 200);
+      $('#circleH').removeClass('circleH');
+    }, 50);
   },
     animation17: function(){
-    $animCircle.addClass('circleJ');
+    $('#circleJ').addClass('circleJ');
+    $('#circleJ').addClass('circle_animationJ');
     setTimeout(function() {
-      $animCircle.removeClass('circleJ');
-    }, 200);
+      $('#circleJ').removeClass('circleJ');
+    }, 50);
   },
     animation18: function(){
-    $animCircle.addClass('circleK');
+    $('#circleK').addClass('circleK');
+    $('#circleK').addClass('circle_animationK');
     setTimeout(function() {
-      $animCircle.removeClass('circleK');
-    }, 200);
+      $('#circleK').removeClass('circleK');
+    }, 50);
   },
     animation19: function(){
-    $animCircle.addClass('circleL');
+    $('#circleL').addClass('circleL');
+    $('#circleL').addClass('circle_animationL');
     setTimeout(function() {
-      $animCircle.removeClass('circleL');
-    }, 200);
+      $('#circleL').removeClass('circleL');
+    }, 50);
+  },
+    animation20: function(){
+    $('#circleZ').addClass('circleZ');
+    $('#circleZ').addClass('circle_animationZ');
+    setTimeout(function() {
+      $('#circleZ').removeClass('circleZ');
+    }, 50);
+  },
+    animation21: function(){
+    $('#circleX').addClass('circleX');
+    $('#circleX').addClass('circle_animationX');
+    setTimeout(function() {
+      $('#circleX').removeClass('circleX');
+    }, 50);
+  },
+    animation22: function(){
+    $('#circleC').addClass('circleC');
+    $('#circleC').addClass('circle_animationC');
+    setTimeout(function() {
+      $('#circleC').removeClass('circleC');
+    }, 50);
+  },
+    animation23: function(){
+    $('#circleV').addClass('circleV');
+    $('#circleV').addClass('circle_animationV');
+    setTimeout(function() {
+      $('#circleV').removeClass('circleV');
+    }, 50);
+  },
+    animation24: function(){
+    $('#circleB').addClass('circleB');
+    $('#circleB').addClass('circle_animationB');
+    setTimeout(function() {
+      $('#circleB').removeClass('circleB');
+    }, 50);
+  },
+    animation25: function(){
+    $('#circleN').addClass('circleN');
+    $('#circleN').addClass('circle_animationN');
+    setTimeout(function() {
+      $('#circleN').removeClass('circleN');
+    }, 50);
+  },
+    animation26: function(){
+    $('#circleM').addClass('circleM');
+    $('#circleM').addClass('circle_animationM');
+    setTimeout(function() {
+      $('#circleM').removeClass('circleM');
+    }, 50);
   },
 }
 

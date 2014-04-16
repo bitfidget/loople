@@ -157,48 +157,48 @@ var keyPress = function(){
       case 90:
         makeKey(20);
         playSound('thirteen');
-        //drawCircleZ();
+        circleAnimate.animation20()
         break;
 
       //Letter 'X'
       case 88:
         makeKey(21);
         playSound('fourteen');
-        //drawCircleX();
+        circleAnimate.animation21()
         break;
 
       //Letter 'C'
       case 67:
         makeKey(22);
         playSound('fifteen');
-        //drawCircleC();
+        circleAnimate.animation22()
         break;
 
       //Letter 'V'
       case 86:
         makeKey(23);
         playSound('sixteen');
-        //drawCircleV();
+        circleAnimate.animation23()
         break;
       //Letter 'B'
       case 66:
         makeKey(24);
         playSound('seventeen');
-        //drawCircleB();
+        circleAnimate.animation24()
         break;
 
       //Letter 'N'
       case 78:
         makeKey(25);
         playSound('eighteen');
-        //drawCircleN();
+        circleAnimate.animation25()
         break;
 
       //Letter 'M'
       case 77:
         makeKey(26);
         playSound('nineteen');
-        //drawCircleM();
+        circleAnimate.animation26()
         break;
     }
   });
