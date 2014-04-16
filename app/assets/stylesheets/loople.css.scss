@@ -5,8 +5,9 @@ body {
   background: #333;
   font-family: 'Roboto', sans-serif;
 }
+
 /* this displays the main loop elements - the playbar and the blips */
-#loop-window{
+#loop-window {
   z-index: 10;
   width: 85%;
   left: 15%;
@@ -14,8 +15,9 @@ body {
   position: absolute;
   display: block;
 }
+
 /* this displays the main amimations - the playbar and the blips */
-#anim-window{
+#anim-window {
   width: 100%;
   left: 0;
   top: 0;
@@ -24,11 +26,10 @@ body {
   z-index: -10;
 }
 
-#column{
+#column {
   width: 15%;
   display: block;
   padding-top: 15px;
-  margin-top: 15px;
   box-shadow: 0 -1px 8px 3px black;
   background: rgb(36, 36, 36);
   z-index: 100;
@@ -83,7 +84,6 @@ nav li a {
   color: white;
   background-color: rgb(36, 36, 36);
   border: 0;
-  text-align: left;
   font-size: 16px;
 }
 
@@ -93,7 +93,7 @@ nav li a {
 }
 
 .sign_up {
-  padding-left: 15px;
+  padding-left: 20px;
   font-family: 'Roboto', sans-serif;
   color: white;
   background-color: rgb(36, 36, 36);
@@ -105,11 +105,6 @@ nav li a {
 
 .signup {
   display: none;
-}
-
-#counter {
-  margin-top: 40px;
-  padding-left: 15px;
 }
 
 /* all of the following is just the playhead */
@@ -135,17 +130,13 @@ nav li a {
   display: block;
   transition: all .1s ease;
 }
-<<<<<<< HEAD
 
 .key-blip:hover {
   background: rgba(230,50,50,0.8);
   border-radius: 0;
 }
 
-.key-blip:hover {
-=======
 .key-blip:hover{
->>>>>>> 1260f50b8a4dcf09852c6b698a3cbf6cba8be18b
   background: rgba(230,50,50,1);
   border-radius: 0;
 }

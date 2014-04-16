@@ -18,35 +18,27 @@
 	<div id="form">
 	  <%= form_for @user do |f| %>
 	    <p>
-	      <%= f.label :username %>
-	      <%= f.text_field :username, :autofocus => true, :class => 'field-short' %>
+	      <%= f.text_field :username, :placeholder => "Username", :autofocus => true, :class => 'field-short' %>
 	    </p>
 	    <p>
-	      <%= f.label :email %>
-	      <%= f.email_field :email %>
+	      <%= f.email_field :email, :placeholder => "Email Address" %>
+	    </p> 
+	    <p>
+	      <%= f.password_field :password, :placeholder => "Password", :class => 'field-short' %>
 	    </p>
 	    <p>
-	      <%= f.label :image, "image URL" %>
-	      <%= f.url_field :image %>
-	    </p>  
-	    <p>
-	      <%= f.label :password %>
-	      <%= f.password_field :password, :class => 'field-short' %>
-	    </p>
-	    <p>
-	      <%= f.label :password_confirmation %>
-	      <%= f.password_field :password_confirmation, :class => 'field-short' %>
+	      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => 'field-short' %>
 	    </p>
 
-	    <p><%= f.submit %></p>
+		<div class="signh3">
+	    <p><%= f.submit "Sign Up", :class => "signh3" %></p>
+		</div>
 	  <% end %>
 	</div>
 </form>
 
-  <div id="counter"></div>
-
-  <form id="loop-save">
-    <input name="loop-name" id="loop-name" placeholder="Name your loop">
-    <input name="loop-colour" id="loop-colour" type="color" />
-    <button>Save Loop</button>
-  </form>
+<form id="loop-save">
+	<input name="loop-name" id="loop-name" placeholder="Name your loop">
+	<input name="loop-colour" id="loop-colour" type="color" />
+	<button>Save Loop</button>
+</form>
