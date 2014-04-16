@@ -118,26 +118,3 @@ var circleAnimate = {
   },
 }
 
-circleAnimate.animation1()
-circleAnimate.animation2()
-circleAnimate.animation3()
-circleAnimate.animation4()
-circleAnimate.animation5()
-circleAnimate.animation6()
-circleAnimate.animation7()
-circleAnimate.animation8()
-circleAnimate.animation9()
-circleAnimate.animation10()
-circleAnimate.animation11()
-circleAnimate.animation12()
-circleAnimate.animation13()
-circleAnimate.animation14()
-circleAnimate.animation15()
-circleAnimate.animation16()
-circleAnimate.animation17()
-circleAnimate.animation18()
-circleAnimate.animation19()
-
-
-
-

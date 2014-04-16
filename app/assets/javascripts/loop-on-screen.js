@@ -19,11 +19,13 @@ $(document).ready(function(){
   var $loopName = $('#loop-name');
   var $loopColour = $('#loop-colour');
 
+//-------------------------------------------------
+// The global timer function - all LOOP starts here
+//-------------------------------------------------
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // KH lets create a variable for the time so we can change it easily later
   var loopTime = 2000
-
 
   // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
   // KH at 0 the counter fires-off the playbar animation (moveHead)
@@ -31,21 +33,19 @@ $(document).ready(function(){
     if (countBar >= 200){
       countBar = 0;
     };
-    $('#counter').text(countBar)
     // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
     playBlips();
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
-    });
-    if (countBar % 23 == 0){
-      // $animCircle.toggleClass('circle-half');
-    };
-    
-
+    });    
     countBar++;
   }, 
   loopTime/200);
+
+//-------------------------------------------------
+// Save each keystroke (key and time) to the arrays
+//-------------------------------------------------
 
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
@@ -55,8 +55,12 @@ $(document).ready(function(){
     plotKey(key, countBar);
   };
 
+//-------------------------
+// Plot the blips on screen
+//-------------------------
 
   // KH This draws the key according to it's time on the grid
+  // KH create a plotCount variable so each blip can have a unique ID
   var plotCount = 0;
   var plotKey = function(key, time){
     var $keyBlip = $('<div class="key-blip kb' + key + '" id="' + loopKeys.length + '" />').css({
@@ -66,8 +70,9 @@ $(document).ready(function(){
     plotCount += 1;
   };
 
-  
-
+//--------------------------------------------------------------
+// Create listeners for saving loop and removing blips from grid
+//--------------------------------------------------------------
 
   // KH all listeners for this section will start from here...
   // KH The save loop button and form

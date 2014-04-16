@@ -1,3 +1,18 @@
+/* define all circles with the same style */
+.circle_animated{
+  width: 200px;
+  height: 200px;
+  border: solid 1px rgba(255,0,0,1);
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+/* then add different styles to each different circle */
+
+
 #circleQ.circle_animationQ{
   width: 50%;
   height: 90%;
@@ -150,12 +165,6 @@
   height: 76%;
  border: solid 5px rgb(60,255,187);
 }
-
-
-
-
-
-
 
 
 

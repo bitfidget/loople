@@ -5,12 +5,10 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <!-- these are for charlies animations -->
-  <script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
-  <script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
-  <script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
 </head>
+
 
 
 <body id="body" class="<%= params[:controller] %> <%= params[:action] %>">
@@ -19,11 +17,9 @@
       <ul>
         <img src="assets/loople_logo.png">
         <%== usernav %>
-        <li><%= link_to("Users", users_path ) %></li>
-        <li><%= link_to("Loops", loops_path ) %></li>
-        <li><%= link_to("Loop Test", kriss_path ) %></li>
       </ul>
-    </nav> 
+    </nav>
+
     <%= yield %>   
     
   </div>
@@ -43,22 +39,22 @@
     <div id="loop-head"></div>
   </div>
 
-
-
 </body>
+
 <script type="text/javascript">
-$(document).ready(function(){
-  keyPress();
-});
+// we only want to track keypress on the loople page (which is actually every page now)
+  $(document).ready(function(){
+    keyPress();
+  });
 
-// google analytics tracking
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  // google analytics tracking
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-49479736-2', 'loople.herokuapp.com');
-ga('send', 'pageview');
+  ga('create', 'UA-49479736-2', 'loople.herokuapp.com');
+  ga('send', 'pageview');
 
 </script>
 </html>

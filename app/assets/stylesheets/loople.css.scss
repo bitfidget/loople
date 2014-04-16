@@ -3,9 +3,11 @@ body {
   margin: 0;
   z-index: -100;
   background: #333;
+  font-family: 'Roboto', sans-serif;
 }
 
-#loop-window{
+/* this displays the main loop elements - the playbar and the blips */
+#loop-window {
   z-index: 10;
   width: 85%;
   left: 15%;
@@ -14,25 +16,21 @@ body {
   display: block;
 }
 
-
+/* this displays the main amimations - the playbar and the blips */
 #anim-window{
-  width: 100%;
-  left: 0;
+  width: 85%;
+  left: 15%;
   top: 0;
   position: absolute;
   display: block;
   z-index: -10;
 }
 
-#loop-window{
-  z-index: 10;
-}
-
-#column{
+/* this displays the left column - needs to remain as 15% width or the other windows will overlap */
+#column {
   width: 15%;
   display: block;
   padding-top: 15px;
-  margin-top: 15px;
   box-shadow: 0 -1px 8px 3px black;
   background: rgb(36, 36, 36);
   z-index: 100;
@@ -68,13 +66,8 @@ nav li a {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
   line-height: 2.5;
-  padding-left: 15px;
+  padding-left: 17px;
   color: white;
-}
-
-#counter {
-  margin-top: 40px;
-  padding-left: 15px;
 }
 
 #loop-save {
@@ -86,29 +79,22 @@ nav li a {
   margin-top: 10px;
 }
 
-/* This allows the first sign in link to disappear */
-
 .signh3 {
   padding-left: 15px;
   font-family: 'Roboto', sans-serif;
   color: white;
   background-color: rgb(36, 36, 36);
   border: 0;
-  text-align: left;
   font-size: 16px;
-  height: 100px;
 }
 
+/* This allows the first sign in link to disappear */
 .signin {
   display: none;
 }
 
-.signup {
-  display: none;
-}
-
 .sign_up {
-  padding-left: 15px;
+  padding-left: 20px;
   font-family: 'Roboto', sans-serif;
   color: white;
   background-color: rgb(36, 36, 36);
@@ -116,6 +102,10 @@ nav li a {
   text-align: left;
   font-size: 16px;
   height: 30px;
+}
+
+.signup {
+  display: none;
 }
 
 /* all of the following is just the playhead */
@@ -142,17 +132,17 @@ nav li a {
   transition: all .1s ease;
 }
 
-.key-blip:hover{
-  background: rgba(230,50,50,1);
+.key-blip:hover {
+  background: rgba(230,50,50,0.8);
   border-radius: 0;
 }
+
 .key-blip.blipPlay{
   background: rgba(0,255,0,1);
   -moz-box-shadow:    0px 1px 5px 6px rgba(80,255,80,0.2);
   -webkit-box-shadow: 0px 1px 5px 6px rgba(80,255,80,0.2);
   box-shadow:         0px 1px 5px 6px rgba(80,255,80,0.2);
   border-radius: 50%;
-
 }
 
 /* Log in section */
