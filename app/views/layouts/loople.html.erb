@@ -19,8 +19,6 @@
       </ul>
     </nav>
 
-    <%= yield %> 
-
       <!--The user can modify the tempo -->
     <label>BPM</label>
 
@@ -30,6 +28,8 @@
     <input type="button" name="startBpm" id="startBpm"class="startBpm" value="start">
     <input type="button" name="stopBpm" id="stopBpm" class="stopBpm" value="stop">
 
+    <%= yield %>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>  
   </div>
 
   <!-- anim window is the animation stage, loop window is the loop stage, loop head is the animated bar that sweeps accross in time -->
@@ -66,8 +66,6 @@
   <div id="loop-window">
     <div id="loop-head"></div>
   </div>
-
- <a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
 </body>
 
 <script type="text/javascript">
