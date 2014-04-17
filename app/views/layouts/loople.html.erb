@@ -6,7 +6,6 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <!-- these are for charlies animations -->
 </head>
 
 
@@ -15,18 +14,15 @@
   <div id="column">
     <nav id="main">
       <ul>
-        <img src="assets/loople_logo.png">
+        <li><img src="assets/loople_logo.png"></li>
         <%== usernav %>
       </ul>
     </nav>
 
     <%= yield %> 
-  <!--The user can modify the tempo -->
-    <label>BPM</label>
 
-    <input type="text" name = "bpm" id="bpm" value="120"/>
-    <input type="button" name="bpmPlus" id="bpmPlus"
   </div>
+
   <!-- anim window is the animation stage, loop window is the loop stage, loop head is the animated bar that sweeps accross in time -->
   <div id="anim-window">
     <!-- <div class="tempoGrid"></div> -->
