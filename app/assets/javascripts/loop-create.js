@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
   // KH lets create a variable for the time so we can change it easily later
-  var loopTime = 8000
+  var loopTime = 2000
 
   // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
   // KH at 0 the counter fires-off the playbar animation (moveHead)

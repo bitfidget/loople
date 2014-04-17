@@ -15,8 +15,10 @@ $(document).ready(function(){
 	$($startBpm).click(function(){
 		if (metroSound === false){
  			metroSound = true;
+ 			$startBpm.val("Off");
  		} else {		
 			metroSound = false;
+			$startBpm.val("On");
 		};
 	});
 
