@@ -1,4 +1,4 @@
-/* define all circles with the same style */
+/* Define all circles with the same style */
 .circle_animated{
   border-radius: 50%;
   display: block;
@@ -345,4 +345,10 @@
  opacity: 1;
 }
 
+.gridLine{
+  width: 1px;
+  background-color: grey;
+  position: absolute;
+  opacity: 0.6;
+}
 
