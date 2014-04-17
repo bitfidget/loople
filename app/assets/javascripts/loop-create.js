@@ -32,9 +32,10 @@ $(document).ready(function(){
   counterMain = setInterval(function(){
     if (countBar >= 200){
       countBar = 0;
+      //loadBlips()
     };
     // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
-    playBlips();
+    playBlips(countBar);
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
@@ -50,17 +51,13 @@ $(document).ready(function(){
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
   makeKey = function(key){
-    //loopKeys.push(key);
-    //loopTimes.push(countBar);
-
+    // check to see if there's already a key saved at this time
     if (!loopKeysTimes[countBar]){
       loopKeysTimes[countBar] = []
     }
+    // add key to time value within hash
     loopKeysTimes[countBar].push(key);
-    
-
-    console.log(loopKeysTimes);
-
+    // call the function to show the key
     plotKey(key, countBar);
   };
 
