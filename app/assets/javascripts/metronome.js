@@ -10,7 +10,9 @@ var metronome = function(){
 
 $(document).ready(function(){
 	var $startBpm = $('#startBpm');
-	var $stopBpm = $('#stopBpm');
+	var $bpmPlus = $('#bpmPlus');
+	var $bpmMinus = $('#bpmMinus');
+	var $bpm = $('#bpm');
 
 	$($startBpm).click(function(){
 		if (metroSound === false){
@@ -20,6 +22,19 @@ $(document).ready(function(){
 			metroSound = false;
 			$startBpm.val("On");
 		};
+	});
+
+	//CG: increases the value of the bpm input everytime the + button is pressed.
+	$($bpmPlus).click(function(){
+		var $valueBpm = parseInt($bpm.val());
+	 	newBpm = $valueBpm + 1;
+	 	$bpm.val(newBpm);
+	});
+
+	$($bpmMinus).click(function(){
+		var $valueBpm = parseInt($bpm.val());
+		newBpm = $valueBpm - 1;
+	 	$bpm.val(newBpm);
 	});
 
 });
