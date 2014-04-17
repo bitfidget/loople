@@ -39,7 +39,8 @@ $(document).ready(function(){
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
     }); 
-    metronome();   
+    metronome();
+
     countBar++;
   }, 
   loopTime/200);

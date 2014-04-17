@@ -352,3 +352,35 @@
   opacity: 0.6;
 }
 
+/*--------------------- BPM BUTTONS -------------------*/
+
+#bpm.bpm{
+  width: 40px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#bpmPlus.bpmPlus{
+  width: 40px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#bpmMinus.bpmMinus{
+  width: 40px;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+#startBpm.startBpm{
+  width: 50px;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+#stopBpm.stopBpm{
+  width: 50px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
