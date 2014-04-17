@@ -1,17 +1,36 @@
+<!-- ------------------------------------------------- -->
+<!-- top section only appears if you ARE logged in -->
+<!-- ------------------------------------------------- -->
+
+
 <% if @current_user %>
 <!-- the save loop button and field-->
 	<form id="loop-save">
-	  <input name="loop-name" id="loop-name" placeholder="Name your loop">
+	  <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
 	  <input name="loop-colour" id="loop-colour" type="color" />
 	  <button>Save Loop</button>
 	</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
-	<ul id="loops-saved">
+	<nav id="loops-saved">
+    <ul>
+			<% @current_user.loops.each do |loop| %>
+				<li>
+					<a href="#" id="loop_<%= loop.id %>" class="load-loop" style="background: #<%= loop.colour %>">
+						<span class="queue">queue</span>
+						<%= loop.name %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+  </nav>
 
-	</ul>
 <% end %>
 
+
+<!-- ------------------------------------------------- -->
+<!-- following section only appear if you are NOT logged in -->
+<!-- ------------------------------------------------- -->
 
 <% unless @current_user %>
 	

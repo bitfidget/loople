@@ -3,6 +3,8 @@
 /* grid background colour */
 $darkGrey: #333;
 
+$looplBlue: rgba(32,188,241,1);
+
 /* play head and blip colour */
 $headAndBlips: rgba(0,255,0,0.8);
 
@@ -31,6 +33,7 @@ body {
   z-index: -100;
   background: $darkGrey;
   font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
 /* this displays the main loop elements - the playbar and the blips */
@@ -63,6 +66,27 @@ body {
   z-index: 100;
   border-right: solid 1px #344;
   color: #FFF;
+
+  /* some basic forms styling */
+  input, button{
+    display: block;
+    padding: 3px;
+    background: #FFF;
+    box-shadow: 0 -1px 1px 1px rgba(0,0,0,0.5);
+    color: $looplBlue;
+    border-radius: 3px;
+    border: 0;
+    width: 90%;
+    margin: 5px auto;
+  }
+  button{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .queue{
+    color: $looplBlue;
+    text-transform: lowercase;
+  }
 }
 
 #column img {
@@ -95,33 +119,30 @@ nav ul li {
 nav ul li:first-child {
   border-top: none;
 }
-
 nav ul li:last-child {
   border-bottom: none;
 }
 
-nav li a {
-  font-family: 'Roboto', sans-serif;
+nav a {
   text-decoration: none;
   line-height: 2.5;
   padding-left: 17px;
   color: white;
+  display: block;
+  transition: all .5s ease;
+  text-transform: uppercase;
 }
 
-#loop-save {
-  margin-top: 40px;
-  padding-left: 15px;
+nav a:hover{
+  background: rgba(255,255,255,0.1) !important;
 }
 
-#loop-colour {
-  margin-top: 10px;
-}
+
 
 /* Style for both Sign In and Sign Up buttons */
 #sign-in,
 #sign-up {
   padding-left: 15px;
-  font-family: 'Roboto', sans-serif;
   color: white;
   background-color: rgb(36, 36, 36);
   border: 0;
@@ -166,11 +187,6 @@ nav li a {
   border-radius: 0;
 }
 
-.key-blip:hover{
-  background: rgba(230,50,50,1);
-  border-radius: 0;
-}
-
 .key-blip.blipPlay{
   background: rgba(0,255,0,1);
   -moz-box-shadow:    0px 1px 5px 6px rgba(80,255,80,0.2);
@@ -178,6 +194,7 @@ nav li a {
   box-shadow:         0px 1px 5px 6px rgba(80,255,80,0.2);
   border-radius: 50%;
 }
+
 
 
 

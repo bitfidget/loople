@@ -3,6 +3,7 @@ class LoopsController < ApplicationController
   def create
     # KH create and save the new loop
     loop = Loop.new(params[:loop])
+    loop.user = @current_user
     loop.save
     # KH pull the two keys
     keys = params[:loopKeys]

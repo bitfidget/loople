@@ -10,6 +10,4 @@ $(document).ready(function(){
 		$('.sign-in').removeClass("toggle-visible");
 	})
 
-
-
 });

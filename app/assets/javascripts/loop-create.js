@@ -38,15 +38,7 @@ $(document).ready(function(){
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
-    });
-    // attempting to make the circle pulse, we will probably cut it out
-    // if (countBar % 25 == 0){
-    //   $animCircle.addClass('circle-half');
-    //   setTimeout(function() {
-    //     $animCircle.removeClass('circle-half');
-    //   }, 200);
-    // };
-    // KH make the count count
+    });    
     countBar++;
   }, 
   loopTime/200);
@@ -107,12 +99,3 @@ $(document).ready(function(){
     this.remove();
   })
 }); // end of document.ready function
-
-
-// KH all keypresses are saved in the loopKeyTime array, under 2 different arrays
-// KH To access them by loopKeyTime[0].loopKeys[x] and loopKeyTime[0].loopTimes[x]
-var loopKeys = [];
-var loopTimes = [];
-var loopKeyTime = [loopKeys, loopTimes];
-var countBar = 0
-var $animCircle = 0
