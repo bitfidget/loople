@@ -7,7 +7,13 @@ var playBlips = function(countBar){
     return;
   }
   // if there's a key here, play it
-  $.each(keys, function(i, key) {
+  $.each(keys, function(i, key){
     blipPress(key)
+    blipID = ('#blip' + key + 'at' + countBar)
+    // apply stype to the blip using it's id in format: blip11at28
+    $(blipID).addClass('blipPlay');
+    setTimeout(function() {
+      $(blipID).removeClass('blipPlay');
+    }, 50);
   });
 };
