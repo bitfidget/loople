@@ -15,20 +15,38 @@ function init() {
     }
 }
 
+var sounds = {}; // Memoization hash
+
+var soundFiles = 'clap cowbell kickdrum snare laser01 laser02 laser03 robot01 robot02'.split(' ');
+for (var i = 0; i < soundFiles.length; i++) {
+    playSound(soundFiles[i], true);
+}
+
 // Load the Sound with XMLHttpRequest
-function playSound(sound) {
-    // Note: this will load asynchronouslys
-    var request = new XMLHttpRequest();
-    request.open("GET", "/assets/" + sound + ".mp3", true);
-    request.responseType = "arraybuffer"; // Read as binary data
+function playSound(sound, silent) {
 
-    // Asynchronous callback
-    request.onload = function() {
-        var data = request.response;
-        audioRouting(data);
-    };
+    if (! sounds[sound]) {
+        // Note: this will load asynchronouslys
+        var request = new XMLHttpRequest();
+        request.open("GET", "/assets/" + sound + ".mp3", true);
+        request.responseType = "arraybuffer"; // Read as binary data
 
-    request.send();
+        // Asynchronous callback
+        request.onload = function() {
+            var data = request.response;
+            sounds[sound] = data;
+            if (! silent) {
+                audioRouting(sounds[sound]);
+            }
+        };
+
+        request.send();
+    } else {
+        if (! silent) {
+            audioRouting(sounds[sound]);
+        }
+    }
+    console.log("showing fetched sounds", sounds);
 }
 
 function audioRouting(data) {
