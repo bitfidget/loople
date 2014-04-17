@@ -11,7 +11,7 @@ $(document).ready(function(){
 }); // end of document.ready function
 
 // Charlies event listener for keys clicked
-// add all key press fucntions here
+// add all key press functions here
 
 var keyPress = function(){
   $(document).keydown(function(e){
