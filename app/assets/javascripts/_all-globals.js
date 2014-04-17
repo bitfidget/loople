@@ -10,6 +10,9 @@ var $animWindow = 0;
 var loopKeys = [];
 var loopTimes = [];
 
+// this wil replace the arrays above...
+var loopKeysTimes = {};
+
 // KH the global timer - everythign hangs off this variable!
 var countBar = 0;
 

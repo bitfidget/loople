@@ -50,8 +50,17 @@ $(document).ready(function(){
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
   makeKey = function(key){
-    loopKeys.push(key);
-    loopTimes.push(countBar);
+    //loopKeys.push(key);
+    //loopTimes.push(countBar);
+
+    if (!loopKeysTimes[countBar]){
+      loopKeysTimes[countBar] = []
+    }
+    loopKeysTimes[countBar].push(key);
+    
+
+    console.log(loopKeysTimes);
+
     plotKey(key, countBar);
   };
 
@@ -83,10 +92,8 @@ $(document).ready(function(){
     $loopName.val('');
     // KH get the loop colour
     var colour = $loopColour.val().replace('#', '');
-    // KH get the loop keystrokes array
-    var keyStrokes = loopKeyTime;
     // KH make Ajax goodness happen
-    loopAjax.createLoop(name, colour, loopKeys, loopTimes);
+    loopAjax.createLoop(name, colour, loopKeysTimes);
   });
 
   // KH the listener for removing objects from the window

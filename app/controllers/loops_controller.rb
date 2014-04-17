@@ -5,21 +5,18 @@ class LoopsController < ApplicationController
     loop = Loop.new(params[:loop])
     loop.user = @current_user
     loop.save
-    # KH pull the two keys
-    keys = params[:loopKeys]
-    times = params[:loopTimes]
-    # KH delete the empty values (cross fingers that they match up)
-    keys.delete('')
-    times.delete('')
-    # KH save the keys as keyStrokes in the DB!
-    i = 0
-    while i < keys.length do
-      keyStroke = Keystroke.new
-      keyStroke.key = keys[i]
-      keyStroke.time = times[i]
-      keyStroke.loop_id = loop.id
-      keyStroke.save
-      i += 1
+
+    keysTimes = params[:loopKeysTimes]
+    # this is confusing because we are using TIME as the key and KEY as the value, but stick with us, it'll be worth it
+    # each time can have multiple keys, so iterate each time value, and save EACh key as an object
+    keysTimes.each do |time, keys|
+      keys.each do |key|
+        keyStroke = Keystroke.new
+        keyStroke.key = key
+        keyStroke.time = time
+        keyStroke.loop_id = loop.id
+        keyStroke.save
+      end
     end
     if loop.save
       render :json => loop.to_json
