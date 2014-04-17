@@ -66,8 +66,19 @@ body {
 }
 
 #column img {
-  margin-top: -14px;
+  margin-top: -10px;
   max-width: 100%;
+}
+
+.info_text {
+  padding: 15px 20px 15px 15px;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.info_text h2 {
+  color: rgb(32, 188, 241);
+  text-decoration: underline;
 }
 
 nav ul {
@@ -106,7 +117,9 @@ nav li a {
   margin-top: 10px;
 }
 
-.signh3 {
+/* Style for both Sign In and Sign Up buttons */
+#sign-in,
+#sign-up {
   padding-left: 15px;
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -116,31 +129,12 @@ nav li a {
   font-size: 16px;
 }
 
-/* This allows the first sign in link to disappear */
-.signin {
-  display: none;
-}
-
-.sign_up {
-  padding-left: 19px;
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  background-color: rgb(36, 36, 36);
-  border: 0;
-  text-align: left;
-  font-size: 16px;
-  height: 30px;
-}
-
-.signup {
-  display: none;
-}
 /* any class that you don't want shown on page load need display none - currently this includes sign in and sign up forms */
 .sign-in,
 .sign-up{
   display: none;
 }
-/* use this class to make soemthing visible via js */
+/* use this class to make something visible via js */
 .toggle-visible{
   display: block;
 }

@@ -18,36 +18,12 @@
 	<button id="sign-in">Sign In</button>
 	<button id="sign-up">Sign Up</button>
 
-<<<<<<< HEAD
-<button class="sign_up">Sign Up</button>
-<form action='/login' class="signup" method="post">
-	<div id="form">
-	  <%= form_for @user do |f| %>
-	    <p>
-	      <%= f.text_field :username, :placeholder => "Username", :autofocus => true, :class => 'field-short' %>
-	    </p>
-	    <p>
-	      <%= f.email_field :email, :placeholder => "Email Address" %>
-	    </p> 
-	    <p>
-	      <%= f.password_field :password, :placeholder => "Password", :class => 'field-short' %>
-	    </p>
-	    <p>
-	      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => 'field-short' %>
-	    </p>
-
-		<div class="signh3">
-	    <p><%= f.submit "Sign Up" %></p>
-		</div>
-	  <% end %>
-=======
 	<div class="sign-in">
 		<%= form_tag login_path, :method => :post do %>
 		  <%= text_field_tag :username, params[:username], :placeholder => "username" %>
 		  <%= password_field_tag :password, :placeholder => "password" %>
 		  <%= submit_tag "Sign in" %>
 		<% end %>
->>>>>>> ea107056ea5e892a824b32f896143fbb2ad266d5
 	</div>
 
 	<div class="sign-up">
@@ -62,6 +38,14 @@
 			<%= f.submit "Sign Up" %>
 		<% end %>
 	</div>
+
+	<div class="info_text">
+        <h2>Welcome to Loople!</h2> 
+        <p>You are currently in demo mode. Loops can be created however you will not be able to save your work.</p>
+        <p>To save your loops, simply Sign Up above and get creative! </p>
+        <h2>Instructions</h2> 
+        <p>Use keys A-Z to trigger sounds and create a loop.</p>
+    </div>
 
 <% end %>
 
