@@ -32,9 +32,10 @@ $(document).ready(function(){
   counterMain = setInterval(function(){
     if (countBar >= 200){
       countBar = 0;
+      //loadBlips()
     };
     // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
-    playBlips();
+    playBlips(countBar);
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
@@ -50,8 +51,13 @@ $(document).ready(function(){
   // KH ohhhkay so here we need to log keypress KEY and TIME so we can plot it on the screen
   // KH This saves the Key and curretn Time to the array - it then fires plotKey to draw it on screen
   makeKey = function(key){
-    loopKeys.push(key);
-    loopTimes.push(countBar);
+    // check to see if there's already a key saved at this time
+    if (!loopKeysTimes[countBar]){
+      loopKeysTimes[countBar] = []
+    }
+    // add key to time value within hash
+    loopKeysTimes[countBar].push(key);
+    // call the function to show the key
     plotKey(key, countBar);
   };
 
@@ -63,7 +69,7 @@ $(document).ready(function(){
   // KH create a plotCount variable so each blip can have a unique ID
   var plotCount = 0;
   var plotKey = function(key, time){
-    var $keyBlip = $('<div class="key-blip kb' + key + '" id="' + loopKeys.length + '" />').css({
+    var $keyBlip = $('<div class="key-blip kb' + key + '" id="blip' + key + 'at' + time + '" />').css({
       left: ($loopWindow.width() / 200) * time + 'px',
       top: ($gridVert) * key + 'px'
     }).appendTo($loopWindow);
@@ -83,18 +89,27 @@ $(document).ready(function(){
     $loopName.val('');
     // KH get the loop colour
     var colour = $loopColour.val().replace('#', '');
-    // KH get the loop keystrokes array
-    var keyStrokes = loopKeyTime;
     // KH make Ajax goodness happen
-    loopAjax.createLoop(name, colour, loopKeys, loopTimes);
+    loopAjax.createLoop(name, colour, loopKeysTimes);
   });
 
   // KH the listener for removing objects from the window
   $loopWindow.on('click', '.key-blip', function(event) {
     event.preventDefault();
-    // KH Delete the blip from the arrays
-    loopKeys[(this.id - 1)] = '';
-    loopTimes[(this.id - 1)] = '';
+    // KH Delete the blip from the hash by getting it's id which is the format of
+    // blipKEYatTime so we need to firstly get those two values out of the string 
+    console.log(this.id);
+    removeKey = (this.id).split('at')[0].replace('blip', '');
+    removeTime = (this.id).split('at')[1];
+
+    // KH now remove that key from the correct array inside the hash
+    loopKeysTimes[removeTime].splice($.inArray(removeKey, loopKeysTimes[removeTime]),1);
+    // KH check to see if that hash value is now empty, if it is, delete it
+    if (loopKeysTimes[removeTime].length == 0){
+      delete loopKeysTimes[removeTime];
+    };
+
+    console.log(loopKeysTimes);
     // KH Delete the blip from the screen
     this.remove();
   })
