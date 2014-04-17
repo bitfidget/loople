@@ -1,6 +1,6 @@
 var metronome = function(){
 	if(countBar % (200/steps)  == 0){
-		console.log(countBar)
+		
 	}
 }
 	
