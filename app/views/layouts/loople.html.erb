@@ -20,8 +20,12 @@
       </ul>
     </nav>
 
-    <%= yield %>   
-    
+    <%= yield %> 
+  <!--The user can modify the tempo -->
+    <label>BPM</label>
+
+    <input type="text" name = "bpm" id="bpm" value="120"/>
+    <input type="button" name="bpmPlus" id="bpmPlus"
   </div>
   <!-- anim window is the animation stage, loop window is the loop stage, loop head is the animated bar that sweeps accross in time -->
   <div id="anim-window">

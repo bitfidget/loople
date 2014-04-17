@@ -38,7 +38,8 @@ $(document).ready(function(){
     // KH animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
-    });    
+    }); 
+    metronome();   
     countBar++;
   }, 
   loopTime/200);
