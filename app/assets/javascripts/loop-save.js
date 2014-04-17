@@ -17,4 +17,17 @@ var loopAjax = {
       console.log('fart');
     });
   }
+  // loadLoop: function(loopID) {
+  //   console.log('ajax load' + loopID);
+  //   $.ajax({
+  //     url: '/loops',
+  //     type: 'GET',
+  //     dataType: 'json',
+  //     data: {loop: { name: loopName, colour: loopColour }, loopKeys: loopKeys, loopTimes: loopTimes}
+  //   }).done(function(){
+  //     console.log('loop created');
+  //   }).fail(function(){
+  //     console.log('fart');
+  //   });
+  // }
 }

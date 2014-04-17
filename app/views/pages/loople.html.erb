@@ -15,9 +15,31 @@
 	<nav id="loops-saved">
     <ul>
 			<% @current_user.loops.each do |loop| %>
+				
+				<!-- things gonna get funky here -->
+				<script type="text/javascript">
+					// create an empty array for the loop
+					var loopids_<%= loop.id %> = [];
+					var loopkeys_<%= loop.id %> = [];
+					var looptimes_<%= loop.id %> = [];
+				</script>
+
+				<% loop.keystrokes.each do |key| %>
+					<script type="text/javascript">
+						// populate the arrays with the values
+						loopids_<%= loop.id %>.push(<%= key.id %>);
+						loopkeys_<%= loop.id %>.push('<%= key.key %>');
+						looptimes_<%= loop.id %>.push(<%= key.time %>);
+
+						console.log(loopkeys_<%= loop.id %>)
+						console.log(looptimes_<%= loop.id %>)		
+
+					</script>
+				<% end %>
+				
 				<li>
 					<a href="#" id="loop_<%= loop.id %>" class="load-loop" style="background: #<%= loop.colour %>">
-						<span class="queue">queue</span>
+						<span class="queue">cue</span>
 						<%= loop.name %>
 					</a>
 				</li>
@@ -34,8 +56,8 @@
 
 <% unless @current_user %>
 	
-	<button id="sign-in">Sign In</button>
-	<button id="sign-up">Sign Up</button>
+	<button id="sign-in" class="toggle-visibile">Sign In</button>
+	<button id="sign-up" class="toggle-visibile">Sign Up</button>
 
 	<div class="sign-in">
 		<%= form_tag login_path, :method => :post do %>
