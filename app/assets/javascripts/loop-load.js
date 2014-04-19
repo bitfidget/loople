@@ -1,23 +1,38 @@
 //------------------------------
-// to load a saved loop via ajax
+// to load a saved loops via ajax
 //------------------------------
 
-var $loadLoops = 0;
+loadLoops = function(){
+  // ajax to retrieve all of the loops belonging to current user
+  $.ajax({
+    url: '/loops/load',
+    type: 'GET',
+    dataType: 'json'
+  }).done(function(loops_to_load){
+    console.log(loops_to_load)
+    $.each(loops_to_load, function(index, loop){
+
+
+    }
+
+
+    .each(tasks, function (task) {
+      task.created_at = moment(task.created_at).calendar();
+      task.updated_at = moment(task.updated_at).calendar();
+      var html = task_html(task);
+      if (task.complete) {
+        $(html).appendTo('#completed');
+      } else {
+        $(html).appendTo('#tasks');
+      }
+    });
+  }).fail(function(){
+    console.log('fart - load loops failed');
+  });
+};
 
 $(document).ready(function(){
-  // KH listen for clicks on the loops saved nav
-  $loadLoops = $('#loops-saved');
-  $loadLoops.on('click' , '.load-loop', function(event){
-    event.preventDefault();
-    // KH get the id of the button clicked
-    var loopToLoad = $(this).attr('id');
-    // KH remove 'loop_' from that string
-    loopID = loopToLoad.replace('loop_', '');
-    // KH now you have the ID of the Loop object you need to load, send it to the ajax function
-    loadKeys = ('loopKeys_' + loopID)
-    console.log(loadKeys)
-
-  });
+  loadLoops()
 });
 
 
