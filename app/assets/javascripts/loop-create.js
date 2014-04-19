@@ -1,3 +1,7 @@
+  // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
+  // KH lets create a variable for the time so we can change it easily later
+  var loopTime = 2000
+  
 $(document).ready(function(){
   // KH the first dom elements we need to mess with will be the window and playhead
   var $loopWindow = $('#loop-window');
@@ -23,28 +27,27 @@ $(document).ready(function(){
 // The global timer function - all LOOP starts here
 //-------------------------------------------------
 
-  // KH Time that sets the tempo of the loop. 120bpm = 2 beats per second, so one bar of 4 beats should be 2000s of a second
-  // KH lets create a variable for the time so we can change it easily later
-  var loopTime = 2000
-
   // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
   // KH at 0 the counter fires-off the playbar animation (moveHead)
   counterMain = setInterval(function(){
-    if (countBar >= 200){
-      countBar = 0;
-      //loadBlips()
-    };
-    // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
-    playBlips(countBar);
-    // KH animate the playbar
-    $loopHead.css({
-      left: ($loopWindow.width() / 200) * countBar + 'px'
-    }); 
-    metronome();
+     if (countBar >= 200){
+       countBar = 0;
+       //loadBlips()
+     };
+     // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
+     playBlips(countBar);
+     // KH animate the playbar
+     $loopHead.css({
+       left: ($loopWindow.width() / 200) * countBar + 'px'
+     }); 
+     metronome();
 
-    countBar++;
-  }, 
-  loopTime/200);
+     countBar++;
+      //console.log(countBar)
+   }, 
+   (loopTime/200));
+   // console.log(loopTime)
+  
 
 //-------------------------------------------------
 // Save each keystroke (key and time) to the arrays
@@ -115,4 +118,6 @@ $(document).ready(function(){
     // KH Delete the blip from the screen
     this.remove();
   })
+
 }); // end of document.ready function
+
