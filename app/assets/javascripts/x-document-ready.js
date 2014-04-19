@@ -81,8 +81,10 @@ $(document).ready(function(){
   // Load a saved loop
   $loopNav.on('click', '.load-loop', function(){
     var id = $(this).closest('li').data('id');
+    $(this).closest('li').addClass('cued-loop');
     console.log('play loop ' + id);
-    loadLoop(id)
+    cuedLoop = true;
+    nextLoop = id;
   });
 
   // delete a saved loop

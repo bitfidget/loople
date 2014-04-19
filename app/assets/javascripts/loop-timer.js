@@ -10,7 +10,9 @@ var timerStart = function(){
   counterMain = setInterval(function(){
     if (countBar >= 200){
       countBar = 0;
-      // loadBlips()
+      if (cuedLoop === true){
+        loadLoop(nextLoop);
+      };
     };
     // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
     playBlips(countBar);

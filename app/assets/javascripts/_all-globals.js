@@ -21,6 +21,8 @@ var $loopNav = 0;
 var loopKeysTimes = {};
 var newKeysTimes = {};
 var savedKeysTimes = {};
+var cuedLoop = false;
+var nextLoop = 0;
 
 // KH the global timer - everythign hangs off this variable!
 var countBar = 0;
