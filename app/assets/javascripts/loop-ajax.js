@@ -17,12 +17,13 @@ var loopAjax = {
 
     // if ajax is a success do the following
     .done(function(){
+      loopAjax.loadLoops();
       console.log('loop created');
     })
 
     // if ajax fails, fart
     .fail(function(){
-      console.log('fart');
+      console.log('fart - loop save failed');
     });
   },
 
@@ -36,11 +37,8 @@ var loopAjax = {
 
     // if ajax is a success do the following
     .done(function(loops_to_load){
+      $loopNav.html('')
       $.each(loops_to_load, function(index, loop){
-        console.log(this.name)
-        console.log(this.id)
-        console.log(this.modified)
-        console.log(this.time)
         var navItem = "<li data-id=" + this.id + "><a href='#' class='delete-loop'>X</a><a href='#' class='load-loop'><span class='queue'>cue</span>" + this.name + "</a></li>"
         $loopNav.append(navItem);
       })
@@ -50,6 +48,18 @@ var loopAjax = {
     .fail(function(){
       console.log('fart - load loops failed');
     });
+  },
+
+  deleteLoop: function(loopID){
+    // ajax to delete a loop from the db
+    $.ajax({
+      url: 'loops/destroy',
+      type: 'DELETE',
+      dataType: 'json',
+      data: {id: loopID} 
+    }).done(function(){
+      console.log('loop deleted')
+    })
   }
 };
 

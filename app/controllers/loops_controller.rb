@@ -64,10 +64,12 @@ class LoopsController < ApplicationController
   end
 
   def index
+    # not currently used but may be handy for admin
     @loops = Loop.all
   end
 
   def show
+    # not currently used but may be handy for admin
     @loop = Loop.find(params[:id])
   end
 

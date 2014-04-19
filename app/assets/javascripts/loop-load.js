@@ -10,7 +10,9 @@ $(document).ready(function(){
     console.log('play ' + id)
   });
   $loopNav.on('click', '.delete-loop', function(){
-    var id = $(this).closest('li').data('id')
-    console.log('delete ' + id)
+    var id = $(this).closest('li').data('id');
+    $(this).closest('li').fadeOut(function(){
+      loopAjax.deleteLoop(id);
+    });
   });
 });
