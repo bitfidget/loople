@@ -2,6 +2,8 @@
 /* CG: I REMOVED ALL OLD ANIMATIONS HERE, WE SHOULD DELETE THIS FILE AS WE'RE
 NOT USING IT ANYMORE. */
 
+var steps = 4
+
 $(document).ready(function(){
 	/*CG: declaring variables representing the full size of the window.
 	Makes it easier to set position of shapes later on and helps if the user 
@@ -12,7 +14,7 @@ $(document).ready(function(){
 	winHeight = window.innerHeight;	
 
 	//CG: Creates a grid on the screen
-	var steps = 4
+	
 	var grid = ($animWindow.width() / steps);
 	console.log(grid)	
 	// var $tempoGrid = $('.tempoGrid');
