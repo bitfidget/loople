@@ -21,6 +21,8 @@ loadLoop = function(id){
     };
   });
   // remove the cued class from the button
+  $('.current-loop').removeClass('current-loop');
+  $('.cued-loop').addClass('current-loop');
   $('.cued-loop').removeClass('cued-loop');
   console.log('wtf??')
   // switch cuedLoop back

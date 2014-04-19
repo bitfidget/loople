@@ -54,6 +54,7 @@ body {
   position: absolute;
   display: block;
   z-index: -10;
+  overflow: hidden;
 }
 
 /* this displays the left column - needs to remain as 15% width or the other windows will overlap */
