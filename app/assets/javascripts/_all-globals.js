@@ -19,6 +19,8 @@ var $loopNav = 0;
 // KH all keypresses are saved in the loopKeysTimes hash
 // KH the time is the key, and the keys played are the value
 var loopKeysTimes = {};
+var newKeysTimes = {};
+var savedKeysTimes = {};
 
 // KH the global timer - everythign hangs off this variable!
 var countBar = 0;

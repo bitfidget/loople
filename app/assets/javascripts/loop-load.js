@@ -1,4 +1,10 @@
 //------------------------------
-// to load a saved loops via ajax just the button listeners are here for now...
+// chnage the current loop hash
 //------------------------------
 
+loadLoop = function(id){
+  console.log(loopKeysTimes);
+  loopKeysTimes = savedKeysTimes[id];
+  console.log(loopKeysTimes);
+  console.log(loopKeysTimes.name);
+}

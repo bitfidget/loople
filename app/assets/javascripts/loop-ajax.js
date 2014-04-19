@@ -42,10 +42,12 @@ var loopAjax = {
     })
 
     // if ajax is a success do the following
-    .done(function(loops_to_load){
-      $loopNav.html('')
-      $.each(loops_to_load, function(index, loop){
+    .done(function(savedLoops){
+      $loopNav.html("<li data-id='0'><a href='#' class='load-loop'><span class='queue'>cue</span>Current Loop</a></li>")
+      $.each(savedLoops, function(index, loop){
         var navItem = "<li data-id=" + this.id + "><a href='#' class='delete-loop'>X</a><a href='#' class='load-loop'><span class='queue'>cue</span>" + this.name + "</a></li>"
+        savedKeysTimes[this.id] = this;
+        console.log('saved loops = ' + savedKeysTimes[this.id].name)
         $loopNav.append(navItem);
       })
     })

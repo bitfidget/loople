@@ -46,11 +46,11 @@ class LoopsController < ApplicationController
       # start to populate the keystrokes for this hash/loop
       loop.keystrokes.each do |key|
         # check to see if we have anything at this time already and if not - create new hash
-        if !loop_detail[key.time]
-          loop_detail[key.time] = Array.new
+        if !loop_detail[key.time.to_i]
+          loop_detail[key.time.to_i] = Array.new
         end
         # append the hashes with all the keys
-        loop_detail[key.time] << key.key
+        loop_detail[key.time.to_i] << key.key.to_i
       end # end of iteration through keystrokes
       loops_to_load << loop_detail
     end # end of iteration through loops

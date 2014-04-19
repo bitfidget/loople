@@ -78,14 +78,18 @@ $(document).ready(function(){
 // the listeners on the saved loops navigation:
 //------------------------------------------------------------------------------------------------------------  
   
-  
+  // Load a saved loop
   $loopNav.on('click', '.load-loop', function(){
-    var id = $(this).closest('li').data('id')
-    console.log('play ' + id)
+    var id = $(this).closest('li').data('id');
+    console.log('play loop ' + id);
+    loadLoop(id)
   });
+
+  // delete a saved loop
   $loopNav.on('click', '.delete-loop', function(){
     var id = $(this).closest('li').data('id');
     $(this).closest('li').fadeOut(function(){
+      console.log('delete loop ' + id);
       loopAjax.deleteLoop(id);
     });
   });
