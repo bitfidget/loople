@@ -1,11 +1,14 @@
-$(document).ready(function () {
-
-});
-
+// ----------------------------------------------------------------------------------
 // KH create an object to deal with all Ajax Loop actions
+// ----------------------------------------------------------------------------------
+
 var loopAjax = {
+
+// ----------------------------------------------------------------------------------
+// ajax to save the new loop to the db
+// ----------------------------------------------------------------------------------
+
   createLoop: function(loopName, loopColour, loopKeysTimes){
-    // ajax to save the new loop to the db
     console.log(loopKeysTimes);
     $.ajax({
       url: '/loops',
@@ -27,8 +30,11 @@ var loopAjax = {
     });
   },
 
-  loadLoops: function(){
-    // ajax to retrieve all of the loops belonging to current user
+// ----------------------------------------------------------------------------------
+// ajax to retrieve all of the loops belonging to current user
+// ----------------------------------------------------------------------------------
+
+  loadLoops: function(){  
     $.ajax({
       url: '/loops/load',
       type: 'GET',
@@ -50,8 +56,11 @@ var loopAjax = {
     });
   },
 
+// ----------------------------------------------------------------------------------
+// ajax to delete a loop from the db
+// ----------------------------------------------------------------------------------
+
   deleteLoop: function(loopID){
-    // ajax to delete a loop from the db
     $.ajax({
       url: 'loops/destroy',
       type: 'DELETE',

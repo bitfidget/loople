@@ -1,4 +1,9 @@
+// ----------------------------------------------------------------------------------
 // KH Playback the saved blips on screen
+// compares all times in the hash to the current value of countbar and plays the sound
+// via blipPress() and also adds the css style to the correct blip on screen
+// ----------------------------------------------------------------------------------
+
 var playBlips = function(countBar){
   // grab the loopKey (Keys) that has the same time as the current time (countBar)
   var keys = loopKeysTimes[countBar];
