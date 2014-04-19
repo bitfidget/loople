@@ -12,6 +12,11 @@ $(document).ready(function(){
   $column = $('#column');
   $loopHead = $('#loop-head');
 
+  $startBpm = $('#startBpm');
+  $bpmPlus = $('#bpmPlus');
+  $bpmMinus = $('#bpmMinus');
+  $bpm = $('#bpm');
+
   // add some dimensions according to window size
   $loopWindow.css({
     height: winHeight + 'px'
@@ -95,6 +100,47 @@ $(document).ready(function(){
       loopAjax.deleteLoop(id);
     });
   });
+
+//------------------------------------------------------------------------------------------------------------
+// ctivates the metronome and changes the html on the button On/Off
+//------------------------------------------------------------------------------------------------------------  
+
+  $startBpm.click(function(){
+    console.log('metro switch')
+    if (metroSound === false){
+      metroSound = true;
+      $startBpm.val("Off");
+    } else {    
+      metroSound = false;
+      $startBpm.val("On");
+    };
+  });
+
+//-----------------------------------------------------------
+// TEMPO chnage
+//-----------------------------------------------------------
+
+  //CG: increases the value of the bpm input everytime the + button is pressed.
+  //The metronome should go faster as
+  $($bpmPlus).click(function(){
+    var $valueBpm = parseInt($bpm.val());
+    loopTime = ((60/($valueBpm/4))*1000);
+    newBpm = $valueBpm + 1;
+    $bpm.val(newBpm);
+    loopTime;
+    console.log(loopTime)
+  });
+
+  //Decreases the value of the bpm and the speed of the metronome.
+  $($bpmMinus).click(function(){
+    var $valueBpm = parseInt($bpm.val());
+    loopTime = ((60/($valueBpm/4))*1000);
+    newBpm = $valueBpm - 1;
+    $bpm.val(newBpm);
+    loopTime;
+    console.log(loopTime)
+  });
+  console.log($bpm)
 
 
 //------------------------------------------------------------------------------------------------------------

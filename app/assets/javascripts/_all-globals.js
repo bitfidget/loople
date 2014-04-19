@@ -36,3 +36,9 @@ var $loadLoops = 0;
 // the number of steps on the metronome/grid
 var steps = 4;
 var grid = 0;
+
+// for the metronome
+var $startBpm = 0;
+var $bpmPlus = 0;
+var $bpmMinus = 0;
+var $bpm = 0;
