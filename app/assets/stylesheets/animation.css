@@ -3,353 +3,173 @@
   border-radius: 50%;
   display: block;
   position: absolute;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
+  opacity: 0;
+  border-style: solid;
 }
 
 /* then add different styles to each different circle */
 
 /*------------------- LETTER Q -----------------------*/
-#circleQ.circle_animationQ{
-  transition: all 0.1s ease;
-  border: solid 1px #CC33FF;
-  opacity: 0.6;
-}
-
-#circleQ.circleQ{
-  border: solid 10px #CC33FF;
-  opacity: 1;
+#circleQ{
+  border-color: #CC33FF;
 }
 
 /*------------------- LETTER W -----------------------*/
 
-#circleW.circle_animationW{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(255,255,0);
-  opacity: 0.6;
-}
-
-#circleW.circleW{
- border: solid 10px rgb(255,255,0);
- opacity: 1;
+#circleW{
+  border-color: rgb(255,255,0);
 }
 
 /*------------------- LETTER E -----------------------*/
 
-#circleE.circle_animationE{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(120,230,0);
-  opacity: 0.6;
-}
-
-#circleE.circleE{
-  border: solid 10px rgb(120,230,0);
-  opacity: 1;
+#circleE{
+  border-color: rgb(120,230,0);
 }
 
 /*------------------- LETTER R -----------------------*/
 
-#circleR.circle_animationR{
-  transition: all 0.1s ease;
-  border: solid 1px #FF66FF;
-  opacity: 0.6;
-}
-
-#circleR.circleR{
- border: solid 10px #FF66FF;
- opacity: 1;
+#circleR{
+  border-color: #FF66FF;
 }
 
 /*------------------- LETTER T -----------------------*/
 
-#circleT.circle_animationT{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(245,0,0);
-  opacity: 0.6;
-}
-
-#circleT.circleT{
- border: solid 10px rgb(245,0,0);
- opacity: 1;
+#circleT{
+  border-color: rgb(245,0,0);
 }
 
 /*------------------- LETTER Y -----------------------*/
 
-#circleY.circle_animationY{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(214,24,111);
-  opacity: 0.6;
-}
-
-#circleY.circleY{
- border: solid 10px rgb(214,24,111);
- opacity: 1;
+#circleY{
+  border-color: rgb(214,24,111);
 }
 
 /*------------------- LETTER U -----------------------*/
 
-#circleU.circle_animationU{
+#circleU{
   transition: all 0.1s ease;
-  border: solid 1px rgb(244,0,202);
-  opacity: 0.6;
-}
-
-#circleU.circleU{
- border: solid 10px rgb(244,0,202);
- opacity: 1;
+  border-color: rgb(244,0,202);
 }
 
 /*------------------- LETTER I -----------------------*/
 
-#circleI.circle_animationI{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(128,0,255);
-  opacity: 0.6;
-}
-
-#circleI.circleI{
- border: solid 10px rgb(128,0,255);
- opacity: 1;
+#circleI{
+  border-color: rgb(128,0,255);
 }
 
 /*------------------- LETTER O-----------------------*/
 
-#circleO.circle_animationO{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(79,3,202);
-  opacity: 0.6;
-}
-
-#circleO.circleO{
- border: solid 10px rgb(79,3,202);
- opacity: 1;
+#circleO{
+  border-color: rgb(79,3,202);
 }
 
 /*------------------- LETTER P -----------------------*/
 
-#circleP.circle_animationP{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(28,127,255);
-  opacity: 0.6;
-}
-
-#circleP.circleP{
- border: solid 10px rgb(28,127,255);
- opacity: 1;
+#circleP{
+  border-color: rgb(28,127,255);
 }
 
 /*------------------- LETTER A -----------------------*/
 
-#circleA.circle_animationA{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(43,190,255);
-  opacity: 0.6;
-}
-
-#circleA.circleA{
- border: solid 10px rgb(43,190,255);
- opacity: 1;
+#circleA{
+  border-color: rgb(43,190,255);
 }
 
 /*------------------- LETTER S -----------------------*/
 
-#circleS.circle_animationS{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(60,255,187);
-  opacity: 0.6;
-}
-
-#circleS.circleS{
- border: solid 10px rgb(60,255,187);
- opacity: 1;
+#circleS{
+  border-color: rgb(60,255,187);
 }
 
 /*------------------- LETTER D -----------------------*/
 
-#circleD.circle_animationD{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(61,255,50);
-  opacity: 0.6;
-}
-
-#circleD.circleD{
- border: solid 10px rgb(61,255,50);
- opacity: 1;
+#circleD{
+  border-color: rgb(61,255,50);
 }
 
 /*------------------- LETTER F -----------------------*/
 
-#circleF.circle_animationF{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(43,159,0);
-  opacity: 0.6;
-}
-
-#circleF.circleF{
- border: solid 10px rgb(43,159,0);
- opacity: 1;
+#circleF{
+  border-color: rgb(43,159,0);
 }
 
 /*------------------- LETTER G -----------------------*/
 
-#circleG.circle_animationG{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(120,230,0);
-  opacity: 0.6;
-}
-
-#circleG.circleG{
- border: solid 10px rgb(120,230,0);
- opacity: 1;
+#circleG{
+  border-color: rgb(120,230,0);
 }
 
 /*------------------- LETTER H -----------------------*/
 
-#circleH.circle_animationH{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(178,253,0);
-  opacity: 0.6;
-}
-
-#circleH.circleH{
- border: solid 10px rgb(178,253,0);
- opacity: 1;
+#circleH{
+  border-color: rgb(178,253,0);
 }
 
 /*------------------- LETTER J -----------------------*/
 
-#circleJ.circle_animationJ{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(28,127,255);
-  opacity: 0.6;
-}
-
-#circleJ.circleJ{
- border: solid 10px rgb(28,127,255);
- opacity: 1;
+#circleJ{
+  border-color: rgb(28,127,255);
 }
 
 /*------------------- LETTER K -----------------------*/
 
-#circleK.circle_animationK{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(43,190,255);
-  opacity: 0.6;
-}
-
-#animated-circle.circleK{
- border: solid 10px rgb(43,190,255);
- opacity: 1;
+#circleK{
+  border-color: rgb(43,190,255);
 }
 
 /*------------------- LETTER L -----------------------*/
 
-#circleL.circle_animationL{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(60,255,187);
-  opacity: 0.6;
-}
-
-#circleL.circleL{
- border: solid 10px rgb(60,255,187);
- opacity: 1;
+#circleL{
+  border-color: rgb(60,255,187);
 }
 
 /*------------------- LETTER Z -----------------------*/
 
-#circleZ.circle_animationZ{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(0,0,0);
-  opacity: 0.6;
-}
-
-#circleZ.circleZ{
- border: solid 10px rgb(0,0,0);
- opacity: 1;
+#circleZ{
+  border-color: rgb(0,0,0);
 }
 
 /*------------------- LETTER X -----------------------*/
 
-#circleX.circle_animationX{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(232,233,232);
-  opacity: 0.6;
-}
-
-#circleX.circleX{
- border: solid 10px rgb(232,233,232);
- opacity: 1;
+#circleX{
+  border-color: rgb(232,233,232);
 }
 
 /*------------------- LETTER C -----------------------*/
 
-#circleC.circle_animationC{
-  transition: all 0.1s ease;
-  border: solid 1px rgb(255,255,255);
-  opacity: 0.6;
-}
-
-#circleC.circleC{
- border: solid 10px rgb(255,255,255);
- opacity: 1;
+#circleC{
+  border-color: rgb(255,255,255);
 }
 
 /*------------------- LETTER V -----------------------*/
 
-#circleV.circle_animationV{
-  transition: all 0.1s ease;
-  border: solid 1px #669999;
-  opacity: 0.6;
-}
-
-#circleV.circleV{
- border: solid 10px #669999;
- opacity: 1;
+#circleV{
+  border-color: #669999;
 }
 
 /*------------------- LETTER B -----------------------*/
 
-#circleB.circle_animationB{
-  transition: all 0.1s ease;
-  border: solid 1px #00CC99;
-  opacity: 0.6;
-}
-
-#circleB.circleB{
- border: solid 10px #00CC99;
- opacity: 1;
+#circleB{
+  border-color: #00CC99;
 }
 
 /*------------------- LETTER N -----------------------*/
 
-#circleN.circle_animationN{
-  transition: all 0.1s ease;
-  border: solid 1px #66FFFF;
-  opacity: 0.6;
-}
-
-#circleN.circleN{
- border: solid 10px #66FFFF;
- opacity: 1;
+#circleN{
+  border-color: #66FFFF;
 }
 
 /*------------------- LETTER M -----------------------*/
 
-#circleM.circle_animationM{
-  transition: all 0.1s ease;
-  border: solid 1px #99FF66;
-  opacity: 0.6;
-}
-
-#circleM.circleM{
- border: solid 10px #99FF66;
- opacity: 1;
+#circleM{
+  border-color: #99FF66;
 }
 
 .gridLine{
   width: 1px;
   background-color: grey;
   position: absolute;
-  opacity: 0.6;
 }
 
 /*--------------------- BPM BUTTONS -------------------*/
@@ -378,4 +198,13 @@
   margin-left: 40px;
 }
 
+/* this is the style that is applied when circle is played first time */
+.circlelive_visible{
+  opacity: 1;
+  border-width: 1px;
+}
+/* this is the style that is applied when circle is played */
+.circlelive{
+  border-width: 10px;
+}
 

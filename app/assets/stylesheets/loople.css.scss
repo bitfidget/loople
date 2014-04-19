@@ -114,21 +114,19 @@ nav ul {
 }
 
 nav ul li {
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #111;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  width: 100%;
 }
 
 nav ul li:first-child {
   border-top: none;
 }
-nav ul li:last-child {
-  border-bottom: none;
-}
 
 nav a {
   text-decoration: none;
-  line-height: 2.5;
-  padding-left: 17px;
+  line-height: 250%;
+  padding-left: 15px;
   color: white;
   display: block;
   transition: all .5s ease;
@@ -136,7 +134,7 @@ nav a {
 }
 
 nav a:hover{
-  background: rgba(255,255,255,0.1) !important;
+  background: rgba(255,255,255,0.1);
 }
 
 
@@ -165,10 +163,7 @@ nav a:hover{
 /* all of the following is just the playhead */
 #loop-head {
   position: absolute;
-  left: 0;
-  border-right: solid 1px rgba(0,255,0,0.6);
-  border-left: solid 1px rgba(0,255,0,0.8);
-  box-shadow: 0px 1px 5px 6px rgba(80,255,80,0.2);
+  border-right: solid 4px $looplBlue;
   height: 100%;
   width: 1px;
   display: block;
@@ -179,7 +174,7 @@ nav a:hover{
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.4);
   display: block;
   transition: all .1s ease;
 }
@@ -190,11 +185,7 @@ nav a:hover{
 }
 
 .key-blip.blipPlay{
-  background: rgba(0,255,0,1);
-  -moz-box-shadow:    0px 1px 5px 6px rgba(80,255,80,0.2);
-  -webkit-box-shadow: 0px 1px 5px 6px rgba(80,255,80,0.2);
-  box-shadow:         0px 1px 5px 6px rgba(80,255,80,0.2);
-  border-radius: 50%;
+  background: $looplBlue;
 }
 
 
