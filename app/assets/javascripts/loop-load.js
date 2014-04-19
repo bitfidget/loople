@@ -1,24 +1,28 @@
 //------------------------------
-// to load a saved loop via ajax
+// chnage the current loop hash
 //------------------------------
 
-var $loadLoops = 0;
-
-$(document).ready(function(){
-  // KH listen for clicks on the loops saved nav
-  $loadLoops = $('#loops-saved');
-  $loadLoops.on('click' , '.load-loop', function(event){
-    event.preventDefault();
-    // KH get the id of the button clicked
-    var loopToLoad = $(this).attr('id');
-    // KH remove 'loop_' from that string
-    loopID = loopToLoad.replace('loop_', '');
-    // KH now you have the ID of the Loop object you need to load, send it to the ajax function
-    loadKeys = ('loopKeys_' + loopID)
-    console.log(loadKeys)
-
+loadLoop = function(id){
+  // switch out loop arrays
+  if (id == 0){
+    loopKeysTimes = newKeysTimes;
+  } else {
+    loopKeysTimes = savedKeysTimes[id];
+  };
+  // remove the old blips on screen
+  $('.key-blip').remove();
+  // draw the blips for the new loop
+  $.each(loopKeysTimes, function(time, keys){
+    if (!( (time == 'name') || (time == 'modified') || (time == 'modified') ) ){
+      $.each(keys, function(index, key){
+        // call the function to show the key
+        plotKey(key, time);
+      });
+    };
   });
-});
-
-
-// need to make the button clicked get its ID so we can load the loop
+  // remove the cued class from the button
+  $('.cued-loop').removeClass('cued-loop');
+  console.log('wtf??')
+  // switch cuedLoop back
+  cuedLoop = false;
+};

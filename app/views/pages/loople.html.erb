@@ -7,43 +7,13 @@
 <!-- the save loop button and field-->
 	<form id="loop-save">
 	  <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
-	  <input name="loop-colour" id="loop-colour" type="color" />
 	  <button>Save Loop</button>
 	</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
 	<nav id="loops-saved">
-    <ul>
-			<% @current_user.loops.each do |loop| %>
-				
-				<!-- things gonna get funky here -->
-				<script type="text/javascript">
-					// create an empty array for the loop
-					var loopids_<%= loop.id %> = [];
-					var loopkeys_<%= loop.id %> = [];
-					var looptimes_<%= loop.id %> = [];
-				</script>
-
-				<% loop.keystrokes.each do |key| %>
-					<script type="text/javascript">
-						// populate the arrays with the values
-						loopids_<%= loop.id %>.push(<%= key.id %>);
-						loopkeys_<%= loop.id %>.push('<%= key.key %>');
-						looptimes_<%= loop.id %>.push(<%= key.time %>);
-
-						// console.log(loopkeys_<%= loop.id %>)
-						// console.log(looptimes_<%= loop.id %>)		
-
-					</script>
-				<% end %>
-				
-				<li>
-					<a href="#" id="loop_<%= loop.id %>" class="load-loop" style="background: #<%= loop.colour %>">
-						<span class="queue">cue</span>
-						<%= loop.name %>
-					</a>
-				</li>
-			<% end %>
+    <ul id="loop-nav">
+      <!-- this gets populetd by ajax -->
 		</ul>
   </nav>
 
