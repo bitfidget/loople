@@ -6,14 +6,16 @@ loadLoop = function(id){
   // switch out loop arrays
   if (id == 0){
     loopKeysTimes = newKeysTimes;
+    $loopName.val('')
   } else {
     loopKeysTimes = savedKeysTimes[id];
+    $loopName.val(loopKeysTimes.name)
   };
   // remove the old blips on screen
   $('.key-blip').remove();
   // draw the blips for the new loop
   $.each(loopKeysTimes, function(time, keys){
-    if (!( (time == 'name') || (time == 'modified') || (time == 'modified') ) ){
+    if (!( (time == 'name') || (time == 'id') ) ){
       $.each(keys, function(index, key){
         // call the function to show the key
         plotKey(key, time);
@@ -24,7 +26,7 @@ loadLoop = function(id){
   $('.current-loop').removeClass('current-loop');
   $('.cued-loop').addClass('current-loop');
   $('.cued-loop').removeClass('cued-loop');
-  console.log('wtf??')
+  console.log(loopKeysTimes)
   // switch cuedLoop back
   cuedLoop = false;
 };

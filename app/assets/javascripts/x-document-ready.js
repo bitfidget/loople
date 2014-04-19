@@ -35,21 +35,19 @@ $(document).ready(function(){
 //------------------------------------------------------------------------------------------------------------
 // DOM items to listen to
 //------------------------------------------------------------------------------------------------------------  
-  
-  // save loop fields
-  var $loopName = $('#loop-name');
-  var $loopColour = $('#loop-colour');
 
   // the navigation to load saved loops into
   $loopNav = $('#loop-nav');
- 
 
+  // the nmae field for saving loop
+  $loopName = $('#loop-name');
+ 
 
 //------------------------------------------------------------------------------------------------------------
 // Create listeners for saving loop and removing blips from grid
 //------------------------------------------------------------------------------------------------------------
 
-  $('form#loop-save').on('click', 'button', function(event) {
+  $('form#loop-save').on('click', '.save-loop', function(event) {
     event.preventDefault();
     // KH get the loop name, then clear the field
     var name = $loopName.val();
@@ -87,7 +85,6 @@ $(document).ready(function(){
   $loopNav.on('click', '.load-loop', function(){
     var id = $(this).closest('li').data('id');
     $(this).closest('li').addClass('cued-loop');
-    console.log('play loop ' + id);
     cuedLoop = true;
     nextLoop = id;
   });
@@ -96,10 +93,18 @@ $(document).ready(function(){
   $loopNav.on('click', '.delete-loop', function(){
     var id = $(this).closest('li').data('id');
     $(this).closest('li').fadeOut(function(){
-      console.log('delete loop ' + id);
       loopAjax.deleteLoop(id);
     });
   });
+
+  // clear the current new loop
+  $loopNav.on('click', '.clear-loop', function(){
+    // clear the current hash
+    loopKeysTimes = {};
+    // clear all the blips
+    $('.key-blip').remove();
+  });
+
 
 //------------------------------------------------------------------------------------------------------------
 // ctivates the metronome and changes the html on the button On/Off

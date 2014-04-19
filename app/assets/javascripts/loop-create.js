@@ -7,12 +7,12 @@
 makeKey = function(key){
   
   // check to see if there's already a key saved at this time
-  if (!newKeysTimes[countBar]){
-    newKeysTimes[countBar] = []
+  if (!loopKeysTimes[countBar]){
+    loopKeysTimes[countBar] = []
   }
   
   // add key to time value within hash
-  newKeysTimes[countBar].push(key);
+  loopKeysTimes[countBar].push(key);
   
   // call the function to show the key
   plotKey(key, countBar);

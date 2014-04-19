@@ -9,6 +9,7 @@ var loopAjax = {
 // ----------------------------------------------------------------------------------
 
   createLoop: function(loopName, loopColour, loopKeysTimes){
+
     console.log(loopKeysTimes);
     $.ajax({
       url: '/loops',
@@ -43,12 +44,18 @@ var loopAjax = {
 
     // if ajax is a success do the following
     .done(function(savedLoops){
-      $loopNav.html("<li data-id='0'><a href='#' title='clear loop' class='clear-loop'>C</a><a href='#' class='load-loop'>Current Loop</a></li>")
+      // create a button for the current loop
+      $loopNav.html("<li data-id='0'><a href='#' title='clear loop' class='clear-loop'>C</a><a href='#' class='load-loop'>New Loop</a></li>")
       $.each(savedLoops, function(index, loop){
-        var navItem = "<li data-id=" + this.id + "><a href='#' title='delete loop' class='delete-loop'>X</a><a href='#' class='load-loop'><span class='queue'>cue</span>" + this.name + "</a></li>"
+        // create a button for each saved loop
+        var navItem = "<li data-id=" + this.id + "><a href='#' title='delete loop' class='delete-loop'>X</a><a href='#' class='load-loop'><span class='queue'>cue</span> " + this.name + "</a></li>"
+        // add each saved loop to the hash
         savedKeysTimes[this.id] = this;
-        console.log('saved loops = ' + savedKeysTimes[this.id].name)
+        // add button to the screen
         $loopNav.append(navItem);
+        // delete the info that the hash no longer needs - this has been moved up to the save section
+        // delete savedKeysTimes[this.id].name;
+        // delete savedKeysTimes[this.id].id;
       })
     })
 

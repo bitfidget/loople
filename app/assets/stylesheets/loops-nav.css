@@ -36,6 +36,26 @@ nav #loop-nav li a.delete-loop{
   border-right: 1px solid rgba(255,255,255,0.1);
 }
 
+/* the save button */
+nav li.loop-save a{
+  background: rgba(50,255,50,0.8);
+  padding: 0 10px;
+  color: black;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  display: inline-block;
+}
+#column nav li.loop-save input{
+  background: rgba(50,50,50,0.8);
+  padding: 3px;
+  color: white;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: inline-block;
+  width: 68%;
+  line-height: 190%;
+  margin: 0 auto;
+}
+
 /* general */
 nav #loop-nav li a{
   display: table-cell;

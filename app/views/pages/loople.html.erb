@@ -4,11 +4,18 @@
 
 
 <% if @current_user %>
+
 <!-- the save loop button and field-->
-	<form id="loop-save">
-	  <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
-	  <button>Save Loop</button>
-	</form>
+<form id="loop-save">
+  <nav>
+    <ul>
+      <li class="loop-save">
+        <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
+        <a href="#" class="save-loop" title="save">SAVE</a>
+      </li>
+    </ul>
+  </nav>
+</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
 	<nav id="loops-saved">
@@ -61,11 +68,17 @@
 <% end %>
 
 
-      <!--The user can modify the tempo -->
-    <label>BPM</label>
-
-    <input type="text" name = "bpm" id="bpm" class="bpm" value="120"/>
-    <input type="button" name="bpmPlus" id="bpmPlus"class="bpmPlus" value="+">
-    <input type="button" name="bpmMinus" id="bpmMinus" class="bpmMinus" value="-">
-    <input type="button" name="startBpm" id="startBpm"class="startBpm" value="On">
+<!--The user can modify the tempo -->
+<nav id='controls'>
+  <ul>
+    <li>
+      <input type="button" name="bpmMinus" id="bpmMinus" class="bpmMinus" value="-">
+      <input type="text" name = "bpm" id="bpm" class="bpm" value="120"/><label>BPM</label>
+      <input type="button" name="bpmPlus" id="bpmPlus"class="bpmPlus" value="+">
+    </li>
+    <li>
+      <input type="button" name="startBpm" id="startBpm"class="startBpm" value="On">
+    </li>
+  </ul>
+</nav>
 

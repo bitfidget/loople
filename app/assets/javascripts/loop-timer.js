@@ -8,19 +8,33 @@
 var timerStart = function(){
   countBar = 0;
   counterMain = setInterval(function(){
+
+//-------------------------------------------------
+// Functions that need to happen ONCE every loop
+//-------------------------------------------------   
+
     if (countBar >= 200){
+      // reset the counter
       countBar = 0;
+      // load cued loop if it exists
       if (cuedLoop === true){
         loadLoop(nextLoop);
       };
     };
-    // KH playblips plays each of the saved keys - but this gets called on EVERY step of the loop, it would be nice to refactor this later
+
+//-------------------------------------------------
+// Functions that need to happen EVERY step of loop
+//------------------------------------------------- 
+
+    // Play blips
     playBlips(countBar);
-    // KH animate the playbar
+    // Animate the playbar
     $loopHead.css({
       left: ($loopWindow.width() / 200) * countBar + 'px'
     }); 
+    // Play the metronome
     metronome(countBar);
+    // Keep count
     countBar++;
   }, 
   loopTime/200);

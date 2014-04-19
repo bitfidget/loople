@@ -28,7 +28,10 @@ var nextLoop = 0;
 var countBar = 0;
 
 // KH the global looptime - start with 2000 (120BPM)
-var loopTime = 2000
+var loopTime = 2000;
+
+// save loop fields
+var $loopName = 0;
 
 // KH the load loop button nav
 var $loadLoops = 0;

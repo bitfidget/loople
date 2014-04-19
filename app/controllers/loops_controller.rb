@@ -9,6 +9,12 @@ class LoopsController < ApplicationController
     keysTimes = params[:loopKeysTimes]
     # this is confusing because we are using TIME as the key and KEY as the value, but stick with us, it'll be worth it
     # each time can have multiple keys, so iterate each time value, and save EACh key as an object
+    if keysTimes['name']
+      keysTimes.delete('name')
+    end
+    if keysTimes['id'];
+      keysTimes.delete('id')
+    end
     keysTimes.each do |time, keys|
       keys.each do |key|
         keyStroke = Keystroke.new
@@ -41,8 +47,6 @@ class LoopsController < ApplicationController
       else 
         loop_detail['name'] = loop.name
       end
-      # add modified for on the fly saving
-      loop_detail['modified'] = false
       # start to populate the keystrokes for this hash/loop
       loop.keystrokes.each do |key|
         # check to see if we have anything at this time already and if not - create new hash
