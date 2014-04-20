@@ -13,7 +13,11 @@ Loople::Application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  post '/loops' => 'loops#create' #save loop via ajax
+  get '/loops/load' => 'loops#load' #load all user loops via ajax
+  delete '/loops/destroy' => 'loops#destroy' #delete loop via ajax
   
 
-  resources :users, :loops, :keystrokes, :tracks
+  # resources :users, :loops, :keystrokes, :tracks
 end

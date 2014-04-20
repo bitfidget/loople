@@ -4,24 +4,23 @@
 
 
 <% if @current_user %>
+
 <!-- the save loop button and field-->
-	<form id="loop-save">
-	  <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
-	  <input name="loop-colour" id="loop-colour" type="color" />
-	  <button>Save Loop</button>
-	</form>
+<form id="loop-save">
+  <nav>
+    <ul>
+      <li class="loop-save">
+        <input name="loop-name" id="loop-name" placeholder="Name your loop" required>
+        <a href="#" class="save-loop" title="save">SAVE</a>
+      </li>
+    </ul>
+  </nav>
+</form>
 
 <!-- an empty spot for adding the saved loops as buttons -->
 	<nav id="loops-saved">
-    <ul>
-			<% @current_user.loops.each do |loop| %>
-				<li>
-					<a href="#" id="loop_<%= loop.id %>" class="load-loop" style="background: #<%= loop.colour %>">
-						<span class="queue">queue</span>
-						<%= loop.name %>
-					</a>
-				</li>
-			<% end %>
+    <ul id="loop-nav">
+      <!-- this gets populetd by ajax -->
 		</ul>
   </nav>
 
@@ -34,8 +33,8 @@
 
 <% unless @current_user %>
 	
-	<button id="sign-in">Sign In</button>
-	<button id="sign-up">Sign Up</button>
+	<button id="sign-in" class="toggle-visibile">Sign In</button>
+	<button id="sign-up" class="toggle-visibile">Sign Up</button>
 
 	<div class="sign-in">
 		<%= form_tag login_path, :method => :post do %>
@@ -69,4 +68,17 @@
 <% end %>
 
 
+<!--The user can modify the tempo -->
+<nav id='controls'>
+  <ul>
+    <li>
+      <input type="button" name="bpmMinus" id="bpmMinus" class="bpmMinus" value="-">
+      <input type="text" name = "bpm" id="bpm" class="bpm" value="120"/><label>BPM</label>
+      <input type="button" name="bpmPlus" id="bpmPlus"class="bpmPlus" value="+">
+    </li>
+    <li>
+      <input type="button" name="startBpm" id="startBpm"class="startBpm" value="On">
+    </li>
+  </ul>
+</nav>
 
