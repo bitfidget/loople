@@ -129,21 +129,25 @@ $(document).ready(function(){
   //The metronome should go faster as
   $($bpmPlus).click(function(){
     var $valueBpm = parseInt($bpm.val());
-    loopTime = ((60/($valueBpm/4))*1000);
-    newBpm = $valueBpm + 1;
+    
+    newBpm = $valueBpm + 5;
+    loopTime = Math.floor((60/($valueBpm/4))*1000);
     $bpm.val(newBpm);
-    loopTime;
+
     console.log(loopTime)
+    timerReset()
   });
 
   //Decreases the value of the bpm and the speed of the metronome.
   $($bpmMinus).click(function(){
     var $valueBpm = parseInt($bpm.val());
-    loopTime = ((60/($valueBpm/4))*1000);
-    newBpm = $valueBpm - 1;
+    
+    newBpm = $valueBpm - 5;
+    loopTime = Math.floor((60/($valueBpm/4))*1000);
     $bpm.val(newBpm);
-    loopTime;
+
     console.log(loopTime)
+    timerReset()
   });
   console.log($bpm)
 

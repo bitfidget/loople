@@ -6,7 +6,6 @@
 // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
 
 var timerStart = function(){
-  countBar = 0;
   counterMain = setInterval(function(){
 
 //-------------------------------------------------
@@ -38,4 +37,9 @@ var timerStart = function(){
     countBar++;
   }, 
   loopTime/200);
+}
+
+var timerReset = function(){
+  clearInterval(counterMain);
+  timerStart();
 }

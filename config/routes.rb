@@ -19,5 +19,5 @@ Loople::Application.routes.draw do
   delete '/loops/destroy' => 'loops#destroy' #delete loop via ajax
   
 
-  # resources :users, :loops, :keystrokes, :tracks
+  resources :users, :loops
 end
