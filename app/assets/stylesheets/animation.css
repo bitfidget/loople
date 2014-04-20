@@ -3,7 +3,8 @@
   border-radius: 50%;
   display: block;
   position: absolute;
-  transition: all 0.1s ease;
+  transition: opacity 0.1s linear,
+    border-width 0.1s linear;
   opacity: 0;
   border-style: solid;
 }
@@ -200,11 +201,12 @@
 
 /* this is the style that is applied when circle is played first time */
 .circlelive_visible{
-  opacity: 1;
+  opacity: 0.4;
   border-width: 1px;
 }
 /* this is the style that is applied when circle is played */
 .circlelive{
   border-width: 10px;
+  opacity: 1;
 }
 
