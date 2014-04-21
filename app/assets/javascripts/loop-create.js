@@ -5,17 +5,18 @@
 //-------------------------------------------------
 
 makeKey = function(key){
-  
-  // check to see if there's already a key saved at this time
-  if (!loopKeysTimes[countBar]){
-    loopKeysTimes[countBar] = []
+  if (dontMakeKey === false){
+    // check to see if there's already a key saved at this time
+    if (!loopKeysTimes[countBar]){
+      loopKeysTimes[countBar] = []
+    }
+    
+    // add key to time value within hash
+    loopKeysTimes[countBar].push(key);
+    
+    // call the function to show the key
+    plotKey(key, countBar);
   }
-  
-  // add key to time value within hash
-  loopKeysTimes[countBar].push(key);
-  
-  // call the function to show the key
-  plotKey(key, countBar);
 };
 
 //-------------------------
