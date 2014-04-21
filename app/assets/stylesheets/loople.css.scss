@@ -37,13 +37,30 @@ body {
 }
 
 /* this displays the main loop elements - the playbar and the blips */
-#loop-window {
+#loop-window, #pop-up {
   z-index: 10;
   width: 85%;
   left: 15%;
   top: 0;
   position: absolute;
   display: block;
+}
+
+#pop-up p{
+  color: white;
+  text-align: center
+}
+
+#pop-up{
+  max-width: 60%;
+  margin: 20% 10%;
+  background-color: grey;
+  opacity: 0.8
+}
+
+#pop-up #popupButton{
+  max-width: 100px;
+  margin: 2% 45%;
 }
 
 /* this displays the main amimations - the playbar and the blips */

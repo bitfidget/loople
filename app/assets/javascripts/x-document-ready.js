@@ -66,8 +66,8 @@ $(document).ready(function(){
     // KH Delete the blip from the hash by getting it's id which is the format of
     // blipKEYatTime so we need to firstly get those two values out of the string 
     removeKey = (this.id).split('at')[0].replace('blip', '');
-    console.log("This", removeKey)
     removeTime = (this.id).split('at')[1];
+    console.log(removeKey)
     // KH now remove that key from the correct array inside the hash
     loopKeysTimes[removeTime].splice($.inArray(removeKey, loopKeysTimes[removeTime]),1);
     // KH check to see if that hash value is now empty, if it is, delete it
