@@ -33,37 +33,6 @@
 <!-- ------------------------------------------------- -->
 
 <% unless @current_user %>
-<<<<<<< HEAD
-	
-	<button id="sign-in" class="toggle-visibile">Sign In</button>
-	<button id="sign-up" class="toggle-visibile">Sign Up</button>
-
-	<div class="sign-in">
-		<%= form_tag login_path, :method => :post do %>
-		  <%= text_field_tag :username, params[:username], :placeholder => "username" %>
-		  <%= password_field_tag :password, :placeholder => "password" %>
-		  <%= submit_tag "Sign in" %>
-		<% end %>
-	</div>
-
-	<div class="sign-up">
-		<% if flash[:notice].present? %> 
-	 		<h2><%= flash[:notice] %></h2> 
-		<% end %>
-		<%= form_for @user do |f| %>
-			<%= f.text_field :username, :placeholder => "username" %>
-		  <%= f.email_field :email, :placeholder => "email address" %>
-		  <%= f.password_field :password, :placeholder => "password" %>
-		  <%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
-			<%= f.submit "Sign Up" %>
-		<% end %>
-	</div>
-
-	<div class="info_text">
-        <p>You are currently in demo mode. Loops can be created however you will not be able to save your work.</p>
-        <p>To save your loops, simply Sign Up above and get creative! </p>
-    </div>
-=======
 
   <!-- presents the sign in and sign up buttons and forms -->
   <nav id='user'>
@@ -101,7 +70,6 @@
       </li>
     </ul>
   </nav>
->>>>>>> 97c6a7d723a08c045e275f56fff0bd5f89fd8612
 
 <% end %>
 
