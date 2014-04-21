@@ -72,14 +72,16 @@ body {
 
 #pop-up p{
   color: white;
-  text-align: center
+  font-size: 16px;
 }
 
-#pop-up{
+#pop-up {
   max-width: 60%;
-  margin: 20% 10%;
-  background-color: grey;
-  opacity: 0.8
+  margin: 10% 10%;
+  padding: 0px 15px 0px 15px;
+  background-color: rgb(27, 27, 27);
+  opacity: 0.7;
+  text-align: center;
 }
 
 #pop-up #popupButton{
@@ -146,8 +148,10 @@ body {
   text-align: justify;
 }
 
-.info_text h2 {
+h2 {
   color: rgb(32, 188, 241);
+  background-color: black;
+  opacity: 0.8;
 }
 
 nav ul {
