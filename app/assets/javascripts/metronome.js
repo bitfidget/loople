@@ -52,6 +52,7 @@ var metronome = function(){
   if(countBar % (200/steps)  == 0){
     if (metroSound === true){
       playSound('metro');
+      $startBpm.toggleClass('metro-tic');
     };
   };
 };
