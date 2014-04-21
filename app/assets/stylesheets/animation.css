@@ -3,8 +3,6 @@
   border-radius: 50%;
   display: block;
   position: absolute;
-  transition: opacity 0.1s linear,
-    border-width 0.1s linear;
   opacity: 0;
   border-style: solid;
 }
@@ -175,7 +173,7 @@
 
 /*--------------------- BPM BUTTONS -------------------*/
 
-#bpm.bpm{
+/*#bpm.bpm{
   width: 40px;
   display: inline-block;
   margin-left: 5px;
@@ -197,7 +195,7 @@
   width: 50px;
   display: inline-block;
   margin-left: 40px;
-}
+}*/
 
 /* this is the style that is applied when circle is played first time */
 .circlelive_visible{

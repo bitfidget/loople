@@ -113,13 +113,12 @@ $(document).ready(function(){
 //------------------------------------------------------------------------------------------------------------  
 
   $startBpm.click(function(){
-    console.log('metro switch')
     if (metroSound === false){
       metroSound = true;
-      $startBpm.val("Off");
+      $startBpm.text("turn metronome off");
     } else {    
       metroSound = false;
-      $startBpm.val("On");
+      $startBpm.text("turn metronome on");
     };
   });
 
@@ -130,28 +129,35 @@ $(document).ready(function(){
   //CG: increases the value of the bpm input everytime the + button is pressed.
   //The metronome should go faster as
   $($bpmPlus).click(function(){
-    var $valueBpm = parseInt($bpm.val());
+    var valueBpm = parseInt($bpm.text());
     
-    newBpm = $valueBpm + 5;
-    loopTime = Math.floor((60/($valueBpm/4))*1000);
-    $bpm.val(newBpm);
+    newBpm = valueBpm + 5;
+    loopTime = Math.floor((60/(newBpm/4))*1000);
+    $bpm.text(newBpm);
 
-    console.log(loopTime)
-    timerReset()
+    timerReset();
   });
 
   //Decreases the value of the bpm and the speed of the metronome.
   $($bpmMinus).click(function(){
-    var $valueBpm = parseInt($bpm.val());
+    var valueBpm = parseInt($bpm.text());
     
-    newBpm = $valueBpm - 5;
-    loopTime = Math.floor((60/($valueBpm/4))*1000);
-    $bpm.val(newBpm);
+    newBpm = valueBpm - 5;
+    loopTime = Math.floor((60/(newBpm/4))*1000);
+    $bpm.text(newBpm);
 
-    console.log(loopTime)
-    timerReset()
+    timerReset();
   });
-  console.log($bpm)
+
+//------------------------------------------------------------------------------------------------------------
+// Show insrunctios
+//------------------------------------------------------------------------------------------------------------ 
+
+
+  var $buttonInstructions = $('#button-instructions');
+  $buttonInstructions.on('click', function(){
+    $('#pop-up').fadeIn();
+  })
 
 
 //------------------------------------------------------------------------------------------------------------
@@ -166,5 +172,12 @@ $(document).ready(function(){
 
   // start the timer
   timerStart();
+
+  popUpBox();
+
+  //CG: Closes the pop-up box when the users presses on the close button.
+  $('#popupButton').click(function(){
+    $('#pop-up').fadeOut();
+  });
 
 });

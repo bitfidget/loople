@@ -36,30 +36,6 @@ body {
   font-size: 12px;
 }
 
-#twit {
-  float: left;
-  margin-left: 12px;
-  padding-top: 30px;
-}
-
-.fb-share-button {
-  float: right;
-  margin-right: 12px;
-  padding-top: 30px;
-}
-
-.git img {
-  padding-top: 76px;
-  margin-left: -110px;
-}
-
-.git a {
-  float: right;
-  margin-right: 68px;
-  margin-top: -30px;
-  color: rgb(32, 188, 241);
-}
-
 /* this displays the main loop elements - the playbar and the blips */
 #loop-window, #pop-up {
   z-index: 10;
@@ -104,15 +80,12 @@ body {
 #column {
   width: 15%;
   display: block;
-  padding-top: 15px;
   box-shadow: 0 -1px 8px 3px black;
   background: rgb(36, 36, 36);
   z-index: 100;
   border-right: solid 1px #344;
   color: #FFF;
-  overflow: hidden;
   overflow-y: scroll;
-
   
 
   /* some basic forms styling */
@@ -135,10 +108,19 @@ body {
     color: $looplBlue;
     text-transform: lowercase;
   }
+  #main{
+    position: fixed;
+    top: 0;
+    background: #333;
+    width: 15%;
+  }
+  #scrolling-section{
+    padding: 150px 0 10px 0;
+  }
 }
 
 #column img {
-  margin-top: -10px;
+  margin-top: 10px;
   max-width: 100%;
 }
 
@@ -164,10 +146,6 @@ nav ul li {
   border-top: 1px solid rgba(255,255,255,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.4);
   width: 100%;
-}
-
-nav ul li:first-child {
-  border-top: none;
 }
 
 nav a {
@@ -208,6 +186,9 @@ nav a:hover{
 .toggle-visible{
   display: block;
 }
+.toggle-invisible{
+  display: none;
+}
 
 /* all of the following is just the playhead */
 #loop-head {
@@ -225,7 +206,6 @@ nav a:hover{
   height: 20px;
   background: rgba(255,255,255,0.4);
   display: block;
-  transition: all .1s ease;
   margin-left: -10px;
 }
 
