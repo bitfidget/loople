@@ -17,7 +17,7 @@ function init() {
 
 var sounds = {}; // Memoization hash
 
-var soundFiles = 'clap cowbell kickdrum snare laser01 laser02 laser03 robot01 robot02 metro'.split(' ');
+var soundFiles = 'bass bigbass clap click cowbell elec01 elec02 elec03 fart hihat house01 house02 house03 house04 marim01 marim02 marim03 marim04 metro snare synth01 synth02 synth03 voice01 voice02 voice03 voice04 voice05'.split(' ');
 for (var i = 0; i < soundFiles.length; i++) {
     playSound(soundFiles[i], true);
 }
