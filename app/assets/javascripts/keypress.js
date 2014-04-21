@@ -167,6 +167,12 @@ var keyPress = function(){
         makeKey(26);
         blipPress(26);
         break;
+
+      //Letter '`'
+      case 192:
+        blipPress(27);
+        break;
+      
     }
   });
 };
