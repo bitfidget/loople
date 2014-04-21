@@ -148,7 +148,12 @@ $(document).ready(function(){
 
     timerReset();
   });
-  console.log($bpm)
+
+
+  var $buttonInstructions = $('#button-instructions');
+  $buttonInstructions.on('click', function(){
+    $('#pop-up').fadeIn();
+  })
 
 
 //------------------------------------------------------------------------------------------------------------
