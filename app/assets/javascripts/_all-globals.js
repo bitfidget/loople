@@ -36,6 +36,8 @@ var $loopName = 0;
 // KH the load loop button nav
 var $loadLoops = 0;
 
+var dontMakeKey = false;
+
 // the number of steps on the metronome/grid
 var steps = 4;
 var grid = 0;

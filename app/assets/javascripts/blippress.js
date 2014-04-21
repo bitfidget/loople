@@ -131,5 +131,10 @@ var blipPress = function(blip){
       playSound('marim04');
       circleAnimate.animation26()
       break;
+    //Letter '`'
+    case 27:
+      console.log('fart')
+      playSound('fart');
+      break;
   };
 };
