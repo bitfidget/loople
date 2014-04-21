@@ -13,6 +13,7 @@ loadLoop = function(id){
   };
   // remove the old blips on screen
   $('.key-blip').remove();
+  $('.circlelive_visible').removeClass('circlelive_visible')
   // draw the blips for the new loop
   $.each(loopKeysTimes, function(time, keys){
     if (!( (time == 'name') || (time == 'id') ) ){
