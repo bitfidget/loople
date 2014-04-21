@@ -169,4 +169,11 @@ $(document).ready(function(){
   // start the timer
   timerStart();
 
+  popUpBox();
+
+  //CG: Closes the pop-up box when the users presses on the close button.
+  $('#popupButton').click(function(){
+    $('#pop-up').fadeOut();
+  });
+
 });

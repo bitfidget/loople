@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	$('#popupButton').click(function(){
-		console.log("Hello")
-		$('#pop-up').fadeOut();
-	});
-});
+//Displays a pop-up box on the homepage to display the instructions.
+function popUpBox(){
+	$('#pop-up').fadeIn();
+}
