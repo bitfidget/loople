@@ -12,7 +12,7 @@ var timerStart = function(){
 // Functions that need to happen ONCE every loop
 //-------------------------------------------------   
 
-    if (countBar >= 200){
+    if (countBar >= 64){
       // reset the counter
       countBar = 0;
       // load cued loop if it exists
@@ -29,14 +29,14 @@ var timerStart = function(){
     playBlips(countBar);
     // Animate the playbar
     $loopHead.css({
-      left: ($loopWindow.width() / 200) * countBar + 'px'
+      left: ($loopWindow.width() / 64) * countBar + 'px'
     }); 
     // Play the metronome
     metronome(countBar);
     // Keep count
     countBar++;
   }, 
-  loopTime/200);
+  loopTime/64);
 }
 
 var timerReset = function(){

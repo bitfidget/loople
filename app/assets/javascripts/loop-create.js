@@ -29,7 +29,7 @@ makeKey = function(key){
 var plotCount = 0;
 var plotKey = function(key, time){
   var $keyBlip = $('<div class="key-blip kb' + key + '" id="blip' + key + 'at' + time + '" />').css({
-    left: ($loopWindow.width() / 200) * time + 'px',
+    left: ($loopWindow.width() / 64) * time + 'px',
     top: ($gridVert) * key + 'px'
   }).appendTo($loopWindow);
   plotCount += 1;
