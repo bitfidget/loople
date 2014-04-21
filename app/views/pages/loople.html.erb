@@ -1,3 +1,4 @@
+<div id="scrolling-section">
 <!-- ------------------------------------------------- -->
 <!-- top section only appears if you ARE logged in -->
 <!-- ------------------------------------------------- -->
@@ -32,38 +33,43 @@
 <!-- ------------------------------------------------- -->
 
 <% unless @current_user %>
-	
-	<button id="sign-in" class="toggle-visibile">Sign In</button>
-	<button id="sign-up" class="toggle-visibile">Sign Up</button>
 
-	<div class="sign-in">
-		<%= form_tag login_path, :method => :post do %>
-		  <%= text_field_tag :username, params[:username], :placeholder => "username" %>
-		  <%= password_field_tag :password, :placeholder => "password" %>
-		  <%= submit_tag "Sign in" %>
-		<% end %>
-	</div>
-
-	<div class="sign-up">
-		<% if flash[:notice].present? %> 
-	 		<h2><%= flash[:notice] %></h2> 
-		<% end %>
-		<%= form_for @user do |f| %>
-			<%= f.text_field :username, :placeholder => "username" %>
-		  <%= f.email_field :email, :placeholder => "email address" %>
-		  <%= f.password_field :password, :placeholder => "password" %>
-		  <%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
-			<%= f.submit "Sign Up" %>
-		<% end %>
-	</div>
-
-	<div class="info_text">
-        <h2>Welcome to Loople!</h2> 
-        <p>You are currently in demo mode. Loops can be created however you will not be able to save your work.</p>
-        <p>To save your loops, simply Sign Up above and get creative! </p>
-        <h2>Instructions</h2> 
-        <p>Use keys A-Z to trigger sounds and create a loop.</p>
-    </div>
+  <!-- presents the sign in and sign up buttons and forms -->
+  <nav id='user'>
+    <ul>
+      <li>
+        <h2>You Are Currently in Demo Mode</h2> 
+        <p>You can PLAY sounds and CREATE one loop but you cannot SAVE.</p>
+        <h2>SIGN-UP or SIGN-IN so you can access all the features and get creative with Loople now!</h2>
+        <p>Once signed-in you can CREATE, SAVE, EDIT and PLAY multiple loops on the fly.</p>
+      </li>
+      <li>
+      	<a href="#" id="sign-in" class="toggle-visibile">Sign In</a>
+        <div class="sign-in">
+          <%= form_tag login_path, :method => :post do %>
+            <%= text_field_tag :username, params[:username], :placeholder => "username" %>
+            <%= password_field_tag :password, :placeholder => "password" %>
+            <%= submit_tag "Sign in" %>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <a href="#" id="sign-up" class="toggle-visibile">Sign Up</a>
+        <div class="sign-up">
+          <% if flash[:notice].present? %> 
+            <h2><%= flash[:notice] %></h2> 
+          <% end %>
+          <%= form_for @user do |f| %>
+            <%= f.text_field :username, :placeholder => "username" %>
+            <%= f.email_field :email, :placeholder => "email address" %>
+            <%= f.password_field :password, :placeholder => "password" %>
+            <%= f.password_field :password_confirmation, :placeholder => "confirm password" %>
+            <%= f.submit "Sign Up" %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </nav>
 
 <% end %>
 
@@ -72,13 +78,28 @@
 <nav id='controls'>
   <ul>
     <li>
-      <input type="button" name="bpmMinus" id="bpmMinus" class="bpmMinus" value="-">
-      <input type="text" name = "bpm" id="bpm" class="bpm" value="120"/><label>BPM</label>
-      <input type="button" name="bpmPlus" id="bpmPlus"class="bpmPlus" value="+">
+      <a href="#" name="Switch metronome on/off" id="startBpm" class="startBpm" >turn metronome on</a>
+    </li>
+    <li class="bpm">
+      <a href="#" class="bpm-button bpmMinus" id="bpmMinus">-</a><a href="#" class="bpm-button bpmPlus" id="bpmPlus">+</a><span> <span id="bpm" class="bpm-value">120</span> BPM</span>
     </li>
     <li>
-      <input type="button" name="startBpm" id="startBpm"class="startBpm" value="On">
+      <a class="button-git" href="https://github.com/citizengit/loople">Fork Loople on GitHub</a>
     </li>
+    <li>
+      <div class="social-farcebook">
+        <!-- FACEBOOK -->
+        <div id="social-face" class="fb-share-button" data-href="http://loople.herokuapp.com/" data-type="button_count"></div>
+      </div>
+      <div class="social-twit">
+        <!-- TWITTER -->
+        <a href="https://twitter.com/share" id="social-twitter" class="twitter-share-button" data-text="Check out Loople, a fun music/visual javascript experience!" data-url="http://loople.herokuapp.com" data-via="Loople" data-lang="en">Tweet</a>
+      </div>
+
+    </li>
+
   </ul>
 </nav>
+
+</div>
 
