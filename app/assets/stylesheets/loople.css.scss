@@ -127,13 +127,14 @@ body {
 .info_text {
   padding: 15px 20px 15px 15px;
   font-size: 12px;
-  text-align: justify;
 }
 
 h2 {
   color: rgb(32, 188, 241);
-  background-color: black;
-  opacity: 0.8;
+}
+#pop-up h2{
+  text-transform: uppercase;
+  font-size: 30px;
 }
 
 nav ul {
