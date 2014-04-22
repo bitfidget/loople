@@ -52,17 +52,20 @@ body {
 }
 
 #pop-up {
-  max-width: 60%;
-  margin: 5% 10%;
-  padding: 0px 15px 0px 15px;
-  background-color: rgb(27, 27, 27);
-  opacity: 0.7;
+  margin: 0;
+  padding: 0px 10px;
+  background-color: rgba(27, 27, 27, 0.7);
   text-align: center;
 }
 
 #pop-up #popupButton{
-  max-width: 100px;
-  margin: 2% 45%;
+  margin: 2% auto;
+}
+
+#pop-up a{
+  color: #FFF;
+  border-bottom: dotted 1px #FFF;
+  text-decoration: none;
 }
 
 /* this displays the main amimations - the playbar and the blips */
