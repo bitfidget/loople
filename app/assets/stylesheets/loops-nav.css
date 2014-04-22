@@ -85,5 +85,7 @@ a.metro-tic,
 }
 nav li p,
 nav li h2{
-  padding: 5px 15px;
+  padding: 5px 15px 10px 5px;
+  background: #333;
+  margin: 0;
 }
