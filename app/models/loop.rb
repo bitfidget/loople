@@ -36,8 +36,8 @@ class Loop < ActiveRecord::Base
           # start to populate the keystrokes for this hash/loop
           loop_detail['keyStrokes'] = {}
           loop.keystrokes.each do |key_stroke| #Poor naming here;
-            loop_detail['keyStrokes'][key_stroke.time] ||= []
-            loop_detail['keyStrokes'][key_stroke.time] << key_stroke.key
+            loop_detail['keyStrokes'][key_stroke.time.to_i] ||= []
+            loop_detail['keyStrokes'][key_stroke.time.to_i] << key_stroke.key
           end # end of iteration through keystrokes
         end
       loops_to_load << loop_detail

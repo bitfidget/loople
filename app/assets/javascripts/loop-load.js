@@ -44,7 +44,7 @@ $(document).ready(function(){
       console.log('Yay, I have keys', keys);
       // if there's a key here, play it
       $.each(keys, function(i, key){
-        blipPress(key)
+        blipPress(parseInt(key));
         blipID = ('#blip' + key + 'at' + countBar)
         // apply stype to the blip using it's id in format: blip11at28
         $(blipID).addClass('blipPlay');
