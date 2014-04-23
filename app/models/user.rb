@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   #form validation
   validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true
-  validates :image, :presence => true, :length => { :minimum => 2 }
   has_secure_password
 
   has_many :loops
