@@ -4,20 +4,20 @@
 // save Key and curretn Time to the hash - it then fires plotKey to draw it on screen
 //-------------------------------------------------
 
-makeKey = function(key){
-  if (dontMakeKey === false){
-    // check to see if there's already a key saved at this time
-    if (!loopKeysTimes[countBar]){
-      loopKeysTimes[countBar] = []
-    }
+// makeKey = function(key){
+//   if (dontMakeKey === false){
+//     // check to see if there's already a key saved at this time
+//     if (!loopKeysTimes[countBar]){
+//       loopKeysTimes[countBar] = []
+//     }
     
-    // add key to time value within hash
-    loopKeysTimes[countBar].push(key);
+//     // add key to time value within hash
+//     loopKeysTimes[countBar].push(key);
     
-    // call the function to show the key
-    plotKey(key, countBar);
-  }
-};
+//     // call the function to show the key
+//     plotKey(key, countBar);
+//   }
+// };
 
 //-------------------------
 // Plot the blips on screen
@@ -26,11 +26,11 @@ makeKey = function(key){
 //-------------------------
 
   
-var plotCount = 0;
-var plotKey = function(key, time){
-  var $keyBlip = $('<div class="key-blip kb' + key + '" id="blip' + key + 'at' + time + '" />').css({
-    left: ($loopWindow.width() / 64) * time + 'px',
-    top: ($gridVert) * key + 'px'
-  }).appendTo($loopWindow);
-  plotCount += 1;
-};
+// var plotCount = 0;
+// var plotKey = function(key, time){
+//   var $keyBlip = $('<div class="key-blip kb' + key + '" id="blip' + key + 'at' + time + '" />').css({
+//     left: ($loopWindow.width() / 64) * time + 'px',
+//     top: ($gridVert) * key + 'px'
+//   }).appendTo($loopWindow);
+//   plotCount += 1;
+// };

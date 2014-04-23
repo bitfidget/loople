@@ -18,153 +18,153 @@ var keyPress = function(){
     switch(e.keyCode){
       //Letter 'Q'
       case 81:
-        makeKey(1);
+        musicLoop.makeKey(1);
         blipPress(1);
         break;
       //Letter 'W'
       case 87:
-        makeKey(2);
+        musicLoop.makeKey(2);
         blipPress(2);
         break;
       //Letter 'E'
       case 69:
-        makeKey(3);
+        musicLoop.makeKey(3);
         blipPress(3);
         break;
       //Letter 'R'
       case 82:
-        makeKey(4);
+        musicLoop.makeKey(4);
         blipPress(4);
         break;
 
       //Letter 'T'
       case 84:
-        makeKey(5);
+        musicLoop.makeKey(5);
         blipPress(5);
         break; 
 
       //Letter 'Y'
       case 89:
-        makeKey(6);
+        musicLoop.makeKey(6);
         blipPress(6);
         break;
 
       //Letter 'U'
       case 85:
-        makeKey(7);
+        musicLoop.makeKey(7);
         blipPress(7);
         break;
 
       //Letter 'I'
       case 73:
-        makeKey(8);
+        musicLoop.makeKey(8);
         blipPress(8);
         break;
 
       //Letter 'O'
       case 79:
-        makeKey(9);
+        musicLoop.makeKey(9);
         blipPress(9);
         break;
 
       //Letter 'P'
       case 80:
-        makeKey(10);
+        musicLoop.makeKey(10);
         blipPress(10);
         break;
 
       //Letter 'A'
       case 65:
-        makeKey(11);
+        musicLoop.makeKey(11);
         blipPress(11);
         break;
 
       //Letter 'S'
       case 83:
-        makeKey(12);
+        musicLoop.makeKey(12);
         blipPress(12);
         break;
 
       //Letter 'D'
       case 68:
-        makeKey(13);
+        musicLoop.makeKey(13);
         blipPress(13);
         break;
 
       //Letter 'F'
       case 70:
-        makeKey(14);
+        musicLoop.makeKey(14);
         blipPress(14);
         break;
 
       //Letter 'G'
       case 71:
-        makeKey(15);
+        musicLoop.makeKey(15);
         blipPress(15);
         break;
 
       //Letter 'H'
       case 72:
-        makeKey(16);
+        musicLoop.makeKey(16);
         blipPress(16);
         break;
 
       //Letter 'J'
       case 74:
-        makeKey(17);
+        musicLoop.makeKey(17);
         blipPress(17);
         break;
 
       //Letter 'K'
       case 75:
-        makeKey(18);
+        musicLoop.makeKey(18);
         blipPress(18);
         break;
 
       //Letter 'L'
       case 76:
-        makeKey(19);
+        musicLoop.makeKey(19);
         blipPress(19);
         break;
 
       //Letter 'Z'
       case 90:
-        makeKey(20);
+        musicLoop.makeKey(20);
         blipPress(20);
         break;
 
       //Letter 'X'
       case 88:
-        makeKey(21);
+        musicLoop.makeKey(21);
         blipPress(21);
         break;
 
       //Letter 'C'
       case 67:
-        makeKey(22);
+        musicLoop.makeKey(22);
         blipPress(22);
         break;
 
       //Letter 'V'
       case 86:
-        makeKey(23);
+        musicLoop.makeKey(23);
         blipPress(23);
         break;
       //Letter 'B'
       case 66:
-        makeKey(24);
+        musicLoop.makeKey(24);
         blipPress(24);
         break;
 
       //Letter 'N'
       case 78:
-        makeKey(25);
+        musicLoop.makeKey(25);
         blipPress(25);
         break;
 
       //Letter 'M'
       case 77:
-        makeKey(26);
+        musicLoop.makeKey(26);
         blipPress(26);
         break;
 

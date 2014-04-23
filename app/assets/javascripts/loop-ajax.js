@@ -15,7 +15,6 @@ var loopAjax = {
       url: '/loops',
       type: 'POST',
       dataType: 'json',
-      // data: {loop: { name: loopName, colour: loopColour }}
       data: {loop: { name: loopName, colour: loopColour }, loopKeysTimes: loopKeysTimes}
     })
 
@@ -44,6 +43,7 @@ var loopAjax = {
 
     // if ajax is a success do the following
     .done(function(savedLoops){
+      //Add underscore templating here; 
       // create a button for the current loop
       $loopNav.html("<li data-id='0'><a href='#' title='clear loop' class='clear-loop'>C</a><a href='#' class='load-loop'>New Loop</a></li>")
       $.each(savedLoops, function(index, loop){
