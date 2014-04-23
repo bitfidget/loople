@@ -9,20 +9,17 @@ $(document).ready(function(){
         loopKeysTimes = newKeysTimes;
         $loopName.val('')
       } else {
-        loopKeysTimes = savedKeysTimes[id];
-        $loopName.val(loopKeysTimes.name)
+        loopKeysTimes = savedKeysTimes[id].keyStrokes;
+        $loopName.val(savedKeysTimes[id].name)
       };
       // remove the old blips on screen
       $('.key-blip').remove();
-      $('.circlelive_visible').removeClass('circlelive_visible')
+      $('.circlelive_visible').removeClass('circlelive_visible');
       // draw the blips for the new loop
       $.each(loopKeysTimes, function(time, keys){
-        if (!( (time == 'name') || (time == 'id') ) ){
-          $.each(keys, function(index, key){
-            // call the function to show the key
-            musicLoop.plotKey(key, time);
-          });
-        };
+        $.each(keys, function(index, key){
+          musicLoop.plotKey(key, time);
+        });
       });
       this.resetCSS();
     },
@@ -32,17 +29,19 @@ $(document).ready(function(){
       $('.current-loop').removeClass('current-loop');
       $('.cued-loop').addClass('current-loop');
       $('.cued-loop').removeClass('cued-loop');
-      console.log(loopKeysTimes)
       // switch cuedLoop back
       cuedLoop = false;
     },
     playBlips: function(countBar){
+      // debugger;
       // grab the loopKey (Keys) that has the same time as the current time (countBar)
+      // I do not understand why it cant find the key here;
       var keys = loopKeysTimes[countBar];
       // if there are no keys at this location - move on
       if (! keys) {
         return;
       }
+      console.log('Yay, I have keys', keys);
       // if there's a key here, play it
       $.each(keys, function(i, key){
         blipPress(key)
@@ -60,14 +59,16 @@ $(document).ready(function(){
     // save Key and curretn Time to the hash - it then fires plotKey to draw it on screen
     //-------------------------------------------------
     makeKey: function(key){
-      // check to see if there's already a key saved at this time
-      if (!newKeysTimes[countBar]){
-         newKeysTimes[countBar] = []
+      if (dontMakeKey === false){
+        // check to see if there's already a key saved at this time
+        if (!loopKeysTimes[countBar]){
+           loopKeysTimes[countBar] = []
+        }
+        // add key to time value within hash
+        loopKeysTimes[countBar].push(key);
+        // call the function to show the key
+        this.plotKey(key, countBar);
       }
-      // add key to time value within hash
-      newKeysTimes[countBar].push(key);
-      // call the function to show the key
-      this.plotKey(key, countBar);
     },
     //-------------------------
     // Plot the blips on screen
@@ -83,11 +84,11 @@ $(document).ready(function(){
       this.plotCount += 1;
     },
     animation: function(letter){
-    $circleQ.addClass('circlelive');
-    $circleQ.addClass('circlelive_visible');
-    setTimeout(function() {
-      $circleQ.removeClass('circlelive');
-    }, 100);
+      letter.addClass('circlelive');
+      letter.addClass('circlelive_visible');
+      setTimeout(function() {
+        letter.removeClass('circlelive');
+      }, 100);
   },
   }
 });

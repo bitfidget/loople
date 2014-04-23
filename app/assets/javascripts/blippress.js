@@ -1,140 +1,140 @@
 // KH getting experiMENTAL here... this should play back our plotted points for us...
-var blipPress = function(blip){
+  var blipPress = function(blip){
   switch(blip){
     //Letter 'Q'
     case 1:
       playSound('bigbass');
-      circleAnimate.animation1()
+      musicLoop.animation($circleQ);
       break;
     //Letter 'W'
     case 2:
       playSound('bass');
-      circleAnimate.animation2()
+      musicLoop.animation($circleW)
       break;
     //Letter 'E'
     case 3:
       playSound('snare');
-      circleAnimate.animation3()
+      musicLoop.animation($circleE)
       break;
     //Letter 'R'
     case 4:
       playSound('hihat');
-      circleAnimate.animation4()
+      musicLoop.animation($circleR)
       break;
     //Letter 'T'
     case 5:
       playSound('elec01');
-      circleAnimate.animation5();
+      musicLoop.animation($circleT);
       break;
     //Letter 'Y'
     case 6:
       playSound('elec02');
-      circleAnimate.animation6()
+      musicLoop.animation($circleY)
       break;
     //Letter 'U'
     case 7:
       playSound('elec03');
-      circleAnimate.animation7()
+      musicLoop.animation($circleU)
       break;
     //Letter 'I'
     case 8:
       playSound('synth01');
-      circleAnimate.animation8()
+      musicLoop.animation($circleI)
       break;
     //Letter 'O'
     case 9:
       playSound('synth02');
-      circleAnimate.animation9()
+      musicLoop.animation($circleO)
       break;
     //Letter 'P'
     case 10:
       playSound('synth03');
-      circleAnimate.animation10()
+      musicLoop.animation($circleP)
       break;
     //Letter 'A'
     case 11:
       playSound('clap');
-      circleAnimate.animation11()
+      musicLoop.animation($circleA)
       break;
     //Letter 'S'
     case 12:
       playSound('click');
-      circleAnimate.animation12()
+      musicLoop.animation($circleS)
       break;
     //Letter 'D'
     case 13:
       playSound('cowbell');
-      circleAnimate.animation13()
+      musicLoop.animation($circleD)
       break;
     //Letter 'F'
     case 14:
       playSound('house01');
-      circleAnimate.animation14()
+      musicLoop.animation($circleF)
       break;
     //Letter 'G'
     case 15:
       playSound('house02');
-      circleAnimate.animation15()
+      musicLoop.animation($circleG)
       break;
     //Letter 'H'
     case 16:
       playSound('house03');
-      circleAnimate.animation16()
+      musicLoop.animation($circleH)
       break;
     //Letter 'J'
     case 17:
       playSound('house04');
-      circleAnimate.animation17()
+      musicLoop.animation($circleJ)
       break;
     //Letter 'K'
     case 18:
       playSound('marim01');
-      circleAnimate.animation18()
+      musicLoop.animation($circleK)
       break;
     //Letter 'L'
     case 19:
       playSound('marim02');
-    circleAnimate.animation19()
+    musicLoop.animation($circleL)
       break;
     //Letter 'Z'
     case 20:
       playSound('voice01');
-      circleAnimate.animation20()
+      musicLoop.animation($circleZ)
       break;
     //Letter 'X'
     case 21:
       playSound('voice02');
-      circleAnimate.animation21()
+      musicLoop.animation($circleX)
       break;
     //Letter 'C'
     case 22:
       playSound('voice03');
-      circleAnimate.animation22()
+      musicLoop.animation($circleC)
       break;
     //Letter 'V'
     case 23:
       playSound('voice04');
-      circleAnimate.animation23()
+      musicLoop.animation($circleV)
       break;
     //Letter 'B'
     case 24:
       playSound('voice05');
-      circleAnimate.animation24()
+      musicLoop.animation($circleB)
       break;
     //Letter 'N'
     case 25:
       playSound('marim03');
-      circleAnimate.animation25()
+      musicLoop.animation($circleN)
       break;
     //Letter 'M'
     case 26:
       playSound('marim04');
-      circleAnimate.animation26()
+      musicLoop.animation($circleM)
       break;
     //Letter '`'
     case 27:
       console.log('fart')
       playSound('fart');
       break;
+    };
   };
-};

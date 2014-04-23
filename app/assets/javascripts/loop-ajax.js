@@ -9,7 +9,6 @@ var loopAjax = {
 // ----------------------------------------------------------------------------------
 
   createLoop: function(loopName, loopColour, loopKeysTimes){
-
     console.log(loopKeysTimes);
     $.ajax({
       url: '/loops',
@@ -43,6 +42,7 @@ var loopAjax = {
 
     // if ajax is a success do the following
     .done(function(savedLoops){
+      console.log('Here are the savedLoops', savedLoops);
       //Add underscore templating here; 
       // create a button for the current loop
       $loopNav.html("<li data-id='0'><a href='#' title='clear loop' class='clear-loop'>C</a><a href='#' class='load-loop'>New Loop</a></li>")
@@ -50,6 +50,7 @@ var loopAjax = {
         // create a button for each saved loop
         var navItem = "<li data-id=" + this.id + "><a href='#' title='delete loop' class='delete-loop'>X</a><a href='#' class='load-loop'><span class='queue'>cue</span> " + this.name + "</a></li>"
         // add each saved loop to the hash
+        //Because you do not have an update function, only load the keyStrokes, you then do not need to delete them later; 
         savedKeysTimes[this.id] = this;
         // add button to the screen
         $loopNav.append(navItem);

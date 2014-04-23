@@ -4,50 +4,50 @@
 $(document).ready(function(){
 
     // window width and height
-    var winWidth = window.innerWidth;
-    var winHeight = window.innerHeight;
+     winWidth = window.innerWidth;
+     winHeight = window.innerHeight;
 
     // the main windows
-    var $animWindow = 0;
-    var $loopWindow = 0;
+     $animWindow = 0;
+     $loopWindow = 0;
 
     // the loop head
-    var $loopHead = 0;
+     $loopHead = 0;
 
     // the navigation for saved loops
-    var $loopNav = 0;
+     $loopNav = 0;
 
     // KH all keypresses are saved in the loopKeysTimes hash
     // KH the time is the key, and the keys played are the value
-    var loopKeysTimes = {};
-    var newKeysTimes = {};
-    var savedKeysTimes = {};
-    var cuedLoop = false;
-    var nextLoop = 0;
+     loopKeysTimes = {};
+     newKeysTimes = {};
+     savedKeysTimes = {};
+     cuedLoop = false;
+     nextLoop = 0;
 
-    // KH the global timer - everythign hangs off this variable!
-    var countBar = 0;
+    // KH the global timer - everythign hangs off this iable!
+     countBar = 0;
 
     // KH the global looptime - start with 2000 (120BPM)
-    var loopTime = 2000;
+     loopTime = 2000;
 
     // save loop fields
-    var $loopName = 0;
+     $loopName = 0;
 
     // KH the load loop button nav
-    var $loadLoops = 0;
+     $loadLoops = 0;
 
-    var dontMakeKey = false;
+     dontMakeKey = false;
 
     // the number of steps on the metronome/grid
-    var steps = 4;
-    var grid = 0;
+     steps = 4;
+     grid = 0;
 
     // for the metronome
-    var $startBpm = 0;
-    var $bpmPlus = 0;
-    var $bpmMinus = 0;
-    var $bpm = 0;
+     $startBpm = 0;
+     $bpmPlus = 0;
+     $bpmMinus = 0;
+     $bpm = 0;
 
     //circle params;
     $circleQ = $('#circleQ');

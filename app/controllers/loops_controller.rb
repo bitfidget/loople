@@ -6,8 +6,7 @@ class LoopsController < ApplicationController
     # loop = Loop.new(params[:loop])
     # loop.user = @current_user
     # loop.save
-
-    loop = @current_user.loops.new(params[:loop])
+    loop = @current_user.loops.create(params[:loop])
 
     #create the loopKeyTimes
     #Do I need to check if the loop is saved before creating the loopKeysTimes and should the loopKeysTimes stuff be in the model?;
@@ -18,12 +17,14 @@ class LoopsController < ApplicationController
     # this is confusing because we are using TIME as the key and KEY as the value, but stick with us, it'll be worth it
     # each time can have multiple keys, so iterate each time value, and save EACh key as an object
     #What is this doing?
+    ##This code is not longer needed - updated format means when you load a saved loop it only loads the keyStrokes into the loopKeysTimes hash; 
     # if keysTimes['name']
     #   keysTimes.delete('name')
     # end
     # if keysTimes['id'];
     #   keysTimes.delete('id')
     # end
+
     keysTimes.each do |time, keys|
       keys.each do |key|
         keyStroke = Keystroke.new

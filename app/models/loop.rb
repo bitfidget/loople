@@ -10,6 +10,7 @@
 #  updated_at :datetime
 #
 
+
 class Loop < ActiveRecord::Base
   attr_accessible :user_id, :name, :colour
   belongs_to :user
@@ -22,26 +23,24 @@ class Loop < ActiveRecord::Base
     loops_to_load = Array.new
     # iterate through all of the loops and make new hashes
     loops.each do |loop|
-    # set up the hash for this loop
-    loop_detail = Hash.new
-    loop_detail['id'] = loop.id
-    # check for loop name - if there isn't one, use the ID instead
-    if loop.name.blank?
-      loop_detail['name'] = loop.id
-    else 
-      loop_detail['name'] = loop.name
-    end
-    # start to populate the keystrokes for this hash/loop
-    loop.keystrokes.each do |key_stroke| #Poor naming here;
-      # check to see if we have anything at this time already and if not - create new hash
-      # if !loop_detail[key.time.to_i]
-      #   loop_detail[key.time.to_i] = Array.new
-      # end
-      loop_detail[key_stroke.time.to_i] ||= []
-      # append the hashes with all the keys
-      loop_detail[key_stroke.time.to_i] << key_stroke.key.to_i
-    end # end of iteration through keystrokes
-    loops_to_load << loop_detail
+      # set up the hash for this loop
+      loop_detail = Hash.new
+      loop_detail['id'] = loop.id
+      # check for loop name - if there isn't one, use the ID instead
+      if loop.name.blank?
+        loop_detail['name'] = loop.id
+      else 
+        loop_detail['name'] = loop.name
+      end
+        if loop.keystrokes.length >= 1
+          # start to populate the keystrokes for this hash/loop
+          loop_detail['keyStrokes'] = {}
+          loop.keystrokes.each do |key_stroke| #Poor naming here;
+            loop_detail['keyStrokes'][key_stroke.time] ||= []
+            loop_detail['keyStrokes'][key_stroke.time] << key_stroke.key
+          end # end of iteration through keystrokes
+        end
+      loops_to_load << loop_detail
     end # end of iteration through loops
     loops_to_load
   end

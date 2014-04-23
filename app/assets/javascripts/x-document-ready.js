@@ -54,6 +54,7 @@ $(document).ready(function(){
     $loopName.val('');
     var colour = '000000';
     // KH make Ajax goodness happen
+    debugger;
     loopAjax.createLoop(name, colour, loopKeysTimes);
   });
 
