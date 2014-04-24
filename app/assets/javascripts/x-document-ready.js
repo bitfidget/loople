@@ -197,7 +197,7 @@ $(document).ready(function(){
         left: ($loopWindow.width() / 64) * countBar + 'px'
       }); 
       // Play the metronome
-      metronome(countBar);
+      startPage.metronome(countBar);
       // Keep count
       countBar++;
       }, 
@@ -206,6 +206,14 @@ $(document).ready(function(){
     timerReset: function(){
       clearInterval(counterMain);
       this.timerStart();
+    },
+    metronome: function(countBar){
+      if(countBar % (64/steps)  == 0){
+        if (metroSound === true){
+          playSound('metro');
+          $startBpm.toggleClass('metro-tic');
+        };
+      }; 
     }
   }
   startPage.addGrid()
@@ -216,6 +224,11 @@ $(document).ready(function(){
   startPage.timerStart();
 
   popUpBox();
+
+  //Displays a pop-up box on the homepage to display the instructions.
+  function popUpBox(){
+    $('#pop-up').fadeIn();
+  }
 
   //CG: Closes the pop-up box when the users presses on the close button.
   $('#popupButton').click(function(){

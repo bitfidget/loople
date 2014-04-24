@@ -33,7 +33,7 @@
 <!-- ------------------------------------------------- -->
 
 <% unless @current_user %>
-
+  <!-- Put this into a partial -->
   <!-- presents the sign in and sign up buttons and forms -->
   <nav id='user'>
     <ul>
@@ -43,7 +43,7 @@
         <h2>SIGN-UP or SIGN-IN so you can access all the features and get creative with Loople now!</h2>
         <p>Once signed-in you can CREATE, SAVE, EDIT and PLAY multiple loops on the fly.</p>
       </li>
-      <li>
+      <li class="login">
       	<a href="#" id="sign-in" class="toggle-visibile">Sign In</a>
         <div class="sign-in">
           <%= form_tag login_path, :method => :post do %>
@@ -53,7 +53,7 @@
           <% end %>
         </div>
       </li>
-      <li>
+      <li class="login">
         <a href="#" id="sign-up" class="toggle-visibile">Sign Up</a>
         <div class="sign-up">
           <% if flash[:notice].present? %> 

@@ -49,6 +49,8 @@ $(document).ready(function(){
      $bpmMinus = 0;
      $bpm = 0;
 
+    metroSound = false;
+
     //circle params;
     $circleQ = $('#circleQ');
     $circleW = $('#circleW');

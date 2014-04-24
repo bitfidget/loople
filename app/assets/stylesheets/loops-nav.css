@@ -83,6 +83,11 @@ a.metro-tic,
 .current-forms a{
   background: none !important;
 }
+
+.current-forms .sign-up, .current-forms .sign-in{
+  display:block;
+}
+
 nav li p,
 nav li h2{
   padding: 5px 15px 10px 5px;
