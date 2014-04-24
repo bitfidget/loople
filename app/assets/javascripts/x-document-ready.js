@@ -54,6 +54,7 @@ $(document).ready(function(){
     $loopName.val('');
     var colour = '000000';
     // KH make Ajax goodness happen
+    debugger;
     loopAjax.createLoop(name, colour, loopKeysTimes);
   });
 
@@ -163,21 +164,74 @@ $(document).ready(function(){
 //------------------------------------------------------------------------------------------------------------
 // START: all functions that need to be called when we're ll ready to fly:
 //------------------------------------------------------------------------------------------------------------ 
-
+  startPage = {
+    //Draws the grid 
+    addGrid: function(number){
+      for(i = 0; i <= number; i++){
+        var $gridline = $('<div class="gridLine"></div>').css({
+          left: (i * grid) + "px",
+          height: winHeight + "px",
+        }).appendTo($animWindow)
+        console.log(i);
+        startPage.timerStart();
+      }
+    },
+    // BPM = (60 / (loopTime/1000) ) * 4
+    // KH create the counter - this runs everything! Currently it sets up 200 steps, regardless of tempo (so should scale OK), so it resets to 0 at 200.
+    timerStart: function(){
+      counterMain = setInterval(function(){
+      // Functions that need to happen ONCE every loop
+      if (countBar >= 64){
+        // reset the counter
+        countBar = 0;
+        // load cued loop if it exists
+        if (cuedLoop === true){
+          musicLoop.loadLoop(nextLoop);
+        };
+      };
+      // Functions that need to happen EVERY step of loop
+      // Play blips
+      musicLoop.playBlips(countBar);
+      // Animate the playbar
+      $loopHead.css({
+        left: ($loopWindow.width() / 64) * countBar + 'px'
+      }); 
+      // Play the metronome
+      startPage.metronome(countBar);
+      // Keep count
+      countBar++;
+      }, 
+      loopTime/64);
+    },
+    timerReset: function(){
+      clearInterval(counterMain);
+      this.timerStart();
+    },
+    metronome: function(countBar){
+      if(countBar % (64/steps)  == 0){
+        if (metroSound === true){
+          playSound('metro');
+          $startBpm.toggleClass('metro-tic');
+        };
+      }; 
+    }
+  }
+  startPage.addGrid()
   // load saved loops
   loopAjax.loadLoops();
 
-  // load the grid
-  addGrid(steps);
-
   // start the timer
-  timerStart();
+  startPage.timerStart();
 
   popUpBox();
+
+  //Displays a pop-up box on the homepage to display the instructions.
+  function popUpBox(){
+    $('#pop-up').fadeIn();
+  }
 
   //CG: Closes the pop-up box when the users presses on the close button.
   $('#popupButton').click(function(){
     $('#pop-up').fadeOut();
   });
-
 });
