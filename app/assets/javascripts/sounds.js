@@ -50,13 +50,14 @@ function playSound(sound, silent) {
 }
 
 function audioRouting(data) {
-    source = context.createBufferSource(); // Create sound source
-    //gain = context.createGain();
-    buffer = context.createBuffer(data, true); // Create source buffer from raw binary
-    source.buffer = buffer; // Add buffered data to object
+    context.decodeAudioData(data, function(buffer){
+        source = context.createBufferSource(); // Create sound source
+        myBuffer = buffer
+        source.buffer = myBuffer; // Add buffered data to object
+        source.connect(context.destination); // Connect sound source to output
+        source.start(0); //Important line to get the sound to play!
+    }); // Create source buffer from raw binary
     //source.connect(gain);
-    source.connect(context.destination); // Connect sound source to output
-    source.start(0); //Important line to get the sound to play!
 }
 
 init();
